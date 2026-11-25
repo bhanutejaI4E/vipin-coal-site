@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coal trading website — 5 design concepts</title>
+<meta name="description" content="Five homepage design concepts for a new coal trading company. Placeholder content.">
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#F6F5F2;--card:#fff;--ink:#16161A;--muted:#5D5D66;--line:#E4E2DC;--accent:#16161A;--r:18px;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+:focus-visible{outline:3px solid #2563EB;outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:1rem;top:-100px;background:var(--ink);color:#fff;padding:.7rem 1rem;border-radius:8px;text-decoration:none}
+.skip:focus{top:1rem}
+.wrap{width:min(100% - 2.5rem,1200px);margin-inline:auto}
+header{padding:4rem 0 2.5rem}
+.kick{display:inline-flex;gap:.5rem;align-items:center;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.kick b{background:#FDE68A;color:#713F12;padding:.15rem .5rem;border-radius:6px;letter-spacing:.04em}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin:1rem 0}
+.intro{max-width:46rem;color:var(--muted);font-size:1.1rem}
+.jump{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.75rem;padding:0;list-style:none}
+.jump a{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem .9rem;border-radius:999px;background:#fff;border:1px solid var(--line);text-decoration:none;font-weight:600;font-size:.92rem}
+.jump a:hover{border-color:var(--ink)}
+.jump i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+main{padding-bottom:5rem}
+.concept{display:grid;grid-template-columns:1.25fr 1fr;gap:2.5rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:1.5rem;margin-top:1.5rem}
+.shots{position:relative;padding-right:3.5rem;padding-bottom:2rem}
+.shots a{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 40px -24px rgba(0,0,0,.35);transition:transform .3s}
+.shots a:hover{transform:translateY(-3px)}
+.shots img{display:block;width:100%;height:auto}
+.phone{position:absolute;right:0;bottom:0;width:26%;border-radius:18px;overflow:hidden;border:5px solid #16161A;box-shadow:0 20px 40px -16px rgba(0,0,0,.45);background:#16161A}
+.phone img{display:block;width:100%;height:auto}
+.num{font-size:.85rem;font-weight:700;color:var(--muted);letter-spacing:.06em}
+.concept h2{font-size:2rem;letter-spacing:-.03em;margin:.25rem 0 .5rem}
+.mood{color:var(--muted);font-size:1.05rem}
+.swatches{display:flex;gap:.4rem;margin:1.25rem 0 .5rem;padding:0;list-style:none}
+.swatches li{width:34px;height:34px;border-radius:10px;background:var(--c);border:1px solid rgba(0,0,0,.08)}
+dl.meta{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;margin:1rem 0;font-size:.93rem}
+dl.meta dt{color:var(--muted)}
+dl.meta dd{margin:0;font-weight:600}
+.hl{margin:0 0 1.25rem;padding-left:1.1rem;font-size:.95rem}
+.hl li{margin:.25rem 0}
+.best{font-size:.93rem;background:var(--bg);border-radius:12px;padding:.8rem 1rem;margin-bottom:1.25rem}
+.best b{font-weight:700}
+.open{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.25rem;border-radius:10px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600}
+.open:hover{background:#33333A}
+section.info{margin-top:4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.panel{background:#fff;border:1px solid var(--line);border-radius:24px;padding:2rem}
+.panel h2{font-size:1.4rem;letter-spacing:-.02em;margin-bottom:1rem}
+.panel ul{margin:0;padding-left:1.1rem}
+.panel li{margin:.4rem 0}
+.panel p{color:var(--muted);margin-bottom:.75rem}
+.panel.wide{grid-column:1 / -1}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+@media (max-width:900px){.concept,section.info{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to concepts</a>
+<header>
+  <div class="wrap">
+    <span class="kick"><b>Draft</b> Prepared for Vipin · November 2026</span>
+    <h1>Coal trading website<br>5 design concepts</h1>
+    <p class="intro">Each concept is a complete, responsive homepage built with the <strong>same placeholder content</strong> — so you're comparing look and feel only. The company name “Kolvara Resources”, phone numbers, addresses and figures are stand-ins until we receive the real details.</p>
+    <ul class="jump" aria-label="Jump to a concept">
+      <li><a href="#c1"><i style="--c:#F08A3C" aria-hidden="true"></i>01 Obsidian</a></li>
+      <li><a href="#c2"><i style="--c:#FF4D00" aria-hidden="true"></i>02 Ledger</a></li>
+      <li><a href="#c3"><i style="--c:#5EEAD4" aria-hidden="true"></i>03 Terminal</a></li>
+      <li><a href="#c4"><i style="--c:#A4471E" aria-hidden="true"></i>04 Strata</a></li>
+      <li><a href="#c5"><i style="--c:#B08D57" aria-hidden="true"></i>05 Meridian</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article class="concept" id="c1" aria-labelledby="c1-t">
+    <div class="shots">
+      <a href="concepts/01-obsidian.html" aria-label="Open concept 01, Obsidian"><img src="previews/01-obsidian.jpg" alt="Obsidian homepage: dark warm-black page with a large serif headline and a glowing faceted coal illustration" width="1200" height="750"></a>
+      <div class="phone"><img src="previews/01-obsidian-mobile.jpg" alt="Obsidian on a phone" width="390" height="844" loading="lazy"></div>
+    </div>
+    <div>
+      <span class="num">CONCEPT 01</span>
+      <h2 id="c1-t">Obsidian</h2>
+      <p class="mood">Dark, premium and editorial. The closest to the Verslin feel, refreshed for 2026.</p>
+      <ul class="swatches" aria-label="Colour palette: warm black, charcoal, ivory, ember orange"><li style="--c:#0C0B0A"></li><li style="--c:#1E1A17"></li><li style="--c:#EDE6DC"></li><li style="--c:#F08A3C"></li></ul>
+      <dl class="meta"><dt>Fonts</dt><dd>Instrument Serif · Hanken Grotesk</dd><dt>Theme</dt><dd>Dark</dd></dl>
+      <ul class="hl"><li>Faceted coal illustration with ember glow and live spec callouts</li><li>Big-statement typography, spec cards for every product</li><li>Calm, confident motion (respects reduced-motion settings)</li></ul>
+      <p class="best"><b>Best if</b> Vipin wants continuity with Verslin's dark/orange identity, but sharper.</p>
+      <a class="open" href="concepts/01-obsidian.html">Open concept <span aria-hidden="true">→</span></a>
+    </div>
+  </article>
+
+  <article class="concept" id="c2" aria-labelledby="c2-t">
+    <div class="shots">
+      <a href="concepts/02-ledger.html" aria-label="Open concept 02, Ledger"><img src="previews/02-ledger.jpg" alt="Ledger homepage: off-white paper background, giant black extended headline and a printed spec-sheet ticket" width="1200" height="750"></a>
+      <div class="phone"><img src="previews/02-ledger-mobile.jpg" alt="Ledger on a phone" width="390" height="844" loading="lazy"></div>
+    </div>
+    <div>
+      <span class="num">CONCEPT 02</span>
+      <h2 id="c2-t">Ledger</h2>
+      <p class="mood">Swiss-industrial and data-first. Reads like a trading spec sheet.</p>
+      <ul class="swatches" aria-label="Colour palette: paper, ink black, warm grey, signal orange"><li style="--c:#F2F0EB"></li><li style="--c:#111111"></li><li style="--c:#CFCAC0"></li><li style="--c:#FF4D00"></li></ul>
+      <dl class="meta"><dt>Fonts</dt><dd>Archivo (extended) · IBM Plex Mono</dd><dt>Theme</dt><dd>Light</dd></dl>
+      <ul class="hl"><li>Expandable product rows with full spec tables</li><li>Calorific-value range chart and origin/port coordinates</li><li>Live “trade desk open/closed” indicator (IST)</li></ul>
+      <p class="best"><b>Best if</b> buyers are technical (plant procurement, engineers) and value specs over imagery.</p>
+      <a class="open" href="concepts/02-ledger.html">Open concept <span aria-hidden="true">→</span></a>
+    </div>
+  </article>
+
+  <article class="concept" id="c3" aria-labelledby="c3-t">
+    <div class="shots">
+      <a href="concepts/03-terminal.html" aria-label="Open concept 03, Terminal"><img src="previews/03-terminal.jpg" alt="Terminal homepage: dark interface with teal and violet glow, market ticker and an interactive quick-quote panel" width="1200" height="750"></a>
+      <div class="phone"><img src="previews/03-terminal-mobile.jpg" alt="Terminal on a phone" width="390" height="844" loading="lazy"></div>
+    </div>
+    <div>
+      <span class="num">CONCEPT 03</span>
+      <h2 id="c3-t">Terminal</h2>
+      <p class="mood">The “AI-era” option. Feels like a modern trading platform, not a brochure.</p>
+      <ul class="swatches" aria-label="Colour palette: near-black, graphite, mint, violet"><li style="--c:#07090B"></li><li style="--c:#0E1215"></li><li style="--c:#5EEAD4"></li><li style="--c:#8B7CFF"></li></ul>
+      <dl class="meta"><dt>Fonts</dt><dd>Geist · Geist Mono</dd><dt>Theme</dt><dd>Dark</dd></dl>
+      <ul class="hl"><li>Interactive quick-quote: product, quantity slider, port → pre-fills the enquiry form</li><li>Animated world map of sourcing routes into Indian ports</li><li>Bento grid: sample quality certificate, shipment tracker, logistics chain</li></ul>
+      <p class="best"><b>Best if</b> Vipin wants to look like the most modern, tech-forward trader in the market.</p>
+      <a class="open" href="concepts/03-terminal.html">Open concept <span aria-hidden="true">→</span></a>
+    </div>
+  </article>
+
+  <article class="concept" id="c4" aria-labelledby="c4-t">
+    <div class="shots">
+      <a href="concepts/04-strata.html" aria-label="Open concept 04, Strata"><img src="previews/04-strata.jpg" alt="Strata homepage: warm sand background, elegant serif headline and an illustrated geological cross-section with a coal seam" width="1200" height="750"></a>
+      <div class="phone"><img src="previews/04-strata-mobile.jpg" alt="Strata on a phone" width="390" height="844" loading="lazy"></div>
+    </div>
+    <div>
+      <span class="num">CONCEPT 04</span>
+      <h2 id="c4-t">Strata</h2>
+      <p class="mood">Warm, earthy and human. Leads with trust and responsible sourcing.</p>
+      <ul class="swatches" aria-label="Colour palette: sand, olive, ochre, clay, coal"><li style="--c:#F4EFE6"></li><li style="--c:#4F5B32"></li><li style="--c:#C98B2E"></li><li style="--c:#A4471E"></li><li style="--c:#1C1A18"></li></ul>
+      <dl class="meta"><dt>Fonts</dt><dd>Fraunces · Instrument Sans</dd><dt>Theme</dt><dd>Light</dd></dl>
+      <ul class="hl"><li>Illustrated geological cross-section hero (seam → supply chain)</li><li>“Responsible by design” section and FAQ for buyers</li><li>Soft, rounded, approachable layout with photo slots</li></ul>
+      <p class="best"><b>Best if</b> ESG / responsible sourcing matters to customers or future partners.</p>
+      <a class="open" href="concepts/04-strata.html">Open concept <span aria-hidden="true">→</span></a>
+    </div>
+  </article>
+
+  <article class="concept" id="c5" aria-labelledby="c5-t">
+    <div class="shots">
+      <a href="concepts/05-meridian.html" aria-label="Open concept 05, Meridian"><img src="previews/05-meridian.jpg" alt="Meridian homepage: deep navy hero with brass accents, bold headline and a wireframe globe with shipping routes" width="1200" height="750"></a>
+      <div class="phone"><img src="previews/05-meridian-mobile.jpg" alt="Meridian on a phone" width="390" height="844" loading="lazy"></div>
+    </div>
+    <div>
+      <span class="num">CONCEPT 05</span>
+      <h2 id="c5-t">Meridian</h2>
+      <p class="mood">Classic corporate trust. Navy and brass, structured like Steelmont but cleaner.</p>
+      <ul class="swatches" aria-label="Colour palette: navy, deep blue, mist, brass"><li style="--c:#0B1F3A"></li><li style="--c:#1C3560"></li><li style="--c:#F3F5F8"></li><li style="--c:#B08D57"></li></ul>
+      <dl class="meta"><dt>Fonts</dt><dd>Manrope</dd><dt>Theme</dt><dd>Light with navy sections</dd></dl>
+      <ul class="hl"><li>Numbered commodity selector with spec panel (keyboard accessible)</li><li>Founder's message, services grid, transit-time table</li><li>Familiar corporate structure that banks and large buyers expect</li></ul>
+      <p class="best"><b>Best if</b> the priority is looking established and safe from day one.</p>
+      <a class="open" href="concepts/05-meridian.html">Open concept <span aria-hidden="true">→</span></a>
+    </div>
+  </article>
+
+  <section class="info" aria-label="Project notes">
+    <div class="panel">
+      <h2>Built into every concept</h2>
+      <ul>
+        <li><strong>Accessibility:</strong> audited against WCAG 2.2 AA (zero automated violations), keyboard navigable, visible focus, skip link, screen-reader labels, reduced-motion support</li>
+        <li><strong>Responsive:</strong> tested at desktop and phone widths</li>
+        <li><strong>Fast:</strong> plain HTML/CSS, no frameworks, no stock photos to load</li>
+        <li><strong>SEO-ready:</strong> semantic headings, page titles and meta descriptions</li>
+        <li><strong>Enquiry form</strong> with validation (connected to email before launch)</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>What we need from Vipin</h2>
+      <ul>
+        <li>Company name, tagline and logo (or we design one)</li>
+        <li>Vision and mission</li>
+        <li>Products, typical specs and origins</li>
+        <li>Phone, WhatsApp, email and office address(es)</li>
+        <li>LinkedIn and other social links</li>
+        <li>Optional: photos, founder bio, registrations (CIN / GST / IEC), domain name</li>
+      </ul>
+    </div>
+    <div class="panel wide">
+      <h2>How to review</h2>
+      <p>Open any concept and use the floating bar at the bottom to flip between all five. Try it on your phone too. It's fine to mix and match — for example Meridian's layout with Obsidian's colours, or Terminal's quick-quote inside Strata.</p>
+      <p>The market ticker in Terminal shows <strong>sample prices only</strong>. Live benchmark prices (API2, Newcastle, ICI) need a data licence, so for launch we would either license a feed or remove the ticker.</p>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">Design concepts · placeholder content · not for public release.</div></footer>
+</body>
+</html>

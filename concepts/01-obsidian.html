@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kolvara Resources — Independent Coal Trading | Concept 01 · Obsidian</title>
+<meta name="description" content="Independent coal trading company supplying steam coal, anthracite, bituminous coal, coking coal, pet coke and met coke to power, cement and steel producers across India.">
+<meta name="theme-color" content="#0C0B0A">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C0B0A; --bg-2:#110F0E; --surface:#171412; --surface-2:#1E1A17;
+  --line:rgba(237,230,220,.12); --line-2:rgba(237,230,220,.22);
+  --text:#EDE6DC; --muted:#A79E92; --ember:#F08A3C; --ember-2:#FFB477; --ink-on-ember:#1A0F05;
+  --serif:"Instrument Serif", ui-serif, Georgia, serif;
+  --sans:"Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --maxw:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-weight:400;margin:0}
+p{margin:0}
+:focus-visible{outline:2px solid var(--ember-2);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:1rem;top:-120px;z-index:100;background:var(--ember);color:var(--ink-on-ember);padding:.75rem 1rem;font-weight:700;text-decoration:none}
+.skip:focus{top:1rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{width:min(100% - 2.5rem, var(--maxw));margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ember-2)}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ember);box-shadow:0 0 12px 2px rgba(240,138,60,.7)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.5rem;font:600 .95rem/1 var(--sans);letter-spacing:.02em;text-decoration:none;border:1px solid transparent;transition:background .25s,color .25s,border-color .25s,transform .25s}
+.btn-primary{background:var(--ember);color:var(--ink-on-ember)}
+.btn-primary:hover{background:var(--ember-2)}
+.btn-ghost{border-color:var(--line-2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--ember);color:var(--ember-2)}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* Header */
+.site-header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+.site-header.scrolled{background:rgba(12,11,10,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.brand-mark{width:34px;height:34px}
+.brand-name{font:500 1.05rem/1 var(--sans);letter-spacing:.32em}
+.menu{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:2.25rem}
+.menu a:not(.btn){text-decoration:none;font-size:.95rem;letter-spacing:.04em;color:var(--muted);transition:color .2s;padding:.25rem 0;position:relative}
+.menu a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--ember);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.menu a:not(.btn):hover{color:var(--text)}
+.menu a:not(.btn):hover::after{transform:scaleX(1)}
+.menu .btn{padding:.8rem 1.25rem}
+.nav-toggle{display:none;background:none;border:1px solid var(--line-2);width:46px;height:46px;color:var(--text);cursor:pointer}
+.bars,.bars::before,.bars::after{display:block;width:18px;height:1.5px;background:currentColor;margin:auto;position:relative;transition:transform .3s}
+.bars::before,.bars::after{content:"";position:absolute;left:0}
+.bars::before{top:-6px}.bars::after{top:6px}
+.nav-toggle[aria-expanded="true"] .bars{background:transparent}
+.nav-toggle[aria-expanded="true"] .bars::before{transform:translateY(6px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .bars::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;min-height:min(100vh,980px);min-height:min(100svh,980px);display:flex;flex-direction:column;justify-content:flex-end;padding-top:120px;overflow:hidden;
+  background:radial-gradient(60% 55% at 72% 46%, rgba(240,138,60,.16), transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:2rem;flex:1}
+.hero h1{font-family:var(--serif);font-size:clamp(3.2rem,7.2vw,6.6rem);line-height:.98;letter-spacing:-.015em;margin:1.4rem 0 1.6rem}
+.hero h1 em{color:var(--ember-2);font-style:italic}
+.hero .lede{max-width:34rem;color:var(--muted);font-size:1.15rem}
+.hero .actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.25rem}
+.figure{position:relative;aspect-ratio:600/460}
+.figure svg{width:100%;height:auto;overflow:visible}
+.coal{transform-origin:50% 50%;animation:float 9s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(-1.2deg)}}
+.glow{animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.85}50%{opacity:1}}
+.annot text{font:600 10.5px var(--sans);letter-spacing:.14em;fill:var(--muted);text-transform:uppercase}
+.annot text.v{fill:var(--text);font-weight:500;letter-spacing:.06em}
+.embers span{position:absolute;bottom:18%;width:3px;height:3px;border-radius:50%;background:var(--ember-2);box-shadow:0 0 8px 2px rgba(240,138,60,.8);opacity:0;animation:rise var(--d,7s) linear infinite;animation-delay:var(--delay,0s);left:var(--x)}
+@keyframes rise{0%{transform:translateY(0);opacity:0}10%{opacity:.9}100%{transform:translate(var(--drift,10px),-260px);opacity:0}}
+.stats{list-style:none;margin:3.5rem 0 0;padding:1.75rem 0 2.25rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;border-top:1px solid var(--line)}
+.stats strong{display:block;font:400 2.6rem/1 var(--serif);color:var(--text)}
+.stats span{display:block;margin-top:.5rem;font-size:.85rem;letter-spacing:.06em;color:var(--muted)}
+
+/* Sections */
+section{position:relative}
+.section{padding:clamp(5rem,10vw,9rem) 0}
+.statement p{font-family:var(--serif);font-size:clamp(2rem,4.1vw,3.6rem);line-height:1.12;letter-spacing:-.01em;max-width:1100px;color:var(--text)}
+.statement p .hl{color:var(--ember-2)}
+.statement p .dim{color:#8B8379}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.5rem}
+.sec-head h2{font-family:var(--serif);font-size:clamp(2.4rem,4.6vw,4rem);line-height:1.02;margin-top:1rem}
+.sec-head h2 em{color:var(--ember-2)}
+.sec-head p{color:var(--muted);max-width:32rem;justify-self:end}
+
+.triad{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.triad > div{padding:2.5rem 2.25rem 2.5rem 0}
+.triad > div + div{padding-left:2.25rem;border-left:1px solid var(--line)}
+.triad h3{font:600 .78rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ember-2);margin-bottom:1.25rem}
+.triad p{font-size:1.1rem;color:var(--text)}
+.triad p + p{margin-top:1rem;color:var(--muted);font-size:1rem}
+.values{list-style:none;margin:3rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.75rem}
+.values li{border:1px solid var(--line-2);padding:.6rem 1.1rem;border-radius:999px;font-size:.92rem;color:var(--text)}
+.values li em{font-family:var(--serif);font-size:1.05rem;color:var(--ember-2);margin-right:.4rem}
+
+/* Products */
+.products{background:var(--bg-2);border-block:1px solid var(--line)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.product{background:var(--bg-2);padding:2.25rem 2rem 2rem;display:flex;flex-direction:column;gap:1.1rem;position:relative;transition:background .3s}
+.product::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 100% 0%, rgba(240,138,60,.13), transparent 70%);opacity:0;transition:opacity .4s;pointer-events:none}
+.product:hover{background:var(--surface)}
+.product:hover::before{opacity:1}
+.p-top{display:flex;justify-content:space-between;font-size:.8rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.p-top .n{font-family:var(--serif);font-size:1.15rem;letter-spacing:0;color:var(--ember-2);text-transform:none;font-style:italic}
+.product h3{font-family:var(--serif);font-size:2.1rem;line-height:1.05}
+.product > p{color:var(--muted);font-size:.98rem}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.25rem;margin:.4rem 0 0;padding-top:1.1rem;border-top:1px dashed var(--line-2)}
+.specs dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.specs dd{margin:.15rem 0 0;font-size:.98rem;font-variant-numeric:tabular-nums}
+.specs dd small{color:var(--muted);font-size:.78rem}
+.p-link{margin-top:auto;padding-top:.75rem;align-self:flex-start;font-weight:600;font-size:.92rem;color:var(--ember-2);text-decoration:none;border-bottom:1px solid transparent}
+.p-link:hover{border-color:var(--ember-2)}
+.note{margin-top:1.5rem;font-size:.85rem;color:var(--muted)}
+
+/* Process */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:2rem;counter-reset:s}
+.steps li{position:relative;padding-top:2.25rem;border-top:1px solid var(--line-2)}
+.steps li::before{counter-increment:s;content:"0" counter(s);position:absolute;top:-.85rem;left:0;background:var(--bg);padding-right:.75rem;font:italic 400 1.4rem/1 var(--serif);color:var(--ember-2)}
+.steps h3{font:600 1.05rem/1.3 var(--sans);margin-bottom:.6rem}
+.steps p{color:var(--muted);font-size:.95rem}
+
+/* Reach */
+.reach-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:5rem}
+.industries{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.industries li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.15rem 0;border-bottom:1px solid var(--line);transition:padding .3s,color .3s}
+.industries li span:first-child{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.25rem);line-height:1.1}
+.industries li span:last-child{font-size:.88rem;color:var(--muted);text-align:right}
+.industries li:hover{padding-left:.75rem;color:var(--ember-2)}
+.routes{display:grid;grid-template-columns:1fr auto 1fr;gap:1.25rem;align-items:start}
+.routes h3{font:600 .78rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ember-2);margin-bottom:1rem}
+.routes ul{list-style:none;margin:0;padding:0}
+.routes li{padding:.55rem 0;border-bottom:1px solid var(--line);font-size:1rem}
+.routes li small{display:block;color:var(--muted);font-size:.8rem}
+.routes .arrow{align-self:center;color:var(--ember);font-family:var(--serif);font-size:2.5rem}
+
+/* Contact */
+.contact{background:linear-gradient(180deg,var(--bg) 0%, #140F0B 100%);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact h2{font-family:var(--serif);font-size:clamp(3rem,6vw,5.5rem);line-height:.98;margin:1rem 0 2rem}
+.contact h2 em{color:var(--ember-2)}
+.big-mail{display:inline-block;font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2.3rem);text-decoration:none;border-bottom:1px solid var(--ember);padding-bottom:.2rem;margin-bottom:2.5rem}
+.big-mail:hover{color:var(--ember-2)}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem 2rem}
+.details h3{font:600 .75rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+.details p,.details address{font-style:normal;font-size:1rem}
+.details a{text-decoration:none}
+.details a:hover{color:var(--ember-2)}
+.form{background:var(--surface);border:1px solid var(--line);padding:2.5rem}
+.form h3{font-family:var(--serif);font-size:2rem;margin-bottom:.4rem}
+.form .sub{color:var(--muted);font-size:.95rem;margin-bottom:1.75rem}
+.field{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{font-size:.82rem;font-weight:600;letter-spacing:.06em;color:var(--text)}
+label .opt{color:var(--muted);font-weight:400}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--text);background:var(--bg);border:1px solid var(--line-2);padding:.85rem 1rem;border-radius:0;width:100%;transition:border-color .2s}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 15px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+textarea{min-height:120px;resize:vertical}
+input:hover,select:hover,textarea:hover{border-color:rgba(237,230,220,.4)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--ember-2);outline-offset:0;border-color:var(--ember)}
+.form .btn{width:100%;justify-content:center;margin-top:.5rem;border:0;cursor:pointer}
+.status{margin-top:1rem;font-size:.92rem;color:var(--ember-2);min-height:1.4em}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:3.5rem 0 6rem;color:var(--muted);font-size:.92rem}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem}
+.foot p{max-width:28rem;margin-top:1rem}
+.foot h2{font:600 .75rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--text);margin-bottom:1rem}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--ember-2)}
+.social{display:flex;gap:.6rem}
+.social a{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--line-2);border-radius:50%;color:var(--text)}
+.social a:hover{border-color:var(--ember);color:var(--ember-2)}
+.social svg{width:18px;height:18px}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.85rem}
+
+/* Reveal */
+@media (prefers-reduced-motion:no-preference){
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .embers{display:none}
+}
+
+/* Responsive */
+@media (max-width:1024px){
+  .steps{grid-template-columns:repeat(3,1fr);row-gap:3rem}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .reach-grid,.contact-grid{grid-template-columns:1fr;gap:3.5rem}
+}
+@media (max-width:860px){
+  .nav-toggle{display:grid;place-items:center;margin-left:auto}
+  .menu{display:none;position:absolute;top:84px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:1rem 1.25rem 1.5rem;background:rgba(12,11,10,.97);border-bottom:1px solid var(--line)}
+  .menu[data-open="true"]{display:flex}
+  .menu li a:not(.btn){display:block;padding:1rem 0;font-size:1.1rem;border-bottom:1px solid var(--line)}
+  .menu .btn{margin-top:1rem;justify-content:center}
+  .hero-grid{grid-template-columns:1fr}
+  .figure{max-width:520px;margin:0 auto;order:-1}
+  .hero{padding-top:100px}
+  .stats{grid-template-columns:1fr 1fr}
+  .sec-head{grid-template-columns:1fr;gap:1.25rem}
+  .sec-head p{justify-self:start}
+  .triad{grid-template-columns:1fr}
+  .triad > div,.triad > div + div{padding:2rem 0;border-left:0;border-bottom:1px solid var(--line)}
+  .foot{grid-template-columns:1fr 1fr}
+  .foot > div:first-child{grid-column:1/-1}
+}
+@media (max-width:640px){
+  .grid-3,.steps{grid-template-columns:1fr}
+  .annot{display:none}
+  .row,.details{grid-template-columns:1fr}
+  .routes{grid-template-columns:1fr}
+  .routes .arrow{transform:rotate(90deg);justify-self:start}
+  .form{padding:1.75rem 1.25rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Kolvara Resources, home">
+      <svg class="brand-mark" viewBox="0 0 34 34" aria-hidden="true">
+        <polygon points="17,2 30,10 28,25 17,32 6,25 4,10" fill="none" stroke="#F08A3C" stroke-width="1.4"/>
+        <polyline points="4,10 15,15 17,32" fill="none" stroke="#F08A3C" stroke-width="1" opacity=".7"/>
+        <polyline points="30,10 15,15" fill="none" stroke="#F08A3C" stroke-width="1" opacity=".7"/>
+        <polyline points="17,2 15,15" fill="none" stroke="#F08A3C" stroke-width="1" opacity=".45"/>
+      </svg>
+      <span class="brand-name">KOLVARA</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span></button>
+    <nav aria-label="Primary">
+      <ul class="menu" id="site-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#process">How we work</a></li>
+        <li><a href="#reach">Reach</a></li>
+        <li><a class="btn btn-ghost" href="#contact">Request a quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Independent solid-fuel trading · India</span>
+        <h1 id="hero-title">Energy, sourced<br>with <em>integrity.</em></h1>
+        <p class="lede">Kolvara connects proven mines in Indonesia, South Africa, Australia and beyond with power, cement and steel producers across India — every cargo independently tested, every tonne accounted for.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Request a quote <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#products">Explore products</a>
+        </div>
+      </div>
+
+      <div class="figure">
+        <div class="embers" aria-hidden="true">
+          <span style="--x:38%;--d:7s;--delay:0s;--drift:-14px"></span>
+          <span style="--x:52%;--d:8.5s;--delay:1.4s;--drift:12px"></span>
+          <span style="--x:61%;--d:6.5s;--delay:2.8s;--drift:-6px"></span>
+          <span style="--x:45%;--d:9s;--delay:3.6s;--drift:18px"></span>
+          <span style="--x:68%;--d:7.5s;--delay:4.9s;--drift:-10px"></span>
+          <span style="--x:33%;--d:8s;--delay:5.6s;--drift:8px"></span>
+        </div>
+        <svg viewBox="0 0 600 460" role="img" aria-labelledby="coal-title">
+          <title id="coal-title">Illustration of a faceted coal lump with sample specification callouts</title>
+          <defs>
+            <radialGradient id="g-glow" cx="50%" cy="55%" r="50%">
+              <stop offset="0" stop-color="#F08A3C" stop-opacity=".55"/>
+              <stop offset=".45" stop-color="#C2551A" stop-opacity=".22"/>
+              <stop offset="1" stop-color="#C2551A" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="g-sheen" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fff" stop-opacity=".10"/>
+              <stop offset=".5" stop-color="#fff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <ellipse class="glow" cx="300" cy="250" rx="270" ry="210" fill="url(#g-glow)"/>
+          <g class="coal">
+            <g transform="translate(90 30)" stroke="rgba(240,138,60,.22)" stroke-width=".8" stroke-linejoin="round">
+              <polygon points="118,70 220,28 170,130" fill="#4A4540"/>
+              <polygon points="220,28 262,118 170,130" fill="#3F3A35"/>
+              <polygon points="220,28 318,62 262,118" fill="#35312D"/>
+              <polygon points="318,62 378,160 262,118" fill="#2A2724"/>
+              <polygon points="378,160 308,210 262,118" fill="#24211E"/>
+              <polygon points="378,160 366,262 308,210" fill="#1C1A17"/>
+              <polygon points="366,262 290,342 308,210" fill="#2E1C12"/>
+              <polygon points="290,342 236,286 308,210" fill="#201C19"/>
+              <polygon points="290,342 178,366 236,286" fill="#3B2215"/>
+              <polygon points="178,366 78,300 236,286" fill="#1A1816"/>
+              <polygon points="78,300 132,236 236,286" fill="#24211E"/>
+              <polygon points="78,300 40,190 132,236" fill="#2F2B27"/>
+              <polygon points="40,190 170,130 132,236" fill="#3D3833"/>
+              <polygon points="40,190 118,70 170,130" fill="#514B45"/>
+              <polygon points="170,130 262,118 218,200" fill="#36322E"/>
+              <polygon points="262,118 308,210 218,200" fill="#2A2623"/>
+              <polygon points="308,210 236,286 218,200" fill="#1F1C1A"/>
+              <polygon points="236,286 132,236 218,200" fill="#2C2825"/>
+              <polygon points="132,236 170,130 218,200" fill="#423D38"/>
+              <polygon points="40,190 118,70 220,28 170,130" fill="url(#g-sheen)" stroke="none"/>
+              <polyline points="40,190 118,70 220,28 318,62" fill="none" stroke="rgba(255,214,170,.45)" stroke-width="1.1"/>
+              <polyline points="366,262 290,342 178,366" fill="none" stroke="rgba(255,150,70,.6)" stroke-width="1.2"/>
+            </g>
+          </g>
+          <g class="annot" aria-hidden="true">
+            <g stroke="rgba(237,230,220,.35)" stroke-width="1" fill="none">
+              <polyline points="408,92 470,48 590,48"/>
+              <polyline points="470,190 530,190 590,190" />
+              <polyline points="168,330 110,402 10,402"/>
+              <polyline points="208,100 150,52 10,52"/>
+            </g>
+            <g fill="#F08A3C"><circle cx="408" cy="92" r="3.5"/><circle cx="470" cy="190" r="3.5"/><circle cx="168" cy="330" r="3.5"/><circle cx="208" cy="100" r="3.5"/></g>
+            <text x="590" y="38" text-anchor="end">GCV (GAR)</text><text class="v" x="590" y="66" text-anchor="end">6,000 kcal/kg</text>
+            <text x="590" y="180" text-anchor="end">Ash</text><text class="v" x="590" y="208" text-anchor="end">&lt; 12%</text>
+            <text x="10" y="392">Origin</text><text class="v" x="10" y="420">Richards Bay, ZA</text>
+            <text x="10" y="42">Total moisture</text><text class="v" x="10" y="70">14%</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="wrap">
+      <ul class="stats" aria-label="Kolvara at a glance">
+        <li><strong>06</strong><span>Sourcing origins</span></li>
+        <li><strong>10+</strong><span>Indian ports served</span></li>
+        <li><strong>100%</strong><span>Cargoes independently tested</span></li>
+        <li><strong>24h</strong><span>Quote turnaround</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="section statement" aria-label="Company statement">
+    <div class="wrap reveal">
+      <p>Kolvara is an independent trading company for <span class="hl">thermal, metallurgical and specialty coals</span> — with long-term sourcing relationships across six origins <span class="dim">and customers across India.</span></p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about" aria-labelledby="about-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">About us</span>
+          <h2 id="about-title">Built on a decade<br>of <em>solid-fuel</em> trade.</h2>
+        </div>
+        <p>Founded in 2026 by a team with deep experience in international coal trading, Kolvara brings mine-level relationships, transparent quality and disciplined logistics to every cargo.</p>
+      </div>
+      <div class="triad reveal">
+        <div>
+          <h3>Who we are</h3>
+          <p>A focused, founder-led trading house serving industrial buyers who need dependable fuel at a fair, transparent price.</p>
+          <p>We work directly with producers and accredited inspection agencies, so what is contracted is what arrives.</p>
+        </div>
+        <div>
+          <h3>Vision</h3>
+          <p>To be India's most trusted partner for responsibly sourced solid fuels — known for quality you can verify and supply you can plan around.</p>
+        </div>
+        <div>
+          <h3>Mission</h3>
+          <p>To source the right coal for every application, test every cargo independently, and deliver on time with complete transparency on specification, price and logistics.</p>
+        </div>
+      </div>
+      <ul class="values reveal" aria-label="Our values">
+        <li><em>i.</em>Integrity</li>
+        <li><em>ii.</em>Transparency</li>
+        <li><em>iii.</em>Reliability</li>
+        <li><em>iv.</em>Responsibility</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section products" id="products" aria-labelledby="products-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Products</span>
+          <h2 id="products-title">Six fuels.<br>One standard of <em>quality.</em></h2>
+        </div>
+        <p>From high-volume steam coal for power plants to low-ash metallurgical grades for steelmakers — matched to your boiler, kiln or furnace.</p>
+      </div>
+      <div class="grid-3">
+        <article class="product reveal">
+          <div class="p-top"><span class="n">01</span><span>ID · ZA · RU</span></div>
+          <h3>Steam coal</h3>
+          <p>Non-coking thermal coal for power generation, cement kilns and sponge iron.</p>
+          <dl class="specs">
+            <div><dt>GCV (GAR)</dt><dd>4,200–6,300 <small>kcal/kg</small></dd></div>
+            <div><dt>Total moisture</dt><dd>12–35%</dd></div>
+            <div><dt>Ash</dt><dd>5–15%</dd></div>
+            <div><dt>Sulphur</dt><dd>0.3–0.9%</dd></div>
+          </dl>
+          <a class="p-link" href="#contact">Enquire<span class="sr-only"> about steam coal</span> →</a>
+        </article>
+        <article class="product reveal">
+          <div class="p-top"><span class="n">02</span><span>VN · RU · ZA</span></div>
+          <h3>Anthracite</h3>
+          <p>High-carbon, low-volatile coal for ferroalloys, sintering, carburising and filtration.</p>
+          <dl class="specs">
+            <div><dt>Fixed carbon</dt><dd>80–90%</dd></div>
+            <div><dt>Volatile matter</dt><dd>3–8%</dd></div>
+            <div><dt>Ash</dt><dd>6–12%</dd></div>
+            <div><dt>Sulphur</dt><dd>&lt; 0.8%</dd></div>
+          </dl>
+          <a class="p-link" href="#contact">Enquire<span class="sr-only"> about anthracite</span> →</a>
+        </article>
+        <article class="product reveal">
+          <div class="p-top"><span class="n">03</span><span>ZA · AU · CO</span></div>
+          <h3>Bituminous coal</h3>
+          <p>Versatile, high-energy coal for industrial boilers, captive power and cement.</p>
+          <dl class="specs">
+            <div><dt>GCV (NAR)</dt><dd>5,800–6,700 <small>kcal/kg</small></dd></div>
+            <div><dt>Volatile matter</dt><dd>25–35%</dd></div>
+            <div><dt>Ash</dt><dd>10–15%</dd></div>
+            <div><dt>Sulphur</dt><dd>0.5–1.0%</dd></div>
+          </dl>
+          <a class="p-link" href="#contact">Enquire<span class="sr-only"> about bituminous coal</span> →</a>
+        </article>
+        <article class="product reveal">
+          <div class="p-top"><span class="n">04</span><span>AU · US · RU</span></div>
+          <h3>Coking coal</h3>
+          <p>Hard and semi-soft metallurgical coals for blast furnaces and coke ovens.</p>
+          <dl class="specs">
+            <div><dt>CSR</dt><dd>60–70</dd></div>
+            <div><dt>Volatile matter</dt><dd>18–30%</dd></div>
+            <div><dt>Ash</dt><dd>8–10%</dd></div>
+            <div><dt>Sulphur</dt><dd>0.4–0.8%</dd></div>
+          </dl>
+          <a class="p-link" href="#contact">Enquire<span class="sr-only"> about coking coal</span> →</a>
+        </article>
+        <article class="product reveal">
+          <div class="p-top"><span class="n">05</span><span>US · Middle East</span></div>
+          <h3>Petroleum coke</h3>
+          <p>High-calorific, low-ash fuel for cement and lime kilns.</p>
+          <dl class="specs">
+            <div><dt>GCV</dt><dd>7,800–8,200 <small>kcal/kg</small></dd></div>
+            <div><dt>Sulphur</dt><dd>4–7%</dd></div>
+            <div><dt>Ash</dt><dd>&lt; 1%</dd></div>
+            <div><dt>Total moisture</dt><dd>6–10%</dd></div>
+          </dl>
+          <a class="p-link" href="#contact">Enquire<span class="sr-only"> about petroleum coke</span> →</a>
+        </article>
+        <article class="product reveal">
+          <div class="p-top"><span class="n">06</span><span>CO · PL · CN</span></div>
+          <h3>Met coke</h3>
+          <p>Low-ash metallurgical coke for foundries, ferroalloys and pig iron.</p>
+          <dl class="specs">
+            <div><dt>Fixed carbon</dt><dd>82–86%</dd></div>
+            <div><dt>Ash</dt><dd>12–14%</dd></div>
+            <div><dt>Volatile matter</dt><dd>&lt; 1.5%</dd></div>
+            <div><dt>Sulphur</dt><dd>0.6–0.8%</dd></div>
+          </dl>
+          <a class="p-link" href="#contact">Enquire<span class="sr-only"> about met coke</span> →</a>
+        </article>
+      </div>
+      <p class="note">Indicative ranges only. Final specifications are agreed per contract and verified by independent inspection at load and discharge ports.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" id="process" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">How we work</span>
+          <h2 id="process-title">Mine to plant,<br><em>one</em> accountable partner.</h2>
+        </div>
+        <p>A single point of contact manages your cargo end to end — from selecting the right grade to the final tonne at your gate.</p>
+      </div>
+      <ol class="steps reveal">
+        <li><h3>Sourcing</h3><p>Direct relationships with mines and producers across six origins, matched to your application and budget.</p></li>
+        <li><h3>Quality assurance</h3><p>Independent sampling and analysis at load and discharge ports by accredited agencies.</p></li>
+        <li><h3>Shipping &amp; logistics</h3><p>Vessel chartering, port handling, customs clearance and rail or road delivery.</p></li>
+        <li><h3>Trade finance</h3><p>LC, documentary collection and flexible payment structures that fit your cycle.</p></li>
+        <li><h3>Delivery &amp; support</h3><p>Shipment updates at every milestone and after-sales support on every contract.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- REACH -->
+  <section class="section" id="reach" aria-labelledby="reach-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Industries &amp; reach</span>
+          <h2 id="reach-title">Fuel for the industries<br>that <em>build India.</em></h2>
+        </div>
+      </div>
+      <div class="reach-grid">
+        <ul class="industries reveal" aria-label="Industries we serve">
+          <li><span>Power generation</span><span>Utilities &amp; captive plants</span></li>
+          <li><span>Cement</span><span>Kilns &amp; captive power</span></li>
+          <li><span>Steel &amp; sponge iron</span><span>DRI, blast furnace, coke ovens</span></li>
+          <li><span>Ferroalloys</span><span>Reductants &amp; carburisers</span></li>
+          <li><span>Paper &amp; textiles</span><span>Process steam &amp; boilers</span></li>
+          <li><span>Bricks &amp; ceramics</span><span>Kilns &amp; dryers</span></li>
+        </ul>
+        <div class="routes reveal">
+          <div>
+            <h3>Sourced from</h3>
+            <ul>
+              <li>Indonesia<small>Kalimantan · Sumatra</small></li>
+              <li>South Africa<small>Richards Bay</small></li>
+              <li>Australia<small>Newcastle · Queensland</small></li>
+              <li>Russia<small>Far East · Baltic</small></li>
+              <li>United States<small>East Coast</small></li>
+              <li>Colombia<small>Puerto Bolívar</small></li>
+            </ul>
+          </div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div>
+            <h3>Delivered to</h3>
+            <ul>
+              <li>Paradip<small>Odisha</small></li>
+              <li>Visakhapatnam<small>Andhra Pradesh</small></li>
+              <li>Krishnapatnam<small>Andhra Pradesh</small></li>
+              <li>Mundra<small>Gujarat</small></li>
+              <li>Kandla<small>Gujarat</small></li>
+              <li>Haldia<small>West Bengal</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">Contact</span>
+        <h2 id="contact-title">Let's talk<br><em>tonnage.</em></h2>
+        <a class="big-mail" href="mailto:trade@kolvara.com">trade@kolvara.com</a>
+        <div class="details">
+          <div><h3>Phone</h3><p><a href="tel:+919000000000">+91 90000 00000</a></p></div>
+          <div><h3>WhatsApp</h3><p><a href="#contact">Chat with our trade desk</a></p></div>
+          <div><h3>Head office</h3><address>Unit 1201, Trade Centre<br>Bandra Kurla Complex<br>Mumbai 400051, India</address></div>
+          <div><h3>Branch office</h3><address>Dwaraka Nagar<br>Visakhapatnam 530016<br>Andhra Pradesh, India</address></div>
+          <div><h3>Hours</h3><p>Mon–Sat · 09:30–18:30 IST</p></div>
+        </div>
+      </div>
+      <form class="form reveal" novalidate aria-labelledby="form-title">
+        <h3 id="form-title">Request a quote</h3>
+        <p class="sub">Tell us what you need. We reply within one business day.</p>
+        <div class="row">
+          <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization" required></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f-product">Product</label>
+            <select id="f-product" name="product" required>
+              <option value="">Select a product</option>
+              <option>Steam coal</option><option>Anthracite</option><option>Bituminous coal</option><option>Coking coal</option><option>Petroleum coke</option><option>Met coke</option><option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-qty">Monthly quantity (MT) <span class="opt">(optional)</span></label><input id="f-qty" name="quantity" inputmode="numeric" placeholder="e.g. 25,000"></div>
+        </div>
+        <div class="field"><label for="f-msg">Message <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" placeholder="Destination port, specification, delivery window…"></textarea></div>
+        <button class="btn btn-primary" type="submit">Send enquiry <span class="arr" aria-hidden="true">→</span></button>
+        <p class="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="Kolvara Resources, back to top">
+          <svg class="brand-mark" viewBox="0 0 34 34" aria-hidden="true"><polygon points="17,2 30,10 28,25 17,32 6,25 4,10" fill="none" stroke="#F08A3C" stroke-width="1.4"/><polyline points="4,10 15,15 17,32" fill="none" stroke="#F08A3C" stroke-width="1" opacity=".7"/><polyline points="30,10 15,15" fill="none" stroke="#F08A3C" stroke-width="1" opacity=".7"/></svg>
+          <span class="brand-name" style="color:var(--text)">KOLVARA</span>
+        </a>
+        <p>Independent trading in thermal, metallurgical and specialty coals for Indian industry.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Company</h2>
+        <ul><li><a href="#about">About</a></li><li><a href="#products">Products</a></li><li><a href="#process">How we work</a></li><li><a href="#contact">Contact</a></li></ul>
+      </nav>
+      <div>
+        <h2>Follow</h2>
+        <div class="social">
+          <a href="#" aria-label="Kolvara on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="4.5" r="2.2"/><path d="M10 9h3.8v1.8c.6-1.1 2-2.1 4-2.1 3.4 0 4.2 2.2 4.2 5.2V21h-4v-6.2c0-1.5-.3-2.8-1.9-2.8-1.7 0-2.1 1.2-2.1 2.8V21h-4z"/></svg></a>
+          <a href="#" aria-label="Kolvara on X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          <a href="#" aria-label="Message Kolvara on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8.5 8.5 0 1 1 8 19z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8a5 5 0 0 1-2.8-2.8l.8-1-1-2z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="legal"><span>© <span class="yr">2026</span> Kolvara Resources Pvt. Ltd. All rights reserved.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(() => {
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('site-menu');
+  const setOpen = (open) => { toggle.setAttribute('aria-expanded', String(open)); menu.dataset.open = String(open); };
+  toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setOpen(false); toggle.focus(); } });
+
+  const io = new IntersectionObserver((entries) => entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  const form = document.querySelector('.form');
+  const status = form.querySelector('.status');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const firstInvalid = form.querySelector(':invalid');
+    if (firstInvalid) { status.textContent = 'Please complete the highlighted fields.'; firstInvalid.focus(); form.reportValidity(); return; }
+    status.textContent = 'Thank you — this is a design mockup, so nothing was sent yet.';
+    form.reset();
+  });
+  document.querySelectorAll('.yr').forEach((el) => (el.textContent = new Date().getFullYear()));
+})();
+</script>
+<script src="mockup-bar.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kolvara Resources — Smarter Coal Sourcing | Concept 03 · Terminal</title>
+<meta name="description" content="Quality-assured steam coal, anthracite, bituminous coal, coking coal, pet coke and met coke — sourced globally, inspected independently and delivered to Indian ports and plants.">
+<meta name="theme-color" content="#07090B">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090B; --bg-2:#0A0D10; --panel:rgba(255,255,255,.035); --panel-2:rgba(255,255,255,.06); --solid:#0E1215;
+  --border:rgba(255,255,255,.08); --border-2:rgba(255,255,255,.15);
+  --text:#E8ECEF; --muted:#8D98A3; --mint:#5EEAD4; --mint-2:#99F6E4; --mint-ink:#03201B; --violet:#8B7CFF;
+  --up:#4ADE80; --down:#FB7185;
+  --sans:"Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --mono:"Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --maxw:1240px; --r:18px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+:focus-visible{outline:2px solid var(--mint);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:1rem;top:-120px;z-index:100;background:var(--mint);color:var(--mint-ink);padding:.75rem 1rem;border-radius:10px;font-weight:600;text-decoration:none}
+.skip:focus{top:1rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{width:min(100% - 2.5rem, var(--maxw));margin-inline:auto}
+.mono{font-family:var(--mono)}
+.tag{display:inline-flex;align-items:center;gap:.5rem;font:500 .75rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mint);padding:.45rem .75rem;border:1px solid rgba(94,234,212,.25);background:rgba(94,234,212,.06);border-radius:999px}
+.tag .pulse{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(94,234,212,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(94,234,212,0)}100%{box-shadow:0 0 0 0 rgba(94,234,212,0)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;height:46px;padding:0 1.2rem;border-radius:12px;font:500 .95rem/1 var(--sans);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,transform .2s,box-shadow .2s}
+.btn-mint{background:var(--mint);color:var(--mint-ink);box-shadow:0 0 0 1px rgba(94,234,212,.4),0 8px 30px -8px rgba(94,234,212,.55)}
+.btn-mint:hover{background:var(--mint-2);transform:translateY(-1px)}
+.btn-glass{background:var(--panel-2);border-color:var(--border-2);color:var(--text)}
+.btn-glass:hover{background:rgba(255,255,255,.1)}
+.glass{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:var(--r);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+
+/* Ticker */
+.ticker{display:flex;align-items:center;border-bottom:1px solid var(--border);background:var(--bg-2);font:500 .78rem/1 var(--mono);height:36px;overflow:hidden}
+.ticker .lbl{flex:none;padding:0 .9rem;height:100%;display:flex;align-items:center;gap:.5rem;color:var(--muted);border-right:1px solid var(--border);background:var(--bg-2);z-index:1;letter-spacing:.06em}
+.ticker .lbl b{color:var(--bg);background:var(--muted);padding:.2rem .4rem;border-radius:4px;font-weight:600}
+.tk-viewport{overflow:hidden;flex:1;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.tk-track{display:flex;width:max-content;animation:tick 60s linear infinite}
+.ticker:hover .tk-track,.ticker:focus-within .tk-track{animation-play-state:paused}
+.tk-track ul{display:flex;list-style:none;margin:0;padding:0}
+.tk-track li{padding:0 1.4rem;white-space:nowrap;color:var(--muted)}
+.tk-track li b{color:var(--text);font-weight:500;margin:0 .45rem}
+.up{color:var(--up)}.down{color:var(--down)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;padding:.75rem 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:60px;padding:0 .6rem 0 1rem;border-radius:16px;transition:background .3s,border-color .3s;border:1px solid transparent}
+.site-header.scrolled .nav{background:rgba(10,13,16,.72);border-color:var(--border);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%)}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
+.brand svg{width:28px;height:28px}
+.menu{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:.25rem}
+.menu a:not(.btn){display:block;padding:.55rem .85rem;border-radius:10px;text-decoration:none;color:var(--muted);font-size:.93rem;transition:color .2s,background .2s}
+.menu a:not(.btn):hover{color:var(--text);background:var(--panel-2)}
+.menu .btn{height:40px;margin-left:.5rem}
+.nav-toggle{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--border-2);background:var(--panel);color:var(--text);cursor:pointer}
+
+/* Hero */
+.hero{position:relative;padding:4.5rem 0 5rem;isolation:isolate}
+.aurora{position:absolute;inset:-120px 0 0;z-index:-1;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55}
+.aurora i:nth-child(1){width:560px;height:420px;left:8%;top:40px;background:#0F766E;animation:drift1 18s ease-in-out infinite}
+.aurora i:nth-child(2){width:520px;height:420px;right:4%;top:120px;background:#4C3FB8;opacity:.45;animation:drift2 22s ease-in-out infinite}
+.aurora i:nth-child(3){width:380px;height:300px;left:45%;top:340px;background:#115E59;opacity:.4;animation:drift1 26s ease-in-out infinite reverse}
+@keyframes drift1{50%{transform:translate(60px,40px) scale(1.08)}}
+@keyframes drift2{50%{transform:translate(-70px,30px) scale(.94)}}
+.grid-bg{position:absolute;inset:-120px 0 0;z-index:-1;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);opacity:.6}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.9rem);line-height:1.02;letter-spacing:-.045em;font-weight:600;margin:1.4rem 0 1.4rem}
+.grad{background:linear-gradient(100deg,#fff 10%,var(--mint) 55%,#A5B4FC 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{color:var(--muted);font-size:1.15rem;max-width:36rem}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.assure{list-style:none;margin:2.25rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;color:var(--muted);font-size:.88rem}
+.assure li{display:flex;align-items:center;gap:.5rem}
+.assure svg{width:16px;height:16px;color:var(--mint)}
+
+/* RFQ */
+.rfq{padding:1.5rem;box-shadow:0 30px 80px -20px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06)}
+.rfq-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+.rfq-head h2{font-size:1.05rem;font-weight:600;letter-spacing:-.01em}
+.rfq-head span{font:500 .72rem var(--mono);color:var(--muted)}
+.rfq fieldset{border:0;margin:0 0 1.1rem;padding:0}
+.rfq legend,.rfq label.l{display:block;font:500 .72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.chips span{display:block;padding:.5rem .8rem;border-radius:9px;border:1px solid var(--border-2);font-size:.86rem;color:var(--muted);transition:all .2s}
+.chips input:hover + span{color:var(--text);border-color:rgba(255,255,255,.3)}
+.chips input:checked + span{background:rgba(94,234,212,.12);border-color:rgba(94,234,212,.6);color:var(--mint-2)}
+.chips input:focus-visible + span{outline:2px solid var(--mint);outline-offset:2px}
+.qty-head{display:flex;justify-content:space-between;align-items:baseline}
+.qty-head output{font:500 1.05rem var(--mono);color:var(--text)}
+input[type=range]{width:100%;margin:.25rem 0 1.1rem;accent-color:var(--mint);height:24px;background:transparent}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.1rem}
+.rfq select,.cform input,.cform select,.cform textarea{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(0,0,0,.35);border:1px solid var(--border-2);border-radius:10px;padding:.7rem .8rem;transition:border-color .2s}
+.rfq select,.cform select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 17px) 55%,calc(100% - 12px) 55%;background-size:5px 5px;background-repeat:no-repeat;padding-right:2rem}
+select option{background:#0E1215;color:var(--text)}
+.rfq select:hover,.cform input:hover,.cform select:hover,.cform textarea:hover{border-color:rgba(255,255,255,.3)}
+.rfq select:focus-visible,.cform input:focus-visible,.cform select:focus-visible,.cform textarea:focus-visible{outline:none;border-color:var(--mint);box-shadow:0 0 0 3px rgba(94,234,212,.2)}
+.summary{display:flex;gap:.75rem;align-items:flex-start;padding:.85rem 1rem;border-radius:12px;background:rgba(94,234,212,.06);border:1px dashed rgba(94,234,212,.3);font-size:.88rem;color:var(--text);margin-bottom:1rem}
+.summary svg{flex:none;width:18px;height:18px;color:var(--mint);margin-top:2px}
+.summary small{display:block;color:var(--muted);font-size:.8rem}
+.rfq .btn{width:100%}
+
+/* Strip */
+.strip{border-block:1px solid var(--border);padding:1.4rem 0;background:var(--bg-2)}
+.strip .wrap{display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;justify-content:space-between}
+.strip p{font:500 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem 2rem}
+.strip li{display:flex;align-items:center;gap:.55rem;color:#C5CDD4;font-size:.95rem}
+.strip svg{width:18px;height:18px;color:var(--muted)}
+
+/* Sections */
+.section{padding:clamp(5rem,9vw,8rem) 0}
+.sec-head{max-width:46rem;margin-bottom:3rem}
+.sec-head h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.06;letter-spacing:-.04em;font-weight:600;margin-top:1rem}
+.sec-head p{color:var(--muted);font-size:1.08rem;margin-top:1rem;max-width:38rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head.center p{margin-inline:auto}
+
+/* Bento */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(210px,auto);gap:1rem}
+.cell{position:relative;padding:1.6rem;border-radius:var(--r);border:1px solid var(--border);background:var(--panel);overflow:hidden;display:flex;flex-direction:column}
+.cell::before,.card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(420px circle at var(--mx,50%) var(--my,-20%),rgba(94,234,212,.10),transparent 45%);pointer-events:none;opacity:0;transition:opacity .3s}
+.cell:hover::before,.card:hover::before{opacity:1}
+.cell h3{font-size:1.15rem;font-weight:600;letter-spacing:-.01em}
+.cell p{color:var(--muted);font-size:.93rem;margin-top:.4rem}
+.c-a{grid-column:span 2;grid-row:span 2}
+.c-b,.c-e,.c-f{grid-column:span 2}
+.coa{margin-top:auto;padding-top:1.5rem;display:grid;gap:1rem}
+.coa-top{display:flex;justify-content:space-between;font:500 .72rem var(--mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:.75rem}
+.coa-top b{color:var(--up);font-weight:500}
+.meter{display:grid;grid-template-columns:7.5rem 1fr 8.5rem;gap:.85rem;align-items:center;font-size:.86rem}
+.meter .bar{height:8px;border-radius:99px;background:rgba(255,255,255,.07);position:relative;overflow:hidden}
+.meter .bar i{position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:inherit;background:linear-gradient(90deg,#0F766E,var(--mint))}
+.meter .bar s{position:absolute;top:-3px;bottom:-3px;left:var(--lim);width:2px;background:#fff;opacity:.6;text-decoration:none}
+.meter .v{font-family:var(--mono);text-align:right;font-size:.8rem}
+.meter .v small{color:var(--muted)}
+.flags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:auto;padding-top:1.25rem}
+.flags span{font:500 .8rem var(--mono);padding:.45rem .65rem;border-radius:8px;border:1px solid var(--border-2);color:#C5CDD4}
+.flags span b{color:var(--mint);font-weight:500;margin-right:.35rem}
+.big{font-size:3.6rem;line-height:1;font-weight:600;letter-spacing:-.05em;margin-top:auto}
+.big span{font-size:1.3rem;color:var(--muted);letter-spacing:0;margin-left:.2rem}
+.pipe{margin-top:auto;padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;position:relative}
+.pipe::before{content:"";position:absolute;left:8px;right:8px;top:calc(1.5rem + 7px);height:2px;background:linear-gradient(90deg,var(--mint),rgba(139,124,255,.7));opacity:.6}
+.pipe div{position:relative;display:flex;flex-direction:column;align-items:center;gap:.6rem;font-size:.78rem;color:var(--muted);text-align:center;width:20%}
+.pipe div::before{content:"";width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--mint)}
+.pipe div:last-child::before{background:var(--mint)}
+.ship{margin-top:auto;padding-top:1.25rem}
+.ship-card{border:1px solid var(--border-2);border-radius:14px;padding:1rem 1.1rem;background:rgba(0,0,0,.25);font-size:.88rem}
+.ship-row{display:flex;justify-content:space-between;gap:1rem}
+.ship-row + .ship-row{margin-top:.35rem}
+.ship-row span{color:var(--muted)}
+.ship-row b{font-weight:500;font-family:var(--mono);font-size:.84rem}
+.prog{height:6px;border-radius:99px;background:rgba(255,255,255,.07);margin-top:.9rem;overflow:hidden}
+.prog i{display:block;height:100%;width:72%;background:linear-gradient(90deg,#0F766E,var(--mint));border-radius:inherit}
+
+/* Products */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{position:relative;padding:1.6rem;border-radius:var(--r);border:1px solid var(--border);background:var(--panel);display:flex;flex-direction:column;gap:.9rem;transition:border-color .3s,transform .3s}
+.card:hover{border-color:rgba(94,234,212,.35);transform:translateY(-2px)}
+.card-top{display:flex;justify-content:space-between;align-items:center}
+.code{font:500 .75rem var(--mono);padding:.35rem .55rem;border-radius:7px;background:rgba(94,234,212,.1);color:var(--mint-2);border:1px solid rgba(94,234,212,.25)}
+.card-top .o{font:500 .75rem var(--mono);color:var(--muted)}
+.card h3{font-size:1.4rem;font-weight:600;letter-spacing:-.02em}
+.card > p{color:var(--muted);font-size:.93rem}
+.specchips{list-style:none;margin:.2rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.specchips li{font:500 .76rem var(--mono);padding:.35rem .55rem;border-radius:7px;background:rgba(255,255,255,.05);color:#C5CDD4}
+.specchips li span{color:var(--muted)}
+.card a{margin-top:auto;padding-top:.6rem;color:var(--mint);font-weight:500;font-size:.92rem;text-decoration:none;display:inline-flex;gap:.4rem;align-items:center;position:relative}
+.card a span{transition:transform .2s}
+.card:hover a span{transform:translateX(3px)}
+.fine{color:var(--muted);font-size:.85rem;margin-top:1.25rem}
+
+/* Map */
+.mapbox{position:relative;border-radius:24px;border:1px solid var(--border);background:radial-gradient(80% 90% at 70% 40%,rgba(15,118,110,.18),transparent 70%),var(--bg-2);padding:1.5rem;overflow:hidden}
+.mapbox svg{width:100%;height:auto}
+.land{fill:url(#dots)}
+.route{fill:none;stroke:url(#rg);stroke-width:1.4;stroke-dasharray:3 5;animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-16}}
+.node{fill:var(--bg);stroke:var(--violet);stroke-width:1.6}
+.hub{fill:var(--mint)}
+.hub-ring{fill:none;stroke:var(--mint);stroke-width:1;opacity:.6;transform-box:fill-box;transform-origin:center;animation:ring 2.4s ease-out infinite}
+@keyframes ring{from{transform:scale(1);opacity:.7}to{transform:scale(3.2);opacity:0}}
+.mlabel{font:500 8.5px var(--mono);fill:#C5CDD4;letter-spacing:.04em}
+.mlabel.hubl{fill:var(--mint-2)}
+.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
+.legend div{padding:1rem 1.1rem;border-radius:14px;border:1px solid var(--border);background:var(--panel)}
+.legend h3{font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.legend p{font-size:.93rem}
+
+/* Process */
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;position:relative;counter-reset:f}
+.flow::before{content:"";position:absolute;top:21px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--mint),var(--violet),transparent);opacity:.6}
+.flow li{position:relative;text-align:center;padding:0 .5rem}
+.flow li::before{counter-increment:f;content:"0" counter(f);display:grid;place-items:center;width:44px;height:44px;margin:0 auto 1.25rem;border-radius:12px;background:var(--solid);border:1px solid rgba(94,234,212,.4);font:500 .85rem var(--mono);color:var(--mint);box-shadow:0 0 24px -4px rgba(94,234,212,.45)}
+.flow h3{font-size:1.02rem;font-weight:600;margin-bottom:.4rem}
+.flow p{color:var(--muted);font-size:.9rem}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.about-main{grid-column:1 / -1;padding:2.25rem;display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:end}
+.about-main h3{font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.12;letter-spacing:-.035em;font-weight:600}
+.about-main p{color:var(--muted);font-size:1.02rem}
+.vm{padding:2rem}
+.vm h3{font:500 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mint);margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem}
+.vm p{font-size:1.15rem;line-height:1.5;letter-spacing:-.01em}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:start}
+.contact h2{font-size:clamp(2.2rem,4.4vw,3.6rem);line-height:1.04;letter-spacing:-.045em;font-weight:600;margin:1rem 0 1rem}
+.contact .intro{color:var(--muted);font-size:1.05rem;margin-bottom:2rem}
+.clist{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.clist li{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.1rem;border-radius:14px;border:1px solid var(--border);background:var(--panel)}
+.clist svg{flex:none;width:20px;height:20px;color:var(--mint);margin-top:2px}
+.clist span{display:block;font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.15rem}
+.clist a{text-decoration:none}
+.clist a:hover{color:var(--mint)}
+.clist address{font-style:normal}
+.cform{padding:2rem}
+.cform h3{font-size:1.25rem;font-weight:600;margin-bottom:.3rem}
+.cform .sub{color:var(--muted);font-size:.92rem;margin-bottom:1.5rem}
+.cform .f{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.cform label{font-size:.85rem;font-weight:500}
+.cform label small{color:var(--muted);font-weight:400}
+.cform textarea{min-height:110px;resize:vertical}
+.cform .btn{width:100%;margin-top:.25rem}
+.status{margin-top:.9rem;font-size:.9rem;color:var(--mint);min-height:1.4em}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:3.5rem 0 6rem;color:var(--muted);font-size:.9rem}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem}
+.foot p{max-width:22rem;margin-top:1rem}
+.foot h2{font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin-bottom:1rem}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--mint)}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border);margin-top:3rem;padding-top:1.5rem;font-size:.82rem}
+
+@media (prefers-reduced-motion:no-preference){
+  .js .reveal{opacity:0;transform:translateY(18px);filter:blur(6px);transition:opacity .8s ease,transform .8s ease,filter .8s ease}
+  .js .reveal.in{opacity:1;transform:none;filter:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .ticker{height:auto;min-height:36px}
+  .tk-viewport{overflow:visible;mask-image:none}
+  .tk-track{width:auto}
+  .tk-track ul{flex-wrap:wrap;row-gap:.6rem;padding:.6rem 0}
+  .tk-track ul[aria-hidden]{display:none}
+  .comet{display:none}
+}
+
+@media (max-width:1060px){
+  .hero-grid{grid-template-columns:1fr}
+  .rfq{max-width:560px}
+  .bento{grid-template-columns:1fr 1fr}
+  .c-a{grid-row:span 1}
+  .cards{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr;gap:0}
+  .flow::before{top:0;bottom:0;left:21px;right:auto;width:1px;height:auto;background:linear-gradient(180deg,var(--mint),var(--violet));opacity:.4}
+  .flow li{text-align:left;display:grid;grid-template-columns:44px 1fr;column-gap:1.25rem;padding:0 0 2rem}
+  .flow li::before{grid-row:span 2;margin:0}
+  .about-main,.contact-grid{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .nav{gap:0}
+  .nav-toggle{display:grid;place-items:center;margin-left:auto}
+  .menu{display:none;position:absolute;top:calc(100% + .25rem);left:1.25rem;right:1.25rem;flex-direction:column;align-items:stretch;padding:.75rem;border-radius:16px;background:rgba(10,13,16,.96);border:1px solid var(--border-2);backdrop-filter:blur(16px)}
+  .menu[data-open="true"]{display:flex}
+  .menu a:not(.btn){padding:.9rem 1rem;font-size:1.05rem}
+  .menu .btn{margin:.5rem 0 0;height:48px}
+  .site-header .nav{background:rgba(10,13,16,.72);border-color:var(--border);backdrop-filter:blur(16px)}
+  .legend{grid-template-columns:1fr}
+  .mlabel{display:none}
+}
+@media (max-width:640px){
+  .bento,.cards,.about-grid{grid-template-columns:1fr}
+  .c-a,.c-b,.c-e,.c-f{grid-column:auto}
+  .two{grid-template-columns:1fr}
+  .meter{grid-template-columns:5.5rem 1fr auto}
+  .meter .v small{display:block}
+  .mapbox{padding:.5rem;border-radius:16px}
+  .ticker .lbl span{display:none}
+  .foot{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="ticker" role="region" aria-label="Indicative coal market prices — sample data for the mockup">
+  <div class="lbl"><b>SAMPLE</b><span>Indicative · USD/t</span></div>
+  <div class="tk-viewport">
+    <div class="tk-track">
+      <ul>
+        <li>ICI-4 4,200 GAR<b>$49.80</b><span class="up">▲ 0.6%</span></li>
+        <li>Newcastle 6,000 NAR<b>$134.25</b><span class="down">▼ 0.4%</span></li>
+        <li>Richards Bay 5,500 NAR<b>$96.10</b><span class="up">▲ 0.9%</span></li>
+        <li>API2 CIF ARA<b>$108.40</b><span class="up">▲ 0.3%</span></li>
+        <li>Premium HCC FOB AUS<b>$212.00</b><span class="down">▼ 1.1%</span></li>
+        <li>US Gulf pet coke 6.5% S<b>$88.50</b><span class="up">▲ 0.2%</span></li>
+        <li>Supramax Kalimantan–WCI<b>$12.40</b><span class="down">▼ 0.5%</span></li>
+      </ul>
+      <ul aria-hidden="true">
+        <li>ICI-4 4,200 GAR<b>$49.80</b><span class="up">▲ 0.6%</span></li>
+        <li>Newcastle 6,000 NAR<b>$134.25</b><span class="down">▼ 0.4%</span></li>
+        <li>Richards Bay 5,500 NAR<b>$96.10</b><span class="up">▲ 0.9%</span></li>
+        <li>API2 CIF ARA<b>$108.40</b><span class="up">▲ 0.3%</span></li>
+        <li>Premium HCC FOB AUS<b>$212.00</b><span class="down">▼ 1.1%</span></li>
+        <li>US Gulf pet coke 6.5% S<b>$88.50</b><span class="up">▲ 0.2%</span></li>
+        <li>Supramax Kalimantan–WCI<b>$12.40</b><span class="down">▼ 0.5%</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Kolvara Resources, home">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#99F6E4"/><stop offset="1" stop-color="#8B7CFF"/></linearGradient></defs><path d="M14 1.5 25 7.75v12.5L14 26.5 3 20.25V7.75z" fill="none" stroke="url(#lg)" stroke-width="1.6"/><path d="M14 8 19.2 11v6L14 20l-5.2-3v-6z" fill="url(#lg)"/></svg>
+      Kolvara
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="sr-only">Menu</span><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    <nav aria-label="Primary">
+      <ul class="menu" id="site-menu">
+        <li><a href="#why">Why Kolvara</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#network">Network</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a class="btn btn-mint" href="#contact">Get a quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag"><span class="pulse" aria-hidden="true"></span>Now contracting for Q1 2027 cargoes</span>
+        <h1 id="hero-title"><span class="grad">Smarter coal sourcing</span><br>for India's industry.</h1>
+        <p class="lede">Quality-assured thermal, metallurgical and specialty coals — sourced from six origins, inspected independently, and delivered to your port or plant.</p>
+        <div class="actions">
+          <a class="btn btn-mint" href="#contact">Talk to the trade desk <span aria-hidden="true">→</span></a>
+          <a class="btn btn-glass" href="#products">Browse products</a>
+        </div>
+        <ul class="assure">
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg>Independent inspection</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg>LC &amp; flexible terms</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg>Port-to-plant delivery</li>
+        </ul>
+      </div>
+
+      <form class="rfq glass" id="rfq" aria-labelledby="rfq-title">
+        <div class="rfq-head"><h2 id="rfq-title">Quick quote</h2><span>Reply in &lt; 24h</span></div>
+        <fieldset>
+          <legend>Product</legend>
+          <div class="chips">
+            <label><input type="radio" name="rp" value="Steam coal" checked><span>Steam</span></label>
+            <label><input type="radio" name="rp" value="Bituminous coal"><span>Bituminous</span></label>
+            <label><input type="radio" name="rp" value="Anthracite"><span>Anthracite</span></label>
+            <label><input type="radio" name="rp" value="Coking coal"><span>Coking</span></label>
+            <label><input type="radio" name="rp" value="Petroleum coke"><span>Pet coke</span></label>
+            <label><input type="radio" name="rp" value="Met coke"><span>Met coke</span></label>
+          </div>
+        </fieldset>
+        <div class="qty-head"><label class="l" for="rq">Quantity</label><output id="rq-out" for="rq">50,000 MT</output></div>
+        <input type="range" id="rq" min="5000" max="150000" step="5000" value="50000" aria-describedby="rq-out">
+        <div class="two">
+          <div><label class="l" for="rport">Discharge port</label>
+            <select id="rport"><option>Paradip</option><option>Visakhapatnam</option><option>Krishnapatnam</option><option>Mundra</option><option>Kandla</option><option>Haldia</option><option>Door delivery</option></select></div>
+          <div><label class="l" for="rwin">Delivery window</label>
+            <select id="rwin"><option>Within 30 days</option><option>30–60 days</option><option>60–90 days</option><option>Term contract</option></select></div>
+        </div>
+        <div class="summary" aria-live="polite">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 11.8 7l4.7.4-3.6 3 1.1 4.6L10 12.6 6 15l1.1-4.6-3.6-3L8.2 7z"/></svg>
+          <div><span id="sum-main">≈ 1 Supramax cargo · Steam coal · CFR Paradip</span><small id="sum-sub">We'll suggest origins and grades that fit your boiler and landed-cost target.</small></div>
+        </div>
+        <button class="btn btn-mint" type="submit">Continue to request <span aria-hidden="true">→</span></button>
+      </form>
+    </div>
+  </section>
+
+  <section class="strip" aria-label="Industries we serve">
+    <div class="wrap">
+      <p>Fuel for</p>
+      <ul>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 2 4 11h5l-1 7 7-9h-5z"/></svg>Power</li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 17V9l4-3v3l4-3v3l4-3v11z"/></svg>Cement</li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 15h14M5 15V9h10v6M7 9V5h6v4"/></svg>Steel &amp; DRI</li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M10 4v12M4 10h12"/></svg>Ferroalloys</li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 3h9l3 3v11H4z"/></svg>Paper &amp; textiles</li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h6v4H3zM11 7h6v4h-6zM7 11h6v4H7z"/></svg>Bricks &amp; ceramics</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="why" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag">Why Kolvara</span>
+        <h2 id="why-title">Every cargo, measured.<br>Every tonne, accounted for.</h2>
+        <p>We combine mine-level relationships with independent testing and disciplined logistics — so procurement teams can plan with confidence.</p>
+      </div>
+      <div class="bento">
+        <article class="cell c-a reveal">
+          <h3>Quality you can verify</h3>
+          <p>Independent sampling at load and discharge. Results shared with you before the vessel sails.</p>
+          <div class="coa" aria-label="Sample certificate of analysis">
+            <div class="coa-top"><span>CoA · Cargo KR-0142 · Load port</span><b>✓ Within spec</b></div>
+            <div class="meter"><span>GCV (GAR)</span><span class="bar" aria-hidden="true"><i style="--w:86%"></i><s style="--lim:84%"></s></span><span class="v">6,020 <small>/ 6,000 min</small></span></div>
+            <div class="meter"><span>Ash</span><span class="bar" aria-hidden="true"><i style="--w:62%"></i><s style="--lim:67%"></s></span><span class="v">11.2% <small>/ 12 max</small></span></div>
+            <div class="meter"><span>Total moisture</span><span class="bar" aria-hidden="true"><i style="--w:68%"></i><s style="--lim:70%"></s></span><span class="v">13.6% <small>/ 14 max</small></span></div>
+            <div class="meter"><span>Sulphur</span><span class="bar" aria-hidden="true"><i style="--w:52%"></i><s style="--lim:67%"></s></span><span class="v">0.62% <small>/ 0.8 max</small></span></div>
+          </div>
+        </article>
+        <article class="cell c-b reveal">
+          <h3>Six origins, one counterparty</h3>
+          <p>Diversified supply keeps you protected from single-origin disruption.</p>
+          <div class="flags"><span><b>ID</b>Indonesia</span><span><b>ZA</b>South Africa</span><span><b>AU</b>Australia</span><span><b>RU</b>Russia</span><span><b>US</b>United States</span><span><b>CO</b>Colombia</span></div>
+        </article>
+        <article class="cell reveal">
+          <h3>Fast quotes</h3>
+          <p>Indicative pricing, same or next business day.</p>
+          <div class="big">24<span>h</span></div>
+        </article>
+        <article class="cell reveal">
+          <h3>Trade finance</h3>
+          <p>Structures that fit your procurement cycle.</p>
+          <div class="flags"><span>LC</span><span>DA / DP</span><span>CAD</span><span>Advance</span></div>
+        </article>
+        <article class="cell c-e reveal">
+          <h3>Port-to-plant logistics</h3>
+          <p>Chartering, port handling, customs and inland delivery — handled.</p>
+          <div class="pipe" aria-label="Logistics chain: load port, vessel, discharge port, rail or road, your plant">
+            <div>Load port</div><div>Vessel</div><div>Discharge</div><div>Rail / road</div><div>Your plant</div>
+          </div>
+        </article>
+        <article class="cell c-f reveal">
+          <h3>Shipment visibility</h3>
+          <p>Milestone updates from loading to final delivery.</p>
+          <div class="ship">
+            <div class="ship-card">
+              <div class="ship-row"><span>Cargo</span><b>KR-0142 · Supramax</b></div>
+              <div class="ship-row"><span>Route</span><b>Samarinda → Paradip</b></div>
+              <div class="ship-row"><span>Status</span><b style="color:var(--mint)">In transit · ETA 02 Dec</b></div>
+              <div class="prog" aria-hidden="true"><i></i></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="products" aria-labelledby="products-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag">Products</span>
+        <h2 id="products-title">The right fuel for every<br>boiler, kiln and furnace.</h2>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-top"><span class="code">STM</span><span class="o">ID · ZA · RU</span></div>
+          <h3>Steam coal</h3>
+          <p>Non-coking thermal coal for power generation, cement kilns and sponge iron.</p>
+          <ul class="specchips" aria-label="Indicative specification"><li><span>GCV</span> 4,200–6,300</li><li><span>TM</span> 12–35%</li><li><span>Ash</span> 5–15%</li><li><span>S</span> 0.3–0.9%</li></ul>
+          <a href="#contact">Request pricing<span class="sr-only"> for steam coal</span> <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card reveal">
+          <div class="card-top"><span class="code">ANT</span><span class="o">VN · RU · ZA</span></div>
+          <h3>Anthracite</h3>
+          <p>High-carbon, low-volatile coal for ferroalloys, sintering, carburising and filtration.</p>
+          <ul class="specchips" aria-label="Indicative specification"><li><span>FC</span> 80–90%</li><li><span>VM</span> 3–8%</li><li><span>Ash</span> 6–12%</li><li><span>S</span> &lt;0.8%</li></ul>
+          <a href="#contact">Request pricing<span class="sr-only"> for anthracite</span> <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card reveal">
+          <div class="card-top"><span class="code">BIT</span><span class="o">ZA · AU · CO</span></div>
+          <h3>Bituminous coal</h3>
+          <p>Versatile, high-energy coal for industrial boilers, captive power and cement.</p>
+          <ul class="specchips" aria-label="Indicative specification"><li><span>GCV</span> 5,800–6,700</li><li><span>VM</span> 25–35%</li><li><span>Ash</span> 10–15%</li><li><span>S</span> 0.5–1.0%</li></ul>
+          <a href="#contact">Request pricing<span class="sr-only"> for bituminous coal</span> <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card reveal">
+          <div class="card-top"><span class="code">HCC</span><span class="o">AU · US · RU</span></div>
+          <h3>Coking coal</h3>
+          <p>Hard and semi-soft metallurgical coals for blast furnaces and coke ovens.</p>
+          <ul class="specchips" aria-label="Indicative specification"><li><span>CSR</span> 60–70</li><li><span>VM</span> 18–30%</li><li><span>Ash</span> 8–10%</li><li><span>S</span> 0.4–0.8%</li></ul>
+          <a href="#contact">Request pricing<span class="sr-only"> for coking coal</span> <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card reveal">
+          <div class="card-top"><span class="code">PET</span><span class="o">US · ME</span></div>
+          <h3>Petroleum coke</h3>
+          <p>High-calorific, very low-ash fuel for cement and lime kilns.</p>
+          <ul class="specchips" aria-label="Indicative specification"><li><span>GCV</span> 7,800–8,200</li><li><span>S</span> 4–7%</li><li><span>Ash</span> &lt;1%</li><li><span>TM</span> 6–10%</li></ul>
+          <a href="#contact">Request pricing<span class="sr-only"> for petroleum coke</span> <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card reveal">
+          <div class="card-top"><span class="code">MET</span><span class="o">CO · PL · CN</span></div>
+          <h3>Met coke</h3>
+          <p>Low-ash metallurgical coke for foundries, ferroalloys and pig iron.</p>
+          <ul class="specchips" aria-label="Indicative specification"><li><span>FC</span> 82–86%</li><li><span>Ash</span> 12–14%</li><li><span>VM</span> &lt;1.5%</li><li><span>S</span> 0.6–0.8%</li></ul>
+          <a href="#contact">Request pricing<span class="sr-only"> for met coke</span> <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+      <p class="fine">Indicative ranges. GCV in kcal/kg. Final specifications agreed per contract and verified by independent inspection.</p>
+    </div>
+  </section>
+
+  <section class="section" id="network" aria-labelledby="network-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="tag">Network</span>
+        <h2 id="network-title">Six origins. Ten-plus Indian ports.</h2>
+        <p>Seaborne supply from the world's major coal basins, routed to India's east and west coast terminals.</p>
+      </div>
+      <div class="mapbox reveal">
+        <svg viewBox="230 40 760 350" role="img" aria-labelledby="map-title map-desc">
+          <title id="map-title">Sourcing network map</title>
+          <desc id="map-desc">Routes from Indonesia, Australia and Russia to Paradip on India's east coast, and from South Africa, the United States and Colombia to Mundra on the west coast.</desc>
+          <defs>
+            <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.05" fill="#3A4652"/></pattern>
+            <linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#8B7CFF"/><stop offset="1" stop-color="#5EEAD4"/></linearGradient>
+            <radialGradient id="cg"><stop offset="0" stop-color="#E6FFFA"/><stop offset=".4" stop-color="#5EEAD4"/><stop offset="1" stop-color="#5EEAD4" stop-opacity="0"/></radialGradient>
+          </defs>
+          <path class="land" d="M33.3 66.7 L50.0 55.6 L66.7 52.8 L111.1 55.6 L144.4 55.6 L180.6 61.1 L236.1 50.0 L277.8 47.2 L291.7 61.1 L327.8 83.3 L344.4 105.6 L333.3 119.4 L316.7 125.0 L305.6 133.3 L288.9 144.4 L288.9 152.8 L275.0 163.9 L277.8 180.6 L272.2 175.0 L266.7 166.7 L250.0 169.4 L230.6 175.0 L230.6 191.7 L247.2 197.2 L258.3 191.7 L255.6 205.6 L269.4 208.3 L269.4 222.2 L280.6 225.0 L277.8 230.6 L261.1 216.7 L244.4 208.3 L208.3 194.4 L194.4 186.1 L188.9 169.4 L172.2 158.3 L155.6 138.9 L155.6 116.7 L138.9 97.2 L111.1 83.3 L77.8 88.9 L61.1 91.7 L41.7 80.6Z M355.6 83.3 L383.3 83.3 L438.9 55.6 L450.0 36.1 L444.4 22.2 L388.9 19.4 L327.8 22.2 L297.2 33.3 L338.9 41.7 L350.0 61.1Z M280.6 225.0 L286.1 227.8 L300.0 216.7 L327.8 222.2 L355.6 236.1 L361.1 247.2 L377.8 255.6 L402.8 266.7 L391.7 291.7 L386.1 311.1 L366.7 319.4 L352.8 341.7 L341.7 347.2 L327.8 358.3 L319.4 363.9 L316.7 380.6 L311.1 394.4 L297.2 394.4 L291.7 377.8 L297.2 361.1 L302.8 333.3 L305.6 300.0 L288.9 288.9 L275.0 263.9 L277.8 250.0 L283.3 241.7Z M452.8 191.7 L455.6 216.7 L463.9 227.8 L477.8 236.1 L500.0 236.1 L519.4 238.9 L525.0 241.7 L525.0 252.8 L536.1 266.7 L536.1 283.3 L533.3 300.0 L541.7 325.0 L550.0 344.4 L561.1 344.4 L572.2 344.4 L586.1 333.3 L591.7 322.2 L597.2 311.1 L611.1 291.7 L611.1 280.6 L616.7 252.8 L641.7 219.4 L619.4 216.7 L608.3 205.6 L602.8 188.9 L594.4 172.2 L588.9 163.9 L569.4 161.1 L555.6 163.9 L527.8 155.6 L527.8 147.2 L497.2 150.0 L483.3 150.0 L472.2 166.7 L463.9 175.0Z M622.2 319.4 L619.4 308.3 L622.2 297.2 L636.1 283.3 L638.9 294.4 L630.6 319.4Z M475.0 147.2 L475.0 130.6 L494.4 129.2 L497.2 122.2 L486.1 116.7 L505.6 108.3 L513.9 102.8 L522.2 100.0 L525.0 91.7 L530.6 86.1 L516.7 86.1 L513.9 77.8 L533.3 66.7 L541.7 58.3 L561.1 55.6 L577.8 52.8 L591.7 55.6 L611.1 61.1 L622.2 61.1 L650.0 58.3 L666.7 58.3 L688.9 55.6 L702.8 47.2 L722.2 47.2 L763.9 38.9 L791.7 33.3 L819.4 44.4 L861.1 50.0 L888.9 47.2 L944.4 55.6 L972.2 55.6 L1000.0 63.9 L1000.0 69.4 L994.4 77.8 L958.3 83.3 L944.4 100.0 L933.3 108.3 L933.3 88.9 L916.7 86.1 L897.2 86.1 L883.3 97.2 L891.7 116.7 L875.0 130.6 L861.1 133.3 L858.3 152.8 L852.8 152.8 L850.0 144.4 L838.9 138.9 L836.1 147.2 L838.9 166.7 L833.3 177.8 L825.0 186.1 L805.6 191.7 L800.0 191.7 L802.8 208.3 L802.8 216.7 L791.7 225.0 L788.9 222.2 L780.6 213.9 L777.8 230.6 L786.1 247.2 L772.2 227.8 L772.2 216.7 L761.1 205.6 L755.6 188.9 L747.2 188.9 L741.7 191.7 L730.6 202.8 L722.2 208.3 L722.2 222.2 L713.9 227.8 L711.1 222.2 L702.8 202.8 L700.0 191.7 L691.7 188.9 L686.1 183.3 L672.2 180.6 L658.3 180.6 L655.6 175.0 L644.4 175.0 L636.1 166.7 L633.3 169.4 L641.7 180.6 L655.6 183.3 L663.9 188.9 L658.3 197.2 L644.4 205.6 L625.0 213.9 L619.4 213.9 L608.3 191.7 L597.2 172.2 L594.4 163.9 L600.0 152.8 L600.0 147.2 L583.3 150.0 L575.0 147.2 L572.2 138.9 L580.6 136.1 L577.8 136.1 L563.9 138.9 L561.1 147.2 L555.6 138.9 L552.8 133.3 L544.4 130.6 L536.1 125.0 L533.3 127.8 L544.4 136.1 L550.0 138.9 L544.4 144.4 L533.3 133.3 L525.0 127.8 L508.3 130.6 L508.3 133.3 L500.0 138.9 L497.2 147.2Z M483.3 111.1 L502.8 108.3 L505.6 104.2 L500.0 100.0 L494.4 94.4 L491.7 87.5 L483.3 88.9 L486.1 97.2 L491.7 100.0 L488.9 102.8 L486.1 105.6Z M472.2 105.6 L483.3 105.6 L483.3 97.2 L477.8 97.2 L472.2 100.0Z M861.1 163.9 L866.7 158.3 L875.0 155.6 L888.9 152.8 L891.7 144.4 L894.4 138.9 L891.7 133.3 L897.2 130.6 L902.8 127.8 L894.4 122.2 L888.9 130.6 L888.9 136.1 L886.1 144.4 L877.8 150.0 L869.4 152.8 L861.1 155.6Z M722.2 222.2 L727.8 230.6 L725.0 233.3 L721.7 230.6Z M763.9 234.7 L772.2 238.9 L788.9 255.6 L794.4 266.7 L788.9 266.7 L780.6 258.3 L772.2 250.0 L763.9 241.7Z M791.7 266.7 L802.8 269.4 L816.7 270.8 L816.7 273.9 L800.0 272.2 L791.7 269.4Z M802.8 247.2 L808.3 244.4 L819.4 236.1 L825.0 230.6 L830.6 236.1 L827.8 247.2 L830.6 252.8 L822.2 261.1 L813.9 259.7 L805.6 258.3 L802.8 252.8Z M830.6 266.7 L833.3 252.8 L836.1 247.2 L847.2 245.8 L838.9 252.8 L841.7 263.9 L836.1 261.1Z M863.9 252.8 L875.0 258.3 L891.7 257.2 L905.6 263.9 L916.7 277.8 L908.3 275.0 L900.0 272.2 L891.7 275.0 L883.3 272.2 L872.2 261.1Z M833.3 200.0 L838.9 200.0 L838.9 211.1 L844.4 213.9 L850.0 225.0 L850.0 233.3 L838.9 230.6 L836.1 222.2 L833.3 211.1Z M816.7 311.1 L816.7 322.2 L819.4 344.4 L827.8 347.2 L844.4 344.4 L858.3 338.9 L866.7 338.9 L875.0 347.2 L883.3 347.2 L888.9 355.6 L900.0 355.6 L916.7 352.8 L925.0 336.1 L925.0 319.4 L913.9 308.3 L905.6 302.8 L902.8 291.7 L894.4 280.6 L891.7 294.4 L877.8 291.7 L877.8 283.3 L866.7 280.6 L861.1 283.3 L850.0 288.9 L838.9 297.2 L827.8 305.6Z M902.8 363.9 L911.1 363.9 L911.1 369.4 L905.6 370.8Z M977.8 345.8 L986.1 352.8 L994.4 355.6 L986.1 363.9 L977.8 363.9 L983.3 358.3Z M977.8 363.9 L983.3 365.3 L975.0 372.2 L969.4 379.2 L962.5 377.8 L966.7 372.2Z"/>
+          <g>
+            <path id="r1" class="route" d="M822 253 Q790 200 741 194"/>
+            <path id="r2" class="route" d="M922 341 Q860 220 741 194"/>
+            <path id="r3" class="route" d="M869 131 Q820 110 741 194"/>
+            <path id="r4" class="route" d="M589 330 Q600 220 694 187"/>
+            <path id="r5" class="route" d="M288 148 Q480 40 694 187"/>
+            <path id="r6" class="route" d="M300 216 Q500 120 694 187"/>
+          </g>
+          <g class="comet">
+            <circle r="4" fill="url(#cg)"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#r1"/></animateMotion></circle>
+            <circle r="4" fill="url(#cg)"><animateMotion dur="4.2s" repeatCount="indefinite" begin="1s"><mpath href="#r2"/></animateMotion></circle>
+            <circle r="4" fill="url(#cg)"><animateMotion dur="3.8s" repeatCount="indefinite" begin=".5s"><mpath href="#r3"/></animateMotion></circle>
+            <circle r="4" fill="url(#cg)"><animateMotion dur="3.6s" repeatCount="indefinite" begin="1.5s"><mpath href="#r4"/></animateMotion></circle>
+            <circle r="4" fill="url(#cg)"><animateMotion dur="6s" repeatCount="indefinite" begin=".8s"><mpath href="#r5"/></animateMotion></circle>
+            <circle r="4" fill="url(#cg)"><animateMotion dur="5.4s" repeatCount="indefinite" begin="2s"><mpath href="#r6"/></animateMotion></circle>
+          </g>
+          <g>
+            <circle class="node" cx="822" cy="253" r="3.4"/><circle class="node" cx="922" cy="341" r="3.4"/><circle class="node" cx="869" cy="131" r="3.4"/>
+            <circle class="node" cx="589" cy="330" r="3.4"/><circle class="node" cx="288" cy="148" r="3.4"/><circle class="node" cx="300" cy="216" r="3.4"/>
+            <circle class="hub-ring" cx="741" cy="194" r="4"/><circle class="hub" cx="741" cy="194" r="4"/>
+            <circle class="hub-ring" cx="694" cy="187" r="4"/><circle class="hub" cx="694" cy="187" r="4"/>
+          </g>
+          <g aria-hidden="true">
+            <text class="mlabel" x="830" y="262">KALIMANTAN</text>
+            <text class="mlabel" x="930" y="345">NEWCASTLE</text>
+            <text class="mlabel" x="877" y="128">VOSTOCHNY</text>
+            <text class="mlabel" x="540" y="346">RICHARDS BAY</text>
+            <text class="mlabel" x="250" y="140">HAMPTON ROADS</text>
+            <text class="mlabel" x="252" y="232">PUERTO BOLÍVAR</text>
+            <text class="mlabel hubl" x="748" y="206">PARADIP</text>
+            <text class="mlabel hubl" x="652" y="178">MUNDRA</text>
+          </g>
+        </svg>
+      </div>
+      <div class="legend reveal">
+        <div><h3>East coast</h3><p>Paradip · Visakhapatnam · Gangavaram · Krishnapatnam · Haldia</p></div>
+        <div><h3>West coast</h3><p>Mundra · Kandla · Navlakhi · Dahej</p></div>
+        <div><h3>Inland</h3><p>Rake and road delivery to plants across India</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process" aria-labelledby="process-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="tag">Process</span>
+        <h2 id="process-title">From enquiry to unloading.</h2>
+      </div>
+      <ol class="flow reveal">
+        <li><h3>Sourcing</h3><p>Grades matched to your application and budget, across six origins.</p></li>
+        <li><h3>Quality assurance</h3><p>Independent sampling and analysis at load and discharge ports.</p></li>
+        <li><h3>Shipping &amp; logistics</h3><p>Chartering, port handling, customs and inland delivery.</p></li>
+        <li><h3>Trade finance</h3><p>LC, documentary collection and flexible payment terms.</p></li>
+        <li><h3>Delivery &amp; support</h3><p>Milestone updates and after-sales support on every contract.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag">About</span>
+        <h2 id="about-title">Built by traders, for buyers.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="glass about-main reveal">
+          <h3>A founder-led trading house bringing mine-level relationships, transparent quality and disciplined logistics to Indian industry.</h3>
+          <p>Founded in 2026 by a team with deep experience in international solid-fuel trading, Kolvara works directly with producers and accredited inspection agencies — so what is contracted is what arrives.</p>
+        </div>
+        <div class="glass vm reveal"><h3>◆ Vision</h3><p>To be India's most trusted partner for responsibly sourced solid fuels — known for quality you can verify and supply you can plan around.</p></div>
+        <div class="glass vm reveal"><h3>◆ Mission</h3><p>To source the right coal for every application, test every cargo independently, and deliver on time with complete transparency on specification, price and logistics.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title" style="padding-top:0">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <span class="tag">Contact</span>
+        <h2 id="contact-title">Let's move your<br>next cargo.</h2>
+        <p class="intro">Share your requirement — our trade desk replies within one business day.</p>
+        <ul class="clist">
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="2"/><path d="m3 5 7 6 7-6"/></svg><div><span>Email</span><a href="mailto:trade@kolvara.com">trade@kolvara.com</a></div></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 2.5h3l1.5 4-2 1.2a9 9 0 0 0 4.8 4.8l1.2-2 4 1.5v3a2 2 0 0 1-2 2A14.5 14.5 0 0 1 3 4.5a2 2 0 0 1 2-2z"/></svg><div><span>Phone · WhatsApp</span><a href="tel:+919000000000">+91 90000 00000</a></div></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 18s6-5.3 6-10a6 6 0 0 0-12 0c0 4.7 6 10 6 10z"/><circle cx="10" cy="8" r="2"/></svg><div><span>Head office</span><address>Unit 1201, Trade Centre, Bandra Kurla Complex, Mumbai 400051</address></div></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 18s6-5.3 6-10a6 6 0 0 0-12 0c0 4.7 6 10 6 10z"/><circle cx="10" cy="8" r="2"/></svg><div><span>Branch office</span><address>Dwaraka Nagar, Visakhapatnam 530016</address></div></li>
+        </ul>
+      </div>
+      <form class="glass cform reveal" id="cform" novalidate aria-labelledby="cform-title">
+        <h3 id="cform-title">Request a quote</h3>
+        <p class="sub">All fields except phone and notes are required.</p>
+        <div class="two">
+          <div class="f"><label for="c-name">Full name</label><input id="c-name" name="name" autocomplete="name" required></div>
+          <div class="f"><label for="c-company">Company</label><input id="c-company" name="company" autocomplete="organization" required></div>
+        </div>
+        <div class="two">
+          <div class="f"><label for="c-email">Work email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="f"><label for="c-phone">Phone <small>(optional)</small></label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="two">
+          <div class="f"><label for="c-product">Product</label>
+            <select id="c-product" name="product" required><option value="">Select</option><option>Steam coal</option><option>Bituminous coal</option><option>Anthracite</option><option>Coking coal</option><option>Petroleum coke</option><option>Met coke</option><option>Not sure yet</option></select></div>
+          <div class="f"><label for="c-qty">Quantity (MT)</label><input id="c-qty" name="quantity" inputmode="numeric" required></div>
+        </div>
+        <div class="f"><label for="c-msg">Notes <small>(optional)</small></label><textarea id="c-msg" name="message" placeholder="Port, specification, delivery window…"></textarea></div>
+        <button class="btn btn-mint" type="submit">Send request <span aria-hidden="true">→</span></button>
+        <p class="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="Kolvara Resources, back to top" style="color:var(--text)">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 1.5 25 7.75v12.5L14 26.5 3 20.25V7.75z" fill="none" stroke="#5EEAD4" stroke-width="1.6"/><path d="M14 8 19.2 11v6L14 20l-5.2-3v-6z" fill="#5EEAD4"/></svg>Kolvara
+        </a>
+        <p>Independent trading in thermal, metallurgical and specialty coals for Indian industry.</p>
+      </div>
+      <nav aria-label="Footer — company"><h2>Company</h2><ul><li><a href="#about">About</a></li><li><a href="#why">Why Kolvara</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+      <nav aria-label="Footer — products"><h2>Products</h2><ul><li><a href="#products">Steam coal</a></li><li><a href="#products">Anthracite</a></li><li><a href="#products">Coking coal</a></li><li><a href="#products">Pet coke</a></li></ul></nav>
+      <div><h2>Social</h2><ul><li><a href="#">LinkedIn</a></li><li><a href="#">X (Twitter)</a></li><li><a href="#">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© <span class="yr">2026</span> Kolvara Resources Pvt. Ltd.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header.classList.toggle('scrolled', scrollY > 40);
+  onScroll(); addEventListener('scroll', onScroll, { passive: true });
+
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('site-menu');
+  const setOpen = (o) => { toggle.setAttribute('aria-expanded', String(o)); menu.dataset.open = String(o); };
+  toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setOpen(false); toggle.focus(); } });
+
+  // Cursor-follow glow on cards
+  document.querySelectorAll('.cell, .card').forEach((el) => el.addEventListener('pointermove', (e) => {
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', `${e.clientX - r.left}px`);
+    el.style.setProperty('--my', `${e.clientY - r.top}px`);
+  }));
+
+  // Pause SVG (SMIL) animations for reduced motion
+  if (reduce) document.querySelectorAll('svg').forEach((s) => s.pauseAnimations && s.pauseAnimations());
+
+  // Reveal
+  const io = new IntersectionObserver((en) => en.forEach((x) => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Quick quote widget
+  const rfq = document.getElementById('rfq');
+  const qty = document.getElementById('rq');
+  const out = document.getElementById('rq-out');
+  const fmt = (n) => n.toLocaleString('en-IN');
+  const vessel = (t) => t <= 30000 ? '1 Handysize cargo' : t <= 58000 ? '1 Supramax cargo' : t <= 82000 ? '1 Panamax cargo' : `${Math.ceil(t / 75000)} Panamax cargoes or a split shipment`;
+  const update = () => {
+    const t = +qty.value;
+    const product = rfq.querySelector('input[name=rp]:checked').value;
+    const port = document.getElementById('rport').value;
+    out.textContent = `${fmt(t)} MT`;
+    qty.setAttribute('aria-valuetext', `${fmt(t)} metric tonnes`);
+    document.getElementById('sum-main').textContent = `≈ ${vessel(t)} · ${product} · ${port === 'Door delivery' ? 'Delivered to plant' : 'CFR ' + port}`;
+  };
+  rfq.addEventListener('input', update); update();
+  rfq.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const product = rfq.querySelector('input[name=rp]:checked').value;
+    document.getElementById('c-product').value = product;
+    document.getElementById('c-qty').value = fmt(+qty.value);
+    document.getElementById('c-msg').value = `Discharge: ${document.getElementById('rport').value}. Window: ${document.getElementById('rwin').value}.`;
+    document.getElementById('contact').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    setTimeout(() => document.getElementById('c-name').focus({ preventScroll: true }), reduce ? 0 : 600);
+  });
+
+  // Contact form
+  const form = document.getElementById('cform');
+  const status = form.querySelector('.status');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const bad = form.querySelector(':invalid');
+    if (bad) { status.textContent = 'Please complete the required fields.'; bad.focus(); form.reportValidity(); return; }
+    status.textContent = 'Thanks — this is a design mockup, so nothing was sent yet.';
+    form.reset();
+  });
+  document.querySelectorAll('.yr').forEach((el) => (el.textContent = new Date().getFullYear()));
+})();
+</script>
+<script src="mockup-bar.js" defer></script>
+</body>
+</html>

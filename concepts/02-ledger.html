@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kolvara Resources — Coal Traded to Specification | Concept 02 · Ledger</title>
+<meta name="description" content="Independent coal trading company supplying steam coal, anthracite, bituminous coal, coking coal, pet coke and met coke to Indian industry — with full specifications and independent inspection.">
+<meta name="theme-color" content="#F2F0EB">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F0EB; --paper-2:#E8E5DD; --white:#FBFAF7; --ink:#111111; --ink-2:#2A2926;
+  --muted:#5C5850; --rule:#CFCAC0; --signal:#FF4D00; --signal-ink:#C23A00;
+  --on-ink:#F2F0EB; --on-ink-muted:#A8A398; --ink-rule:#34322E;
+  --sans:"Archivo", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --maxw:1360px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.skip{position:absolute;left:1rem;top:-120px;z-index:100;background:var(--ink);color:var(--paper);padding:.75rem 1rem;font-weight:700;text-decoration:none}
+.skip:focus{top:1rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{width:min(100% - 2.5rem, var(--maxw));margin-inline:auto}
+.mono{font-family:var(--mono);font-size:.8rem;letter-spacing:.02em}
+.x{font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.02em}
+.label{font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1rem 1.25rem;font:600 .95rem/1 var(--sans);text-decoration:none;border:1.5px solid var(--ink);transition:background .2s,color .2s}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:var(--signal);color:var(--ink);border-color:var(--signal)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.btn-signal{background:var(--signal);border-color:var(--signal);color:var(--ink)}
+.btn-signal:hover{background:var(--paper);border-color:var(--paper)}
+
+/* Utility + header */
+.util{background:var(--ink);color:var(--on-ink)}
+.util .wrap{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;font-family:var(--mono);font-size:.75rem}
+.util a{text-decoration:none}
+.util a:hover{color:var(--signal)}
+.desk::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#3DDC84;margin-right:.55rem;vertical-align:1px}
+.desk.closed::before{background:var(--on-ink-muted)}
+.util-r{display:flex;gap:1.5rem}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(242,240,235,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1.5px solid var(--ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.brand-mark{width:40px;height:40px;background:var(--signal);display:grid;place-items:center;font:900 1.35rem/1 var(--sans);font-stretch:125%}
+.brand-text{display:flex;flex-direction:column;line-height:1}
+.brand-text b{font-weight:800;font-stretch:125%;font-size:1.15rem;letter-spacing:.02em}
+.brand-text span{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:.3rem;letter-spacing:.12em;text-transform:uppercase}
+.menu{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:2rem}
+.menu a:not(.btn){text-decoration:none;font-weight:500;font-size:.98rem}
+.menu a:not(.btn) sup{font-family:var(--mono);font-size:.65rem;color:var(--muted);margin-right:.3rem;vertical-align:.5em}
+.menu a:not(.btn):hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--signal)}
+.menu .btn{padding:.8rem 1.1rem}
+.nav-toggle{display:none;background:var(--ink);color:var(--paper);border:0;height:44px;padding:0 1rem;font:600 .85rem var(--mono);cursor:pointer}
+
+/* Hero */
+.hero{position:relative;padding:3.5rem 0 0;overflow:hidden}
+.hero .wrap{position:relative}
+.cols{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(to right, var(--rule) 1px, transparent 1px);background-size:calc(100% / 12) 100%;border-right:1px solid var(--rule);opacity:.55}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.5rem 2.5rem;margin-bottom:2rem;position:relative}
+.hero-grid{position:relative;display:grid;grid-template-columns:repeat(12,1fr);column-gap:0;align-items:end}
+.hero h1{grid-column:1 / -1;font-size:clamp(1.9rem,8.9vw,9.6rem);line-height:.86;font-stretch:125%;font-weight:850;text-transform:uppercase;letter-spacing:-.035em}
+.hero h1 .dot{color:var(--signal)}
+.ticket{grid-column:9 / span 4;align-self:start;background:var(--white);border:1.5px solid var(--ink);font-family:var(--mono);font-size:.78rem;box-shadow:8px 8px 0 var(--ink);margin:1.75rem 8px 2.5rem 1.5rem}
+.hero-row > .ticket{padding:0}
+.ticket header{display:flex;justify-content:space-between;align-items:center;padding:.7rem .9rem;border-bottom:1.5px solid var(--ink);font-weight:600}
+.ticket header span:last-child{background:var(--signal);padding:.15rem .45rem}
+.ticket dl{margin:0;padding:.4rem .9rem}
+.ticket dl div{display:flex;justify-content:space-between;gap:1rem;padding:.42rem 0;border-bottom:1px dashed var(--rule)}
+.ticket dl div:last-child{border-bottom:0}
+.ticket dt{color:var(--muted)}
+.ticket dd{margin:0;font-weight:600;text-align:right}
+.barcode{height:34px;margin:.2rem .9rem .5rem;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px)}
+.ticket footer{padding:0 .9rem .8rem;color:var(--muted);font-size:.7rem}
+.hero-row{position:relative;display:grid;grid-template-columns:repeat(12,1fr);margin-top:3rem;border-top:1.5px solid var(--ink)}
+.hero-row > *{padding:1.75rem 1.5rem 2.5rem 0}
+.intro{grid-column:1 / span 5}
+.intro .lede{font-size:1.2rem;line-height:1.55;max-width:34rem}
+.intro .cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.facts{grid-column:6 / span 3;list-style:none;margin:0;padding-left:1.5rem!important;border-left:1px solid var(--rule)}
+.facts li{display:flex;justify-content:space-between;align-items:baseline;padding:.35rem 0;border-bottom:1px solid var(--rule)}
+.facts li:last-child{border:0}
+.facts b{font:800 1.6rem/1.1 var(--sans);font-stretch:125%}
+
+/* Marquee */
+.band{background:var(--ink);color:var(--paper);overflow:hidden;border-block:1.5px solid var(--ink)}
+.track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.track ul{display:flex;list-style:none;margin:0;padding:0}
+.track li{font-size:clamp(1.6rem,3.4vw,2.8rem);font-stretch:125%;font-weight:800;text-transform:uppercase;padding:1.1rem 0;white-space:nowrap}
+.track li::after{content:"✱";color:var(--signal);margin:0 2.2rem;font-weight:400}
+@keyframes marq{to{transform:translateX(-50%)}}
+.band:hover .track{animation-play-state:paused}
+
+/* Sections */
+.section{padding:clamp(4.5rem,9vw,8rem) 0}
+.sec-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:0 1.5rem}
+.sec-label{grid-column:1 / span 3}
+.sec-body{grid-column:4 / span 9}
+.sec-title{font-size:clamp(1.75rem,7.2vw,5rem);line-height:.9;font-stretch:125%;font-weight:850;text-transform:uppercase;letter-spacing:-.03em;margin-bottom:2.5rem}
+.sec-title .dot{color:var(--signal)}
+.big-p{font-size:clamp(1.45rem,2.4vw,2.1rem);line-height:1.3;font-weight:500;letter-spacing:-.01em;max-width:52rem}
+.big-p mark{background:linear-gradient(transparent 62%, rgba(255,77,0,.35) 62%);color:inherit}
+.vm{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3.5rem;border-top:1.5px solid var(--ink)}
+.vm > div{padding-top:1.5rem}
+.vm h3{font-family:var(--mono);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.75rem}
+.vm p{font-size:1.1rem;color:var(--ink-2)}
+.values{list-style:none;margin:3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--ink)}
+.values li{padding:1.25rem;border-left:1px solid var(--ink)}
+.values li:first-child{border-left:0}
+.values span{display:block;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.values b{font-size:1.15rem;font-stretch:115%;font-weight:750}
+
+/* Products */
+.products{background:var(--white);border-block:1.5px solid var(--ink)}
+.plist{border-top:1.5px solid var(--ink)}
+.plist details{border-bottom:1px solid var(--ink)}
+.plist summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:4rem 1.4fr 1.6fr 1fr 1fr 2.5rem;align-items:center;gap:1rem;padding:1.4rem .5rem;transition:background .2s}
+.plist summary::-webkit-details-marker{display:none}
+.plist summary:hover{background:var(--paper)}
+.plist .idx{font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+.plist .nm{font-size:clamp(1.3rem,2.2vw,1.9rem);font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1}
+.plist .use{color:var(--ink-2);font-size:.98rem}
+.plist .key,.plist .org{font-family:var(--mono);font-size:.82rem}
+.plist .key b{display:block;font-family:var(--sans);font-size:1.05rem;font-weight:700}
+.plus{width:2.2rem;height:2.2rem;border:1.5px solid var(--ink);display:grid;place-items:center;font:500 1.3rem/1 var(--mono);transition:transform .25s,background .2s}
+details[open] .plus{transform:rotate(45deg);background:var(--signal);border-color:var(--signal)}
+.pbody{display:grid;grid-template-columns:4rem 1fr 1fr;gap:1rem 2.5rem;padding:.5rem .5rem 2.25rem}
+.pbody > p{grid-column:2;font-size:1.05rem;color:var(--ink-2)}
+.pbody table{grid-column:3;grid-row:1 / span 2;width:100%;border-collapse:collapse;font-family:var(--mono);font-size:.85rem}
+.pbody caption{text-align:left;font-size:.72rem;color:var(--muted);padding-bottom:.5rem;letter-spacing:.04em;text-transform:uppercase}
+.pbody th,.pbody td{padding:.55rem 0;border-bottom:1px dashed var(--rule);text-align:left;font-weight:400}
+.pbody th{color:var(--muted)}
+.pbody td{text-align:right;font-weight:600}
+.pbody .btn{grid-column:2;justify-self:start;align-self:start}
+.footnote{margin-top:1.25rem}
+
+/* Chart */
+.chart{margin-top:5rem;display:grid;grid-template-columns:repeat(12,1fr);gap:0 1.5rem}
+.chart > header{grid-column:1 / span 3}
+.chart > header h3{font-size:1.5rem;font-stretch:125%;font-weight:800;text-transform:uppercase;line-height:1;margin-bottom:.75rem}
+.bars-wrap{grid-column:4 / span 9}
+.bars{list-style:none;margin:0;padding:0}
+.bars li{display:grid;grid-template-columns:11rem 1fr 8.5rem;align-items:center;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--rule)}
+.bars .t{font-weight:600}
+.bars .v{font-family:var(--mono);font-size:.82rem;text-align:right}
+.trk{position:relative;height:14px;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px calc(100% / 11))}
+.trk i{position:absolute;top:0;bottom:0;left:calc((var(--a) - 3000) / 5500 * 100%);width:calc((var(--b) - var(--a)) / 5500 * 100%);background:var(--ink)}
+.bars li:hover .trk i{background:var(--signal)}
+.axis{display:grid;grid-template-columns:11rem 1fr 8.5rem;gap:1rem;padding-top:.5rem}
+.axis div{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+
+/* Process */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);border-top:1.5px solid var(--ink);counter-reset:s}
+.steps li{padding:1.5rem 1.5rem 0 0;border-right:1px solid var(--rule);padding-left:1.25rem}
+.steps li:first-child{padding-left:0}
+.steps li:last-child{border-right:0}
+.steps li::before{counter-increment:s;content:"0" counter(s);display:block;font:900 4.2rem/1 var(--sans);font-stretch:125%;color:transparent;-webkit-text-stroke:1.5px var(--ink);margin-bottom:1.25rem}
+.steps li:hover::before{color:var(--signal);-webkit-text-stroke-color:var(--signal)}
+.steps h3{font-size:1.15rem;font-weight:750;margin-bottom:.5rem}
+.steps p{color:var(--ink-2);font-size:.97rem}
+
+/* Industries */
+.ind{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink);border-left:1px solid var(--ink)}
+.ind li{padding:1.75rem 1.5rem 2rem;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);min-height:180px;display:flex;flex-direction:column;justify-content:space-between;transition:background .2s}
+.ind li:hover{background:var(--signal)}
+.ind li:hover .label{color:var(--ink)}
+.ind b{font-size:1.55rem;font-stretch:125%;font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:-.02em}
+
+/* Reach */
+.reach{display:grid;grid-template-columns:7fr 5fr;gap:3rem}
+table.data{width:100%;border-collapse:collapse;font-size:.95rem}
+table.data caption{text-align:left;font-family:var(--mono);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding-bottom:.75rem}
+table.data th{font-family:var(--mono);font-size:.72rem;font-weight:500;color:var(--muted);text-align:left;padding:.6rem .5rem .6rem 0;border-bottom:1.5px solid var(--ink);text-transform:uppercase;letter-spacing:.04em}
+table.data td{padding:.85rem .5rem .85rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+table.data td.m{font-family:var(--mono);font-size:.8rem;color:var(--ink-2)}
+table.data tbody th{font:700 1rem var(--sans);color:var(--ink);text-transform:none;letter-spacing:0;border-bottom:1px solid var(--rule);padding:.85rem .5rem .85rem 0}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--on-ink)}
+.contact .sec-title{color:var(--paper)}
+.contact .label{color:var(--on-ink-muted)}
+.contact-grid{display:grid;grid-template-columns:5fr 7fr;gap:4rem;border-top:1px solid var(--ink-rule);padding-top:2.5rem}
+.cdl{display:grid;gap:1.6rem}
+.cdl dt{font-family:var(--mono);font-size:.75rem;color:var(--on-ink-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+.cdl dd{margin:0;font-size:1.15rem}
+.cdl a{text-decoration:none;border-bottom:1px solid var(--ink-rule)}
+.cdl a:hover{border-color:var(--signal);color:var(--signal)}
+.cdl address{font-style:normal}
+form .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
+.field{display:flex;flex-direction:column;margin-bottom:1.6rem}
+.field.full{grid-column:1 / -1}
+label{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--on-ink-muted);margin-bottom:.35rem}
+input,select,textarea{font:inherit;font-size:1.1rem;color:var(--paper);background:transparent;border:0;border-bottom:1.5px solid #5A5750;padding:.6rem 0;border-radius:0;width:100%}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--on-ink-muted) 50%),linear-gradient(135deg,var(--on-ink-muted) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 7px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+select option{color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+input::placeholder,textarea::placeholder{color:#7D796F}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;border-bottom-color:var(--signal);box-shadow:0 2px 0 0 var(--signal)}
+.form-foot{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.form-foot .btn{cursor:pointer;min-width:240px}
+.status{font-family:var(--mono);font-size:.85rem;color:var(--signal)}
+
+/* Footer */
+body > footer{background:var(--ink);color:var(--on-ink-muted);padding:2rem 0 5.5rem;overflow:hidden}
+.wordmark{font-size:clamp(4rem,19.5vw,22rem);line-height:.8;font-stretch:125%;font-weight:900;letter-spacing:-.05em;color:#1E1D1B;text-transform:uppercase;white-space:nowrap;margin:0 0 2rem -.04em;user-select:none}
+.wordmark::before{content:"Kolvara"}
+.foot{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:var(--mono);font-size:.78rem;border-top:1px solid var(--ink-rule);padding-top:1.25rem}
+.foot nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.5rem;flex-wrap:wrap}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--signal)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .track{animation:none;flex-wrap:wrap;width:auto}
+  .track ul[aria-hidden]{display:none}
+  *{transition-duration:.01ms!important}
+}
+
+@media (max-width:1100px){
+  .intro{grid-column:1 / -1}
+  .facts{grid-column:1 / span 6;padding-left:0!important;border-left:0;border-top:1px solid var(--rule)}
+  .ticket{grid-column:7 / -1}
+  .steps{grid-template-columns:repeat(3,1fr);row-gap:2.5rem}
+  .steps li{padding-left:0}
+  .reach{grid-template-columns:1fr}
+  .plist summary{grid-template-columns:3rem 1.4fr 1fr 2.5rem}
+  .plist .use,.plist .org{display:none}
+}
+@media (max-width:860px){
+  .util-r a:first-child{display:none}
+  .nav-toggle{display:block;margin-left:auto}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1.5px solid var(--ink);padding:.5rem 1.25rem 1.25rem}
+  .menu[data-open="true"]{display:flex}
+  .menu li a:not(.btn){display:block;padding:1rem 0;border-bottom:1px solid var(--rule);font-size:1.1rem}
+  .menu .btn{margin-top:1rem;width:100%}
+  .sec-label,.sec-body{grid-column:1 / -1}
+  .sec-label{margin-bottom:1.25rem}
+  .chart > header,.bars-wrap{grid-column:1 / -1}
+  .chart > header{margin-bottom:1.5rem}
+  .ind{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .values{grid-template-columns:1fr 1fr}
+  .values li:nth-child(3){border-left:0}
+  .values li:nth-child(n+3){border-top:1px solid var(--ink)}
+  .pbody{grid-template-columns:1fr;padding-left:.5rem}
+  .pbody > p,.pbody table,.pbody .btn{grid-column:1;grid-row:auto}
+}
+@media (max-width:640px){
+  .facts,.ticket{grid-column:1 / -1}
+  .ticket{margin:0 8px 2.5rem 0}
+  .steps,.ind,.vm,form .grid{grid-template-columns:1fr}
+  .steps{row-gap:1.25rem}
+  .steps li{border-right:0;border-bottom:1px solid var(--rule);padding-bottom:1.5rem}
+  .steps li::before{font-size:3rem;margin-bottom:.75rem}
+  .bars li,.axis{grid-template-columns:1fr 6.5rem}
+  .bars .trk,.axis div{grid-column:1 / -1;grid-row:2}
+  .axis > span{display:none}
+  .plist summary{grid-template-columns:2.25rem 1fr 2.5rem}
+  .plist .key{display:none}
+  .hide-sm{display:none}
+  table.data td.m.coord{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<aside class="util" aria-label="Trade desk contact">
+  <div class="wrap">
+    <span class="desk" id="desk">Trade desk · Mon–Sat 09:30–18:30 IST</span>
+    <div class="util-r"><a href="tel:+919000000000">+91 90000 00000</a><a href="mailto:trade@kolvara.com">trade@kolvara.com</a></div>
+  </div>
+</aside>
+
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">K</span>
+      <span class="brand-text"><b>KOLVARA</b><span>Resources</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <nav aria-label="Primary">
+      <ul class="menu" id="site-menu">
+        <li><a href="#about"><sup>01</sup>About</a></li>
+        <li><a href="#products"><sup>02</sup>Products</a></li>
+        <li><a href="#process"><sup>03</sup>Process</a></li>
+        <li><a href="#reach"><sup>04</sup>Reach</a></li>
+        <li><a class="btn btn-ink" href="#contact">Start an enquiry <span aria-hidden="true">→</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="cols" aria-hidden="true"></div>
+      <div class="hero-meta label"><span>(Est. 2026)</span><span>Mumbai, India</span><span>Thermal · Metallurgical · Specialty coals</span></div>
+      <div class="hero-grid">
+        <h1 id="hero-title">Coal,<br>traded to<br>specification<span class="dot">.</span></h1>
+      </div>
+      <div class="hero-row">
+        <div class="intro">
+        <p class="lede">Kolvara is an independent coal trading company. We source thermal, metallurgical and specialty coals from proven mines worldwide and deliver them to Indian industry — with the specification on paper matching the cargo at your port.</p>
+        <div class="cta">
+          <a class="btn btn-ink" href="#contact">Request a quote <span aria-hidden="true">→</span></a>
+          <a class="btn btn-line" href="#products">View specifications <span aria-hidden="true">↓</span></a>
+        </div>
+        </div>
+        <ul class="facts" aria-label="Key facts">
+          <li><span class="label">Sourcing origins</span><b>06</b></li>
+          <li><span class="label">Indian ports served</span><b>10+</b></li>
+          <li><span class="label">Cargoes tested</span><b>100%</b></li>
+          <li><span class="label">Quote turnaround</span><b>24h</b></li>
+        </ul>
+        <aside class="ticket" aria-label="Sample cargo specification">
+          <header><span>SPEC SHEET</span><span>KR-0142</span></header>
+          <dl>
+            <div><dt>Product</dt><dd>Steam coal</dd></div>
+            <div><dt>Origin</dt><dd>Kalimantan, ID</dd></div>
+            <div><dt>GCV (GAR)</dt><dd>4,200 kcal/kg</dd></div>
+            <div><dt>Total moisture</dt><dd>35%</dd></div>
+            <div><dt>Ash (ARB)</dt><dd>6%</dd></div>
+            <div><dt>Sulphur</dt><dd>0.3%</dd></div>
+            <div><dt>Size</dt><dd>0–50 mm</dd></div>
+            <div><dt>Discharge</dt><dd>Paradip, IN</dd></div>
+          </dl>
+          <div class="barcode" aria-hidden="true"></div>
+          <footer>Sample cargo · independent inspection at load &amp; discharge</footer>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="track">
+      <ul aria-label="Sourcing origins"><li>Indonesia</li><li>South Africa</li><li>Australia</li><li>Russia</li><li>United States</li><li>Colombia</li></ul>
+      <ul aria-hidden="true"><li>Indonesia</li><li>South Africa</li><li>Australia</li><li>Russia</li><li>United States</li><li>Colombia</li></ul>
+    </div>
+  </div>
+
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="wrap sec-grid">
+      <div class="sec-label label">(01) About</div>
+      <div class="sec-body">
+        <h2 class="sec-title" id="about-title">Founder-led.<br>Specification-first<span class="dot">.</span></h2>
+        <p class="big-p">Founded in 2026 by a team with deep experience in international solid-fuel trading, Kolvara brings <mark>mine-level relationships</mark>, transparent quality and disciplined logistics to every cargo.</p>
+        <div class="vm">
+          <div><h3>Vision</h3><p>To be India's most trusted partner for responsibly sourced solid fuels — known for quality you can verify and supply you can plan around.</p></div>
+          <div><h3>Mission</h3><p>To source the right coal for every application, test every cargo independently, and deliver on time with complete transparency on specification, price and logistics.</p></div>
+        </div>
+        <ul class="values" aria-label="Our values">
+          <li><span>V.01</span><b>Integrity</b></li>
+          <li><span>V.02</span><b>Transparency</b></li>
+          <li><span>V.03</span><b>Reliability</b></li>
+          <li><span>V.04</span><b>Responsibility</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section products" id="products" aria-labelledby="products-title">
+    <div class="wrap">
+      <div class="sec-grid">
+        <div class="sec-label label">(02) Products</div>
+        <div class="sec-body"><h2 class="sec-title" id="products-title">Six grades.<br>Full specs<span class="dot">.</span></h2></div>
+      </div>
+      <div class="plist">
+        <details open>
+          <summary><span class="idx">P.01</span><span class="nm">Steam coal</span><span class="use">Power, cement, sponge iron</span><span class="key"><b>4,200–6,300</b>kcal/kg GAR</span><span class="org">ID · ZA · RU</span><span class="plus" aria-hidden="true">+</span></summary>
+          <div class="pbody">
+            <p>Non-coking thermal coal for utility and captive power, cement kilns and DRI plants. Available across a wide calorific range to match boiler design and landed-cost targets.</p>
+            <table><caption>Indicative specification</caption><tbody>
+              <tr><th scope="row">GCV (GAR)</th><td>4,200–6,300 kcal/kg</td></tr>
+              <tr><th scope="row">Total moisture</th><td>12–35%</td></tr>
+              <tr><th scope="row">Ash</th><td>5–15%</td></tr>
+              <tr><th scope="row">Sulphur</th><td>0.3–0.9%</td></tr>
+              <tr><th scope="row">Origins</th><td>Indonesia, South Africa, Russia</td></tr>
+            </tbody></table>
+            <a class="btn btn-ink" href="#contact">Request this grade <span aria-hidden="true">→</span></a>
+          </div>
+        </details>
+        <details>
+          <summary><span class="idx">P.02</span><span class="nm">Anthracite</span><span class="use">Ferroalloys, sintering, filtration</span><span class="key"><b>80–90%</b>fixed carbon</span><span class="org">VN · RU · ZA</span><span class="plus" aria-hidden="true">+</span></summary>
+          <div class="pbody">
+            <p>High-carbon, low-volatile coal used as a reductant, carburiser and sintering fuel, and in water filtration media.</p>
+            <table><caption>Indicative specification</caption><tbody>
+              <tr><th scope="row">Fixed carbon</th><td>80–90%</td></tr>
+              <tr><th scope="row">Volatile matter</th><td>3–8%</td></tr>
+              <tr><th scope="row">Ash</th><td>6–12%</td></tr>
+              <tr><th scope="row">Sulphur</th><td>&lt; 0.8%</td></tr>
+              <tr><th scope="row">Origins</th><td>Vietnam, Russia, South Africa</td></tr>
+            </tbody></table>
+            <a class="btn btn-ink" href="#contact">Request this grade <span aria-hidden="true">→</span></a>
+          </div>
+        </details>
+        <details>
+          <summary><span class="idx">P.03</span><span class="nm">Bituminous</span><span class="use">Boilers, captive power, cement</span><span class="key"><b>5,800–6,700</b>kcal/kg NAR</span><span class="org">ZA · AU · CO</span><span class="plus" aria-hidden="true">+</span></summary>
+          <div class="pbody">
+            <p>Versatile, high-energy coal for industrial boilers, captive power and cement — a reliable all-rounder with consistent combustion.</p>
+            <table><caption>Indicative specification</caption><tbody>
+              <tr><th scope="row">GCV (NAR)</th><td>5,800–6,700 kcal/kg</td></tr>
+              <tr><th scope="row">Volatile matter</th><td>25–35%</td></tr>
+              <tr><th scope="row">Ash</th><td>10–15%</td></tr>
+              <tr><th scope="row">Sulphur</th><td>0.5–1.0%</td></tr>
+              <tr><th scope="row">Origins</th><td>South Africa, Australia, Colombia</td></tr>
+            </tbody></table>
+            <a class="btn btn-ink" href="#contact">Request this grade <span aria-hidden="true">→</span></a>
+          </div>
+        </details>
+        <details>
+          <summary><span class="idx">P.04</span><span class="nm">Coking coal</span><span class="use">Blast furnaces, coke ovens</span><span class="key"><b>60–70</b>CSR</span><span class="org">AU · US · RU</span><span class="plus" aria-hidden="true">+</span></summary>
+          <div class="pbody">
+            <p>Hard and semi-soft metallurgical coals for integrated steelmakers and merchant coke producers.</p>
+            <table><caption>Indicative specification</caption><tbody>
+              <tr><th scope="row">CSR</th><td>60–70</td></tr>
+              <tr><th scope="row">Volatile matter</th><td>18–30%</td></tr>
+              <tr><th scope="row">Ash</th><td>8–10%</td></tr>
+              <tr><th scope="row">Sulphur</th><td>0.4–0.8%</td></tr>
+              <tr><th scope="row">Origins</th><td>Australia, United States, Russia</td></tr>
+            </tbody></table>
+            <a class="btn btn-ink" href="#contact">Request this grade <span aria-hidden="true">→</span></a>
+          </div>
+        </details>
+        <details>
+          <summary><span class="idx">P.05</span><span class="nm">Pet coke</span><span class="use">Cement and lime kilns</span><span class="key"><b>7,800–8,200</b>kcal/kg</span><span class="org">US · ME</span><span class="plus" aria-hidden="true">+</span></summary>
+          <div class="pbody">
+            <p>High-calorific, very low-ash fuel for cement and lime kilns, typically blended to manage sulphur input.</p>
+            <table><caption>Indicative specification</caption><tbody>
+              <tr><th scope="row">GCV</th><td>7,800–8,200 kcal/kg</td></tr>
+              <tr><th scope="row">Sulphur</th><td>4–7%</td></tr>
+              <tr><th scope="row">Ash</th><td>&lt; 1%</td></tr>
+              <tr><th scope="row">Total moisture</th><td>6–10%</td></tr>
+              <tr><th scope="row">Origins</th><td>United States, Middle East</td></tr>
+            </tbody></table>
+            <a class="btn btn-ink" href="#contact">Request this grade <span aria-hidden="true">→</span></a>
+          </div>
+        </details>
+        <details>
+          <summary><span class="idx">P.06</span><span class="nm">Met coke</span><span class="use">Foundries, ferroalloys, pig iron</span><span class="key"><b>82–86%</b>fixed carbon</span><span class="org">CO · PL · CN</span><span class="plus" aria-hidden="true">+</span></summary>
+          <div class="pbody">
+            <p>Low-ash metallurgical coke in multiple size fractions for cupola foundries, ferroalloy furnaces and mini blast furnaces.</p>
+            <table><caption>Indicative specification</caption><tbody>
+              <tr><th scope="row">Fixed carbon</th><td>82–86%</td></tr>
+              <tr><th scope="row">Ash</th><td>12–14%</td></tr>
+              <tr><th scope="row">Volatile matter</th><td>&lt; 1.5%</td></tr>
+              <tr><th scope="row">Sulphur</th><td>0.6–0.8%</td></tr>
+              <tr><th scope="row">Origins</th><td>Colombia, Poland, China</td></tr>
+            </tbody></table>
+            <a class="btn btn-ink" href="#contact">Request this grade <span aria-hidden="true">→</span></a>
+          </div>
+        </details>
+      </div>
+      <p class="label footnote">Indicative ranges only. Final specifications are agreed per contract and verified by independent inspection.</p>
+
+      <div class="chart">
+        <header>
+          <h3>Calorific value at a glance</h3>
+          <p class="label">Typical gross calorific value, kcal/kg. Indicative.</p>
+        </header>
+        <div class="bars-wrap">
+          <ul class="bars" aria-label="Typical calorific value range by product">
+            <li><span class="t">Steam coal</span><span class="trk" aria-hidden="true"><i style="--a:4200;--b:6300"></i></span><span class="v">4,200–6,300</span></li>
+            <li><span class="t">Bituminous</span><span class="trk" aria-hidden="true"><i style="--a:5800;--b:6700"></i></span><span class="v">5,800–6,700</span></li>
+            <li><span class="t">Anthracite</span><span class="trk" aria-hidden="true"><i style="--a:6500;--b:7500"></i></span><span class="v">6,500–7,500</span></li>
+            <li><span class="t">Met coke</span><span class="trk" aria-hidden="true"><i style="--a:6800;--b:7200"></i></span><span class="v">6,800–7,200</span></li>
+            <li><span class="t">Coking coal</span><span class="trk" aria-hidden="true"><i style="--a:7000;--b:7800"></i></span><span class="v">7,000–7,800</span></li>
+            <li><span class="t">Pet coke</span><span class="trk" aria-hidden="true"><i style="--a:7800;--b:8200"></i></span><span class="v">7,800–8,200</span></li>
+          </ul>
+          <div class="axis" aria-hidden="true"><span></span><div><span>3,000</span><span>4,000</span><span>5,000</span><span>6,000</span><span>7,000</span><span>8,000</span></div><span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="sec-grid">
+        <div class="sec-label label">(03) Process</div>
+        <div class="sec-body"><h2 class="sec-title" id="process-title">Mine to plant<span class="dot">.</span><br>One counterparty<span class="dot">.</span></h2></div>
+      </div>
+      <ol class="steps">
+        <li><h3>Sourcing</h3><p>Direct relationships with mines and producers across six origins, matched to your application and budget.</p></li>
+        <li><h3>Quality assurance</h3><p>Independent sampling and analysis at load and discharge ports by accredited agencies.</p></li>
+        <li><h3>Shipping &amp; logistics</h3><p>Vessel chartering, port handling, customs clearance and rail or road delivery.</p></li>
+        <li><h3>Trade finance</h3><p>LC, documentary collection and flexible payment structures that fit your cycle.</p></li>
+        <li><h3>Delivery &amp; support</h3><p>Shipment updates at every milestone and after-sales support on every contract.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ind-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-grid">
+        <div class="sec-label label">(04) Industries</div>
+        <div class="sec-body"><h2 class="sec-title" id="ind-title">Who we supply<span class="dot">.</span></h2></div>
+      </div>
+      <ul class="ind">
+        <li><span class="label">I.01 — Utilities &amp; captive plants</span><b>Power generation</b></li>
+        <li><span class="label">I.02 — Kilns &amp; captive power</span><b>Cement</b></li>
+        <li><span class="label">I.03 — DRI, BF, coke ovens</span><b>Steel &amp; sponge iron</b></li>
+        <li><span class="label">I.04 — Reductants &amp; carburisers</span><b>Ferroalloys</b></li>
+        <li><span class="label">I.05 — Process steam</span><b>Paper &amp; textiles</b></li>
+        <li><span class="label">I.06 — Kilns &amp; dryers</span><b>Bricks &amp; ceramics</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="reach" aria-labelledby="reach-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-grid">
+        <div class="sec-label label">(05) Reach</div>
+        <div class="sec-body"><h2 class="sec-title" id="reach-title">Six origins.<br>Ten-plus ports<span class="dot">.</span></h2></div>
+      </div>
+      <div class="reach">
+        <table class="data">
+          <caption>Sourcing origins</caption>
+          <thead><tr><th scope="col">Origin</th><th scope="col">Load port</th><th scope="col" class="hide-sm">Coordinates</th><th scope="col">Typical grades</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Indonesia</th><td>Samarinda</td><td class="m coord hide-sm">0.5°S 117.2°E</td><td class="m">GAR 3,400–5,000</td></tr>
+            <tr><th scope="row">South Africa</th><td>Richards Bay</td><td class="m coord hide-sm">28.8°S 32.0°E</td><td class="m">NAR 5,500–6,000</td></tr>
+            <tr><th scope="row">Australia</th><td>Newcastle</td><td class="m coord hide-sm">32.9°S 151.8°E</td><td class="m">NAR 6,000 · Coking</td></tr>
+            <tr><th scope="row">Russia</th><td>Vostochny</td><td class="m coord hide-sm">42.7°N 133.0°E</td><td class="m">NAR 6,000 · Anthracite</td></tr>
+            <tr><th scope="row">United States</th><td>Hampton Roads</td><td class="m coord hide-sm">36.9°N 76.3°W</td><td class="m">Coking · Pet coke</td></tr>
+            <tr><th scope="row">Colombia</th><td>Puerto Bolívar</td><td class="m coord hide-sm">12.2°N 71.9°W</td><td class="m">NAR 6,000 · Met coke</td></tr>
+          </tbody>
+        </table>
+        <table class="data">
+          <caption>Discharge ports — India</caption>
+          <thead><tr><th scope="col">Port</th><th scope="col">State</th><th scope="col" class="hide-sm">Coordinates</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Paradip</th><td>Odisha</td><td class="m coord hide-sm">20.3°N 86.7°E</td></tr>
+            <tr><th scope="row">Visakhapatnam</th><td>Andhra Pradesh</td><td class="m coord hide-sm">17.7°N 83.3°E</td></tr>
+            <tr><th scope="row">Krishnapatnam</th><td>Andhra Pradesh</td><td class="m coord hide-sm">14.3°N 80.1°E</td></tr>
+            <tr><th scope="row">Mundra</th><td>Gujarat</td><td class="m coord hide-sm">22.8°N 69.7°E</td></tr>
+            <tr><th scope="row">Kandla</th><td>Gujarat</td><td class="m coord hide-sm">23.0°N 70.2°E</td></tr>
+            <tr><th scope="row">Haldia</th><td>West Bengal</td><td class="m coord hide-sm">22.0°N 88.1°E</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="sec-grid">
+        <div class="sec-label label">(06) Contact</div>
+        <div class="sec-body"><h2 class="sec-title" id="contact-title">Start an<br>enquiry<span class="dot">.</span></h2></div>
+      </div>
+      <div class="contact-grid">
+        <dl class="cdl">
+          <div><dt>Email</dt><dd><a href="mailto:trade@kolvara.com">trade@kolvara.com</a></dd></div>
+          <div><dt>Phone / WhatsApp</dt><dd><a href="tel:+919000000000">+91 90000 00000</a></dd></div>
+          <div><dt>Head office</dt><dd><address>Unit 1201, Trade Centre, Bandra Kurla Complex, Mumbai 400051, India</address></dd></div>
+          <div><dt>Branch office</dt><dd><address>Dwaraka Nagar, Visakhapatnam 530016, Andhra Pradesh, India</address></dd></div>
+          <div><dt>Social</dt><dd><a href="#">LinkedIn</a> &nbsp;/&nbsp; <a href="#">X</a> &nbsp;/&nbsp; <a href="#">WhatsApp</a></dd></div>
+        </dl>
+        <form novalidate aria-label="Enquiry form">
+          <div class="grid">
+            <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization" required></div>
+            <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-product">Product</label>
+              <select id="f-product" name="product" required><option value="">Select</option><option>Steam coal</option><option>Anthracite</option><option>Bituminous coal</option><option>Coking coal</option><option>Pet coke</option><option>Met coke</option><option>Not sure yet</option></select></div>
+            <div class="field"><label for="f-qty">Quantity, MT/month (optional)</label><input id="f-qty" name="quantity" inputmode="numeric" placeholder="25,000"></div>
+            <div class="field full"><label for="f-msg">Specification &amp; delivery notes (optional)</label><textarea id="f-msg" name="message" placeholder="Destination port, GCV range, delivery window…"></textarea></div>
+          </div>
+          <div class="form-foot">
+            <button class="btn btn-signal" type="submit">Send enquiry <span aria-hidden="true">→</span></button>
+            <p class="status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="wordmark" aria-hidden="true"></div>
+    <div class="foot">
+      <span>© <span class="yr">2026</span> Kolvara Resources Pvt. Ltd.</span>
+      <nav aria-label="Footer"><ul><li><a href="#about">About</a></li><li><a href="#products">Products</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // Trade desk open/closed, computed in IST
+  const desk = document.getElementById('desk');
+  const ist = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+  const mins = ist.getHours() * 60 + ist.getMinutes();
+  const open = ist.getDay() !== 0 && mins >= 570 && mins < 1110;
+  desk.textContent = open ? 'Trade desk open · Mon–Sat 09:30–18:30 IST' : 'Trade desk closed · opens Mon–Sat 09:30 IST';
+  desk.classList.toggle('closed', !open);
+
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('site-menu');
+  const setOpen = (o) => { toggle.setAttribute('aria-expanded', String(o)); menu.dataset.open = String(o); toggle.textContent = o ? 'Close' : 'Menu'; };
+  toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setOpen(false); toggle.focus(); } });
+
+  const form = document.querySelector('form');
+  const status = form.querySelector('.status');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const bad = form.querySelector(':invalid');
+    if (bad) { status.textContent = 'Please complete the required fields.'; bad.focus(); form.reportValidity(); return; }
+    status.textContent = 'Received — this is a mockup, nothing was sent.';
+    form.reset();
+  });
+  document.querySelectorAll('.yr').forEach((el) => (el.textContent = new Date().getFullYear()));
+})();
+</script>
+<script src="mockup-bar.js" defer></script>
+</body>
+</html>
