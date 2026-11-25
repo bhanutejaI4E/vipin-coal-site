@@ -14,6 +14,9 @@
 :root{
   --sand:#F4EFE6; --paper:#FBF8F3; --ink:#22201C; --ink-2:#3A362F; --muted:#6B6358; --line:#E2D9CA;
   --clay:#A4471E; --clay-2:#C2602F; --olive:#4F5B32; --olive-dark:#2E3520; --ochre:#C98B2E; --coal:#1C1A18;
+  --on-accent:#FBF8F3; --on-olive:#FBF8F3; --on-dark:#F4EFE6; --on-dark-muted:#C9C2B2; --on-coal-muted:#CFC6B6;
+  --l1:color-mix(in srgb,var(--olive) 85%,#fff); --l3:color-mix(in srgb,var(--ochre) 45%,#F4E9D8);
+  --l4:color-mix(in srgb,var(--muted) 70%,#B8AC98); --l7:color-mix(in srgb,var(--coal) 70%,var(--muted));
   --serif:"Fraunces", ui-serif, Georgia, serif;
   --sans:"Instrument Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --maxw:1240px; --r:28px;
@@ -32,15 +35,15 @@ h1,h2,h3,p{margin:0}
 .kicker{display:inline-flex;align-items:center;gap:.55rem;font-size:.85rem;font-weight:600;color:var(--clay);letter-spacing:.02em}
 .kicker::before{content:"";width:22px;height:2px;border-radius:2px;background:currentColor}
 .btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.5rem;border-radius:999px;font:600 .98rem/1 var(--sans);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .25s}
-.btn-clay{background:var(--clay);color:var(--paper)}
-.btn-clay:hover{background:#8A3A17;transform:translateY(-1px)}
+.btn-clay{background:var(--clay);color:var(--on-accent)}
+.btn-clay:hover{background:color-mix(in srgb,var(--clay) 82%,#000);transform:translateY(-1px)}
 .btn-line{border-color:var(--ink);color:var(--ink)}
 .btn-line:hover{background:var(--ink);color:var(--paper)}
 .serif{font-family:var(--serif)}
 
 /* Header */
 .site-header{position:sticky;top:0;z-index:50;padding:1rem 0;transition:background .3s,box-shadow .3s}
-.site-header.scrolled{background:rgba(244,239,230,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.site-header.scrolled{background:color-mix(in srgb,var(--sand) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
 .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
 .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font:500 1.45rem/1 var(--serif);letter-spacing:-.01em}
 .brand svg{width:36px;height:36px}
@@ -54,7 +57,7 @@ h1,h2,h3,p{margin:0}
 /* Hero */
 .hero{padding:clamp(3rem,7vw,6rem) 0 0;text-align:center}
 .hero .pill{display:inline-flex;align-items:center;gap:.6rem;padding:.45rem .9rem .45rem .5rem;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:.88rem;color:var(--ink-2)}
-.hero .pill b{background:var(--olive);color:var(--paper);font-weight:600;font-size:.75rem;padding:.25rem .6rem;border-radius:999px}
+.hero .pill b{background:var(--olive);color:var(--on-olive);font-weight:600;font-size:.75rem;padding:.25rem .6rem;border-radius:999px}
 .hero h1{font-family:var(--serif);font-weight:350;font-size:clamp(2.9rem,7.6vw,7rem);line-height:.98;letter-spacing:-.035em;margin:1.75rem auto 1.5rem;max-width:14ch;font-variation-settings:"opsz" 144}
 .hero h1 em{font-style:italic;color:var(--clay);font-weight:400}
 .hero .lede{max-width:40rem;margin:0 auto;font-size:1.18rem;color:var(--ink-2)}
@@ -62,10 +65,10 @@ h1,h2,h3,p{margin:0}
 .strata{position:relative;margin-top:clamp(3rem,6vw,5rem);height:clamp(300px,32vw,460px)}
 .strata svg{position:absolute;inset:0;width:100%;height:100%}
 .layers{list-style:none;margin:0;padding:0;position:absolute;inset:0;pointer-events:none}
-.layers li{position:absolute;right:clamp(1rem,4vw,4rem);transform:translateY(-50%);display:flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:600;padding:.35rem .75rem;border-radius:999px;background:rgba(251,248,243,.94);color:var(--ink);box-shadow:0 2px 10px rgba(34,32,28,.12)}
+.layers li{position:absolute;right:clamp(1rem,4vw,4rem);transform:translateY(-50%);display:flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:600;padding:.35rem .75rem;border-radius:999px;background:color-mix(in srgb,var(--paper) 94%,transparent);color:var(--ink);box-shadow:0 2px 10px rgba(34,32,28,.12)}
 .layers li i{width:10px;height:10px;border-radius:50%;background:var(--c)}
 .layers li.seam{background:var(--paper);outline:2px solid var(--ochre);font-size:.88rem}
-.depth{position:absolute;left:clamp(1rem,4vw,4rem);top:12%;bottom:6%;display:flex;flex-direction:column;justify-content:space-between;font-size:.75rem;font-weight:600;color:var(--paper);text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.depth{position:absolute;left:clamp(1rem,4vw,4rem);top:12%;bottom:6%;display:flex;flex-direction:column;justify-content:space-between;font-size:.75rem;font-weight:600;color:var(--on-dark);text-shadow:0 1px 2px rgba(0,0,0,.4)}
 .drill{position:absolute;left:62%;transform:translateX(-50%);top:-34px;display:flex;flex-direction:column;align-items:center;gap:.25rem;font-size:.75rem;font-weight:600;color:var(--ink-2)}
 .drill span{width:14px;height:14px;border:2px solid var(--clay);border-radius:3px;transform:rotate(45deg);background:var(--sand)}
 
@@ -77,13 +80,13 @@ h1,h2,h3,p{margin:0}
 
 .who{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
 .photo{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:
-  radial-gradient(120% 80% at 20% 10%, rgba(201,139,46,.35), transparent 55%),
-  radial-gradient(90% 70% at 90% 100%, rgba(164,71,30,.45), transparent 60%),
-  linear-gradient(160deg,#3A362F 0%,#1C1A18 70%)}
+  radial-gradient(120% 80% at 20% 10%, color-mix(in srgb,var(--ochre) 35%,transparent), transparent 55%),
+  radial-gradient(90% 70% at 90% 100%, color-mix(in srgb,var(--clay) 45%,transparent), transparent 60%),
+  linear-gradient(160deg,var(--l7) 0%,var(--coal) 70%)}
 .photo::before{content:"";position:absolute;inset:0;opacity:.35;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .photo svg{position:absolute;inset:auto 0 0 0;width:100%;height:auto}
 .photo figcaption{position:absolute;left:1.25rem;top:1.25rem;right:1.25rem;display:flex;justify-content:space-between;gap:1rem;font-size:.8rem;color:#F4EFE6;font-weight:500}
-.photo figcaption span{background:rgba(28,26,24,.55);padding:.35rem .7rem;border-radius:999px;backdrop-filter:blur(6px)}
+.photo figcaption span{background:color-mix(in srgb,var(--coal) 55%,transparent);padding:.35rem .7rem;border-radius:999px;backdrop-filter:blur(6px)}
 .who p + p{margin-top:1rem}
 .who .body{color:var(--ink-2);font-size:1.08rem}
 .values{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
@@ -93,12 +96,12 @@ h1,h2,h3,p{margin:0}
 .values span{font-size:.9rem;color:var(--muted)}
 
 .vm{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.vm article{border-radius:var(--r);padding:clamp(2rem,4vw,3.25rem);color:var(--paper);min-height:300px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
-.vm article:first-child{background:var(--olive)}
+.vm article{border-radius:var(--r);padding:clamp(2rem,4vw,3.25rem);color:var(--on-accent);min-height:300px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.vm article:first-child{background:var(--olive);color:var(--on-olive)}
 .vm article:last-child{background:var(--clay)}
 .vm h3{font-size:.9rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
 .vm p{font-family:var(--serif);font-weight:350;font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.25;letter-spacing:-.015em;margin-top:2rem;max-width:26ch}
-.vm article::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;border:1.5px solid rgba(251,248,243,.25);box-shadow:0 0 0 28px rgba(251,248,243,.05),0 0 0 56px rgba(251,248,243,.04)}
+.vm article::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;border:1.5px solid color-mix(in srgb,currentColor 25%,transparent);box-shadow:0 0 0 28px color-mix(in srgb,currentColor 5%,transparent),0 0 0 56px color-mix(in srgb,currentColor 4%,transparent)}
 
 /* Products */
 .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
@@ -108,7 +111,7 @@ h1,h2,h3,p{margin:0}
 .core{height:110px;border-radius:20px;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--c1),var(--c2))}
 .core::before{content:"";position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .core::after{content:"";position:absolute;inset:0;background:var(--band,none)}
-.core span{position:absolute;left:1rem;bottom:.8rem;font-size:.75rem;font-weight:600;color:var(--paper);background:rgba(28,26,24,.55);padding:.25rem .6rem;border-radius:999px}
+.core span{position:absolute;left:1rem;bottom:.8rem;font-size:.75rem;font-weight:600;color:#FBF8F3;background:color-mix(in srgb,var(--coal) 55%,transparent);padding:.25rem .6rem;border-radius:999px}
 .prod h3{font-family:var(--serif);font-weight:420;font-size:1.75rem;letter-spacing:-.02em;margin:1.25rem .25rem .4rem}
 .prod > p{color:var(--ink-2);font-size:.97rem;margin:0 .25rem}
 .prod dl{display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1rem;margin:1.25rem .25rem 0;padding-top:1rem;border-top:1px solid var(--line)}
@@ -119,16 +122,16 @@ h1,h2,h3,p{margin:0}
 .note{font-size:.88rem;color:var(--muted);margin-top:1.25rem}
 
 /* Responsible */
-.resp{background:var(--coal);color:var(--sand);border-radius:40px;padding:clamp(2.5rem,6vw,5rem);position:relative;overflow:hidden}
+.resp{background:var(--coal);color:var(--on-dark);border-radius:40px;padding:clamp(2.5rem,6vw,5rem);position:relative;overflow:hidden}
 .resp .kicker{color:var(--ochre)}
-.resp .h2{color:var(--paper)}
+.resp .h2{color:var(--on-dark)}
 .resp .h2 em{color:var(--ochre)}
-.resp .sub{color:#CFC6B6}
+.resp .sub{color:var(--on-coal-muted)}
 .resp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;position:relative}
-.resp-grid article{padding:1.5rem;border-radius:22px;background:rgba(244,239,230,.05);border:1px solid rgba(244,239,230,.12)}
+.resp-grid article{padding:1.5rem;border-radius:22px;background:color-mix(in srgb,var(--on-dark) 5%,transparent);border:1px solid color-mix(in srgb,var(--on-dark) 12%,transparent)}
 .resp-grid b{display:block;font-family:var(--serif);font-weight:400;font-size:2.2rem;color:var(--ochre);line-height:1;margin-bottom:1rem}
-.resp-grid h3{font-size:1.08rem;font-weight:600;margin-bottom:.5rem;color:var(--paper)}
-.resp-grid p{font-size:.94rem;color:#CFC6B6}
+.resp-grid h3{font-size:1.08rem;font-weight:600;margin-bottom:.5rem;color:var(--on-dark)}
+.resp-grid p{font-size:.94rem;color:var(--on-coal-muted)}
 .resp svg.bg{position:absolute;right:-80px;top:-40px;width:520px;opacity:.14;pointer-events:none}
 
 /* Process */
@@ -183,18 +186,18 @@ textarea{min-height:120px;resize:vertical}
 input:hover,select:hover,textarea:hover{border-color:var(--line)}
 input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;border-color:var(--clay);background:var(--paper)}
 form .btn{width:100%;justify-content:center;margin-top:.25rem}
-.status{margin-top:.9rem;font-weight:500;color:var(--olive);min-height:1.4em}
+.status{margin-top:.9rem;font-weight:500;color:var(--ink);min-height:1.4em}
 
 /* Footer */
-footer{background:var(--olive-dark);color:#C9C2B2;margin-top:clamp(4rem,8vw,7rem);padding:4rem 0 6rem;font-size:.95rem}
+footer{background:var(--olive-dark);color:var(--on-dark-muted);margin-top:clamp(4rem,8vw,7rem);padding:4rem 0 6rem;font-size:.95rem}
 .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.5rem}
-.foot .brand{color:var(--sand)}
+.foot .brand{color:var(--on-dark)}
 .foot p{margin-top:1rem;max-width:26rem}
-.foot h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--sand);margin-bottom:1rem}
+.foot h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--on-dark);margin-bottom:1rem}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
 .foot a{text-decoration:none}
-.foot a:hover{color:var(--sand);text-decoration:underline}
-.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(244,239,230,.15);font-size:.85rem}
+.foot a:hover{color:var(--on-dark);text-decoration:underline}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid color-mix(in srgb,var(--on-dark) 15%,transparent);font-size:.85rem}
 
 @media (prefers-reduced-motion:no-preference){
   .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
@@ -224,7 +227,7 @@ footer{background:var(--olive-dark);color:#C9C2B2;margin-top:clamp(4rem,8vw,7rem
   .layers li:not(.seam){display:none}
 }
 .menu .m-cta{display:none}
-.menu .m-cta a{background:var(--clay);color:var(--paper);text-align:center;margin-top:.25rem}
+.menu .m-cta a{background:var(--clay);color:var(--on-accent);text-align:center;margin-top:.25rem}
 @media (max-width:640px){
   .vm,.prods,.resp-grid,.steps,.values,form .two{grid-template-columns:1fr}
   .routes li{grid-template-columns:1fr auto}
@@ -241,7 +244,7 @@ footer{background:var(--olive-dark);color:#C9C2B2;margin-top:clamp(4rem,8vw,7rem
 <header class="site-header" id="top">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Kolvara Resources, home">
-      <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#22201C"/><path d="M4 14c5-2 9 1.5 14 0s9-2 14 0" stroke="#C98B2E" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M3.5 20c5-2 9 1.5 14.5 0s9-2 14.5 0" stroke="#FBF8F3" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M6 26c4-1.6 8 1.2 12 0s8-1.6 12 0" stroke="#A4471E" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" style="fill:var(--ink)"/><path d="M4 14c5-2 9 1.5 14 0s9-2 14 0" stroke-width="2.2" fill="none" stroke-linecap="round" style="stroke:var(--ochre)"/><path d="M3.5 20c5-2 9 1.5 14.5 0s9-2 14.5 0" stroke-width="2.2" fill="none" stroke-linecap="round" style="stroke:var(--paper)"/><path d="M6 26c4-1.6 8 1.2 12 0s8-1.6 12 0" stroke-width="2.2" fill="none" stroke-linecap="round" style="stroke:var(--clay)"/></svg>
       Kolvara
     </a>
     <nav aria-label="Primary">
@@ -274,38 +277,38 @@ footer{background:var(--olive-dark);color:#C9C2B2;margin-top:clamp(4rem,8vw,7rem
       <svg viewBox="0 0 1440 420" preserveAspectRatio="none" role="img" aria-labelledby="strata-title">
         <title id="strata-title">Illustrated geological cross-section showing soil, sandstone and shale layers above a coal seam</title>
         <defs>
-          <pattern id="sand" width="14" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#B8935E"/><circle cx="10" cy="7" r=".8" fill="#B8935E"/></pattern>
-          <pattern id="shale" width="40" height="8" patternUnits="userSpaceOnUse"><path d="M0 4h18M24 4h12" stroke="#76695A" stroke-width="1.2"/></pattern>
+          <pattern id="sand" width="14" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" style="fill:color-mix(in srgb,var(--ochre) 55%,var(--l3))"/><circle cx="10" cy="7" r=".8" style="fill:color-mix(in srgb,var(--ochre) 55%,var(--l3))"/></pattern>
+          <pattern id="shale" width="40" height="8" patternUnits="userSpaceOnUse"><path d="M0 4h18M24 4h12" stroke-width="1.2" style="stroke:color-mix(in srgb,var(--coal) 30%,var(--l4))"/></pattern>
         </defs>
-        <path d="M0 30C200 10 420 55 720 35S1200 10 1440 40V420H0Z" fill="#6B7A45"/>
-        <path d="M0 70C260 50 500 95 760 75S1180 50 1440 82V420H0Z" fill="#C98B2E"/>
-        <path d="M0 120C300 100 520 150 800 128S1220 105 1440 135V420H0Z" fill="#DDBE8E"/>
+        <path d="M0 30C200 10 420 55 720 35S1200 10 1440 40V420H0Z" style="fill:var(--l1)"/>
+        <path d="M0 70C260 50 500 95 760 75S1180 50 1440 82V420H0Z" style="fill:var(--ochre)"/>
+        <path d="M0 120C300 100 520 150 800 128S1220 105 1440 135V420H0Z" style="fill:var(--l3)"/>
         <path d="M0 120C300 100 520 150 800 128S1220 105 1440 135V420H0Z" fill="url(#sand)"/>
-        <path d="M0 175C280 160 560 200 820 182S1240 158 1440 190V420H0Z" fill="#8C8070"/>
+        <path d="M0 175C280 160 560 200 820 182S1240 158 1440 190V420H0Z" style="fill:var(--l4)"/>
         <path d="M0 175C280 160 560 200 820 182S1240 158 1440 190V420H0Z" fill="url(#shale)"/>
-        <path d="M0 225C300 210 580 252 860 232S1250 212 1440 240V420H0Z" fill="#1C1A18"/>
-        <g stroke="#FBF8F3" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke">
+        <path d="M0 225C300 210 580 252 860 232S1250 212 1440 240V420H0Z" style="fill:var(--coal)"/>
+        <g stroke="#fff" stroke-opacity=".9" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke">
           <path class="glint" d="M120 262h40" vector-effect="non-scaling-stroke"/>
           <path class="glint" d="M380 280h26" style="animation-delay:1s" vector-effect="non-scaling-stroke"/>
           <path class="glint" d="M640 268h50" style="animation-delay:2s" vector-effect="non-scaling-stroke"/>
           <path class="glint" d="M1010 258h30" style="animation-delay:.5s" vector-effect="non-scaling-stroke"/>
           <path class="glint" d="M1220 284h44" style="animation-delay:1.5s" vector-effect="non-scaling-stroke"/>
         </g>
-        <path d="M0 300C320 286 600 322 880 306S1260 288 1440 312V420H0Z" fill="#A4471E"/>
-        <path d="M0 350C300 338 620 372 900 356S1270 340 1440 362V420H0Z" fill="#3A362F"/>
-        <path d="M893 0V262" stroke="#22201C" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke"/>
-        <circle cx="893" cy="262" r="7" fill="#C98B2E" stroke="#FBF8F3" stroke-width="2" vector-effect="non-scaling-stroke"/>
+        <path d="M0 300C320 286 600 322 880 306S1260 288 1440 312V420H0Z" style="fill:var(--clay)"/>
+        <path d="M0 350C300 338 620 372 900 356S1270 340 1440 362V420H0Z" style="fill:var(--l7)"/>
+        <path d="M893 0V262" style="stroke:var(--ink)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke"/>
+        <circle cx="893" cy="262" r="7" stroke="#fff" stroke-width="2" vector-effect="non-scaling-stroke" style="fill:var(--ochre)"/>
       </svg>
       <div class="drill" aria-hidden="true">Core sample<span></span></div>
       <div class="depth" aria-hidden="true"><span>0 m</span><span>40 m</span><span>80 m</span><span>120 m</span></div>
       <ul class="layers" aria-hidden="true">
-        <li style="top:14.5%;--c:#6B7A45"><i></i>Topsoil</li>
-        <li style="top:25.7%;--c:#C98B2E"><i></i>Overburden</li>
-        <li style="top:38.6%;--c:#DDBE8E"><i></i>Sandstone</li>
-        <li style="top:51%;--c:#8C8070"><i></i>Shale</li>
-        <li class="seam" style="top:65.7%;--c:#1C1A18"><i></i>Coal seam · 6,000 kcal/kg</li>
-        <li style="top:80%;--c:#A4471E"><i></i>Underclay</li>
-        <li style="top:93%;--c:#3A362F"><i></i>Bedrock</li>
+        <li style="top:14.5%;--c:var(--l1)"><i></i>Topsoil</li>
+        <li style="top:25.7%;--c:var(--ochre)"><i></i>Overburden</li>
+        <li style="top:38.6%;--c:var(--l3)"><i></i>Sandstone</li>
+        <li style="top:51%;--c:var(--l4)"><i></i>Shale</li>
+        <li class="seam" style="top:65.7%;--c:var(--coal)"><i></i>Coal seam · 6,000 kcal/kg</li>
+        <li style="top:80%;--c:var(--clay)"><i></i>Underclay</li>
+        <li style="top:93%;--c:var(--l7)"><i></i>Bedrock</li>
       </ul>
     </div>
   </section>
@@ -404,7 +407,7 @@ footer{background:var(--olive-dark);color:#C9C2B2;margin-top:clamp(4rem,8vw,7rem
   <section id="responsible" aria-labelledby="resp-title">
     <div class="wrap">
       <div class="resp reveal">
-        <svg class="bg" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#C98B2E" stroke-width="1"><path d="M0 40c40-15 80 15 120 0s60-15 80 0"/><path d="M0 70c40-15 80 15 120 0s60-15 80 0"/><path d="M0 100c40-15 80 15 120 0s60-15 80 0"/><path d="M0 130c40-15 80 15 120 0s60-15 80 0"/><path d="M0 160c40-15 80 15 120 0s60-15 80 0"/></g></svg>
+        <svg class="bg" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke-width="1" style="stroke:var(--ochre)"><path d="M0 40c40-15 80 15 120 0s60-15 80 0"/><path d="M0 70c40-15 80 15 120 0s60-15 80 0"/><path d="M0 100c40-15 80 15 120 0s60-15 80 0"/><path d="M0 130c40-15 80 15 120 0s60-15 80 0"/><path d="M0 160c40-15 80 15 120 0s60-15 80 0"/></g></svg>
         <span class="kicker">Responsibility</span>
         <h2 class="h2" id="resp-title">Responsible <em>by design.</em></h2>
         <p class="sub">Energy security and responsibility are not opposites. We help customers make better choices at every step of the supply chain.</p>
@@ -518,7 +521,7 @@ footer{background:var(--olive-dark);color:#C9C2B2;margin-top:clamp(4rem,8vw,7rem
   <div class="wrap">
     <div class="foot">
       <div>
-        <a class="brand" href="#top" aria-label="Kolvara Resources, back to top"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#F4EFE6"/><path d="M4 14c5-2 9 1.5 14 0s9-2 14 0" stroke="#C98B2E" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M3.5 20c5-2 9 1.5 14.5 0s9-2 14.5 0" stroke="#22201C" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M6 26c4-1.6 8 1.2 12 0s8-1.6 12 0" stroke="#A4471E" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>Kolvara</a>
+        <a class="brand" href="#top" aria-label="Kolvara Resources, back to top"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" style="fill:var(--on-dark)"/><path d="M4 14c5-2 9 1.5 14 0s9-2 14 0" stroke-width="2.2" fill="none" stroke-linecap="round" style="stroke:var(--ochre)"/><path d="M3.5 20c5-2 9 1.5 14.5 0s9-2 14.5 0" style="stroke:var(--olive-dark)" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M6 26c4-1.6 8 1.2 12 0s8-1.6 12 0" stroke-width="2.2" fill="none" stroke-linecap="round" style="stroke:var(--clay)"/></svg>Kolvara</a>
         <p>Independent trading in thermal, metallurgical and specialty coals — responsibly sourced for Indian industry.</p>
       </div>
       <nav aria-label="Footer"><h2>Explore</h2><ul><li><a href="#about">About</a></li><li><a href="#products">Our coals</a></li><li><a href="#responsible">Responsibility</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
@@ -556,6 +559,45 @@ document.documentElement.classList.add('js');
   });
   document.querySelectorAll('.yr').forEach((el) => (el.textContent = new Date().getFullYear()));
 })();
+</script>
+<script>
+/* Mockup only: options for the "Customise" toolbar (see mockup-bar.js). Remove before launch. */
+window.STYLE_LAB = {
+  themes: [
+    { id: 'terracotta', name: 'Terracotta (original)', swatch: ['#F4EFE6', '#A4471E'], scheme: 'light', vars: {} },
+    { id: 'sage', name: 'Sage', swatch: ['#F1F2EC', '#3F6B4F'], scheme: 'light', meta: '#F1F2EC',
+      vars: { '--sand': '#F1F2EC', '--paper': '#FAFBF7', '--ink': '#1F2420', '--ink-2': '#36403A', '--muted': '#5E6960', '--line': '#DADFD5', '--clay': '#3F6B4F', '--olive': '#2F4A3A', '--olive-dark': '#1C2A22', '--ochre': '#B7A16A', '--coal': '#17201B', '--on-accent': '#FAFBF7', '--on-olive': '#FAFBF7', '--on-dark': '#F1F2EC', '--on-dark-muted': '#B9C4BC', '--on-coal-muted': '#C3CCC5' } },
+    { id: 'coastal', name: 'Coastal Blue', swatch: ['#F2EFE9', '#1F5F8B'], scheme: 'light', meta: '#F2EFE9',
+      vars: { '--sand': '#F2EFE9', '--paper': '#FBFAF7', '--ink': '#14202B', '--ink-2': '#2D3B48', '--muted': '#5B6672', '--line': '#DFDAD0', '--clay': '#1F5F8B', '--olive': '#2B4C63', '--olive-dark': '#102231', '--ochre': '#D29B4A', '--coal': '#0F1923', '--on-accent': '#FFFFFF', '--on-olive': '#FFFFFF', '--on-dark': '#F2EFE9', '--on-dark-muted': '#A9B8C6', '--on-coal-muted': '#BCC8D3' } },
+    { id: 'rosewood', name: 'Rosewood', swatch: ['#F5EEEC', '#8E3B4F'], scheme: 'light', meta: '#F5EEEC',
+      vars: { '--sand': '#F5EEEC', '--paper': '#FCF8F7', '--ink': '#241A1C', '--ink-2': '#3E3033', '--muted': '#6E5F62', '--line': '#E6D9D6', '--clay': '#8E3B4F', '--olive': '#5A3E4A', '--olive-dark': '#2B1C22', '--ochre': '#C7925B', '--coal': '#1E1517', '--on-accent': '#FFFFFF', '--on-olive': '#FFFFFF', '--on-dark': '#F5EEEC', '--on-dark-muted': '#CDB9BE', '--on-coal-muted': '#D3C3C6' } },
+    { id: 'stone', name: 'Stone Mono', swatch: ['#EFEEEA', '#1A1A1A'], scheme: 'light', meta: '#EFEEEA',
+      vars: { '--sand': '#EFEEEA', '--paper': '#FAFAF8', '--ink': '#1A1A1A', '--ink-2': '#333333', '--muted': '#5F5F5F', '--line': '#DDDCD7', '--clay': '#1A1A1A', '--olive': '#4A4A48', '--olive-dark': '#151515', '--ochre': '#B49A6A', '--coal': '#111111', '--on-accent': '#FAFAF8', '--on-olive': '#FAFAF8', '--on-dark': '#EFEEEA', '--on-dark-muted': '#B5B5B0', '--on-coal-muted': '#C4C4BF' } },
+    { id: 'dusk', name: 'Dusk', swatch: ['#191613', '#E08A5A'], scheme: 'dark', meta: '#191613',
+      vars: { '--sand': '#191613', '--paper': '#231F1A', '--ink': '#F1EADF', '--ink-2': '#D6CCBD', '--muted': '#A99F91', '--line': '#3A332B', '--clay': '#E08A5A', '--olive': '#7D8C55', '--olive-dark': '#0E0C0A', '--ochre': '#D9A54A', '--coal': '#0E0C0A', '--on-accent': '#1A1410', '--on-olive': '#12100C', '--on-dark': '#F1EADF', '--on-dark-muted': '#A99F91', '--on-coal-muted': '#C9BFB0' } }
+  ],
+  fonts: [
+    { id: 'fraunces', name: 'Fraunces + Instrument Sans', display: '"Fraunces", serif', body: '"Instrument Sans", sans-serif', vars: {} },
+    { id: 'cormorant', name: 'Cormorant Garamond + Figtree', display: '"Cormorant Garamond", serif', body: '"Figtree", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700&display=swap',
+      vars: { '--serif': '"Cormorant Garamond", Georgia, serif', '--sans': '"Figtree", system-ui, sans-serif' } },
+    { id: 'playfair', name: 'Playfair Display + Source Sans 3', display: '"Playfair Display", serif', body: '"Source Sans 3", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Source+Sans+3:wght@400..700&display=swap',
+      vars: { '--serif': '"Playfair Display", Georgia, serif', '--sans': '"Source Sans 3", system-ui, sans-serif' } },
+    { id: 'newsreader', name: 'Newsreader + Inter', display: '"Newsreader", serif', body: '"Inter", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Inter:wght@400..700&display=swap',
+      vars: { '--serif': '"Newsreader", Georgia, serif', '--sans': '"Inter", system-ui, sans-serif' } },
+    { id: 'lora', name: 'Lora + Nunito Sans', display: '"Lora", serif', body: '"Nunito Sans", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:wght@400;600;700&display=swap',
+      vars: { '--serif': '"Lora", Georgia, serif', '--sans': '"Nunito Sans", system-ui, sans-serif' } },
+    { id: 'dmserif', name: 'DM Serif Display + DM Sans', display: '"DM Serif Display", serif', body: '"DM Sans", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap',
+      vars: { '--serif': '"DM Serif Display", Georgia, serif', '--sans': '"DM Sans", system-ui, sans-serif' } },
+    { id: 'atkinson', name: 'Atkinson Hyperlegible', label: 'Atkinson Hyperlegible', note: 'most readable', display: '"Atkinson Hyperlegible", sans-serif', body: '"Atkinson Hyperlegible", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap',
+      vars: { '--serif': '"Atkinson Hyperlegible", system-ui, sans-serif', '--sans': '"Atkinson Hyperlegible", system-ui, sans-serif' } }
+  ]
+};
 </script>
 <script src="mockup-bar.js" defer></script>
 </body>

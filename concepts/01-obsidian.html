@@ -13,7 +13,8 @@
 <style>
 :root{
   --bg:#0C0B0A; --bg-2:#110F0E; --surface:#171412; --surface-2:#1E1A17;
-  --line:rgba(237,230,220,.12); --line-2:rgba(237,230,220,.22);
+  --line:color-mix(in srgb,var(--text) 12%,transparent); --line-2:color-mix(in srgb,var(--text) 22%,transparent);
+  --dim:color-mix(in srgb,var(--text) 58%,var(--bg));
   --text:#EDE6DC; --muted:#A79E92; --ember:#F08A3C; --ember-2:#FFB477; --ink-on-ember:#1A0F05;
   --serif:"Instrument Serif", ui-serif, Georgia, serif;
   --sans:"Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -34,7 +35,7 @@ p{margin:0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .wrap{width:min(100% - 2.5rem, var(--maxw));margin-inline:auto}
 .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ember-2)}
-.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ember);box-shadow:0 0 12px 2px rgba(240,138,60,.7)}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ember);box-shadow:0 0 12px 2px color-mix(in srgb,var(--ember) 70%,transparent)}
 .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.5rem;font:600 .95rem/1 var(--sans);letter-spacing:.02em;text-decoration:none;border:1px solid transparent;transition:background .25s,color .25s,border-color .25s,transform .25s}
 .btn-primary{background:var(--ember);color:var(--ink-on-ember)}
 .btn-primary:hover{background:var(--ember-2)}
@@ -45,7 +46,7 @@ p{margin:0}
 
 /* Header */
 .site-header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
-.site-header.scrolled{background:rgba(12,11,10,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.site-header.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
 .brand-mark{width:34px;height:34px}
@@ -66,7 +67,7 @@ p{margin:0}
 
 /* Hero */
 .hero{position:relative;min-height:min(100vh,980px);min-height:min(100svh,980px);display:flex;flex-direction:column;justify-content:flex-end;padding-top:120px;overflow:hidden;
-  background:radial-gradient(60% 55% at 72% 46%, rgba(240,138,60,.16), transparent 70%)}
+  background:radial-gradient(60% 55% at 72% 46%, color-mix(in srgb,var(--ember) 16%,transparent), transparent 70%)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:2rem;flex:1}
 .hero h1{font-family:var(--serif);font-size:clamp(3.2rem,7.2vw,6.6rem);line-height:.98;letter-spacing:-.015em;margin:1.4rem 0 1.6rem}
 .hero h1 em{color:var(--ember-2);font-style:italic}
@@ -80,7 +81,7 @@ p{margin:0}
 @keyframes breathe{0%,100%{opacity:.85}50%{opacity:1}}
 .annot text{font:600 10.5px var(--sans);letter-spacing:.14em;fill:var(--muted);text-transform:uppercase}
 .annot text.v{fill:var(--text);font-weight:500;letter-spacing:.06em}
-.embers span{position:absolute;bottom:18%;width:3px;height:3px;border-radius:50%;background:var(--ember-2);box-shadow:0 0 8px 2px rgba(240,138,60,.8);opacity:0;animation:rise var(--d,7s) linear infinite;animation-delay:var(--delay,0s);left:var(--x)}
+.embers span{position:absolute;bottom:18%;width:3px;height:3px;border-radius:50%;background:var(--ember-2);box-shadow:0 0 8px 2px color-mix(in srgb,var(--ember) 80%,transparent);opacity:0;animation:rise var(--d,7s) linear infinite;animation-delay:var(--delay,0s);left:var(--x)}
 @keyframes rise{0%{transform:translateY(0);opacity:0}10%{opacity:.9}100%{transform:translate(var(--drift,10px),-260px);opacity:0}}
 .stats{list-style:none;margin:3.5rem 0 0;padding:1.75rem 0 2.25rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;border-top:1px solid var(--line)}
 .stats strong{display:block;font:400 2.6rem/1 var(--serif);color:var(--text)}
@@ -91,7 +92,7 @@ section{position:relative}
 .section{padding:clamp(5rem,10vw,9rem) 0}
 .statement p{font-family:var(--serif);font-size:clamp(2rem,4.1vw,3.6rem);line-height:1.12;letter-spacing:-.01em;max-width:1100px;color:var(--text)}
 .statement p .hl{color:var(--ember-2)}
-.statement p .dim{color:#8B8379}
+.statement p .dim{color:var(--dim)}
 .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.5rem}
 .sec-head h2{font-family:var(--serif);font-size:clamp(2.4rem,4.6vw,4rem);line-height:1.02;margin-top:1rem}
 .sec-head h2 em{color:var(--ember-2)}
@@ -111,7 +112,7 @@ section{position:relative}
 .products{background:var(--bg-2);border-block:1px solid var(--line)}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .product{background:var(--bg-2);padding:2.25rem 2rem 2rem;display:flex;flex-direction:column;gap:1.1rem;position:relative;transition:background .3s}
-.product::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 100% 0%, rgba(240,138,60,.13), transparent 70%);opacity:0;transition:opacity .4s;pointer-events:none}
+.product::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 100% 0%, color-mix(in srgb,var(--ember) 13%,transparent), transparent 70%);opacity:0;transition:opacity .4s;pointer-events:none}
 .product:hover{background:var(--surface)}
 .product:hover::before{opacity:1}
 .p-top{display:flex;justify-content:space-between;font-size:.8rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
@@ -148,7 +149,7 @@ section{position:relative}
 .routes .arrow{align-self:center;color:var(--ember);font-family:var(--serif);font-size:2.5rem}
 
 /* Contact */
-.contact{background:linear-gradient(180deg,var(--bg) 0%, #140F0B 100%);border-top:1px solid var(--line)}
+.contact{background:linear-gradient(180deg,var(--bg) 0%, color-mix(in srgb,var(--ember) 6%,var(--bg)) 100%);border-top:1px solid var(--line)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .contact h2{font-family:var(--serif);font-size:clamp(3rem,6vw,5.5rem);line-height:.98;margin:1rem 0 2rem}
 .contact h2 em{color:var(--ember-2)}
@@ -169,7 +170,7 @@ label .opt{color:var(--muted);font-weight:400}
 input,select,textarea{font:inherit;font-size:1rem;color:var(--text);background:var(--bg);border:1px solid var(--line-2);padding:.85rem 1rem;border-radius:0;width:100%;transition:border-color .2s}
 select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 15px) 55%;background-size:5px 5px;background-repeat:no-repeat}
 textarea{min-height:120px;resize:vertical}
-input:hover,select:hover,textarea:hover{border-color:rgba(237,230,220,.4)}
+input:hover,select:hover,textarea:hover{border-color:color-mix(in srgb,var(--text) 40%,transparent)}
 input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--ember-2);outline-offset:0;border-color:var(--ember)}
 .form .btn{width:100%;justify-content:center;margin-top:.5rem;border:0;cursor:pointer}
 .status{margin-top:1rem;font-size:.92rem;color:var(--ember-2);min-height:1.4em}
@@ -207,7 +208,7 @@ footer{border-top:1px solid var(--line);padding:3.5rem 0 6rem;color:var(--muted)
 }
 @media (max-width:860px){
   .nav-toggle{display:grid;place-items:center;margin-left:auto}
-  .menu{display:none;position:absolute;top:84px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:1rem 1.25rem 1.5rem;background:rgba(12,11,10,.97);border-bottom:1px solid var(--line)}
+  .menu{display:none;position:absolute;top:84px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:1rem 1.25rem 1.5rem;background:color-mix(in srgb,var(--bg) 97%,transparent);border-bottom:1px solid var(--line)}
   .menu[data-open="true"]{display:flex}
   .menu li a:not(.btn){display:block;padding:1rem 0;font-size:1.1rem;border-bottom:1px solid var(--line)}
   .menu .btn{margin-top:1rem;justify-content:center}
@@ -239,10 +240,10 @@ footer{border-top:1px solid var(--line);padding:3.5rem 0 6rem;color:var(--muted)
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Kolvara Resources, home">
       <svg class="brand-mark" viewBox="0 0 34 34" aria-hidden="true">
-        <polygon points="17,2 30,10 28,25 17,32 6,25 4,10" fill="none" stroke="#F08A3C" stroke-width="1.4"/>
-        <polyline points="4,10 15,15 17,32" fill="none" stroke="#F08A3C" stroke-width="1" opacity=".7"/>
-        <polyline points="30,10 15,15" fill="none" stroke="#F08A3C" stroke-width="1" opacity=".7"/>
-        <polyline points="17,2 15,15" fill="none" stroke="#F08A3C" stroke-width="1" opacity=".45"/>
+        <polygon points="17,2 30,10 28,25 17,32 6,25 4,10" fill="none" stroke-width="1.4" style="stroke:var(--ember)"/>
+        <polyline points="4,10 15,15 17,32" fill="none" stroke-width="1" opacity=".7" style="stroke:var(--ember)"/>
+        <polyline points="30,10 15,15" fill="none" stroke-width="1" opacity=".7" style="stroke:var(--ember)"/>
+        <polyline points="17,2 15,15" fill="none" stroke-width="1" opacity=".45" style="stroke:var(--ember)"/>
       </svg>
       <span class="brand-name">KOLVARA</span>
     </a>
@@ -286,9 +287,9 @@ footer{border-top:1px solid var(--line);padding:3.5rem 0 6rem;color:var(--muted)
           <title id="coal-title">Illustration of a faceted coal lump with sample specification callouts</title>
           <defs>
             <radialGradient id="g-glow" cx="50%" cy="55%" r="50%">
-              <stop offset="0" stop-color="#F08A3C" stop-opacity=".55"/>
-              <stop offset=".45" stop-color="#C2551A" stop-opacity=".22"/>
-              <stop offset="1" stop-color="#C2551A" stop-opacity="0"/>
+              <stop offset="0" stop-opacity=".55" style="stop-color:var(--ember)"/>
+              <stop offset=".45" stop-opacity=".22" style="stop-color:color-mix(in srgb,var(--ember) 70%,var(--bg))"/>
+              <stop offset="1" stop-opacity="0" style="stop-color:color-mix(in srgb,var(--ember) 70%,var(--bg))"/>
             </radialGradient>
             <linearGradient id="g-sheen" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stop-color="#fff" stop-opacity=".10"/>
@@ -297,7 +298,7 @@ footer{border-top:1px solid var(--line);padding:3.5rem 0 6rem;color:var(--muted)
           </defs>
           <ellipse class="glow" cx="300" cy="250" rx="270" ry="210" fill="url(#g-glow)"/>
           <g class="coal">
-            <g transform="translate(90 30)" stroke="rgba(240,138,60,.22)" stroke-width=".8" stroke-linejoin="round">
+            <g transform="translate(90 30)" stroke-width=".8" stroke-linejoin="round" style="stroke:color-mix(in srgb,var(--ember) 22%,transparent)">
               <polygon points="118,70 220,28 170,130" fill="#4A4540"/>
               <polygon points="220,28 262,118 170,130" fill="#3F3A35"/>
               <polygon points="220,28 318,62 262,118" fill="#35312D"/>
@@ -318,18 +319,18 @@ footer{border-top:1px solid var(--line);padding:3.5rem 0 6rem;color:var(--muted)
               <polygon points="236,286 132,236 218,200" fill="#2C2825"/>
               <polygon points="132,236 170,130 218,200" fill="#423D38"/>
               <polygon points="40,190 118,70 220,28 170,130" fill="url(#g-sheen)" stroke="none"/>
-              <polyline points="40,190 118,70 220,28 318,62" fill="none" stroke="rgba(255,214,170,.45)" stroke-width="1.1"/>
-              <polyline points="366,262 290,342 178,366" fill="none" stroke="rgba(255,150,70,.6)" stroke-width="1.2"/>
+              <polyline points="40,190 118,70 220,28 318,62" fill="none" stroke-width="1.1" style="stroke:color-mix(in srgb,var(--ember-2) 50%,transparent)"/>
+              <polyline points="366,262 290,342 178,366" fill="none" stroke-width="1.2" style="stroke:color-mix(in srgb,var(--ember) 65%,transparent)"/>
             </g>
           </g>
           <g class="annot" aria-hidden="true">
-            <g stroke="rgba(237,230,220,.35)" stroke-width="1" fill="none">
+            <g stroke-width="1" fill="none" style="stroke:color-mix(in srgb,var(--text) 35%,transparent)">
               <polyline points="408,92 470,48 590,48"/>
               <polyline points="470,190 530,190 590,190" />
               <polyline points="168,330 110,402 10,402"/>
               <polyline points="208,100 150,52 10,52"/>
             </g>
-            <g fill="#F08A3C"><circle cx="408" cy="92" r="3.5"/><circle cx="470" cy="190" r="3.5"/><circle cx="168" cy="330" r="3.5"/><circle cx="208" cy="100" r="3.5"/></g>
+            <g style="fill:var(--ember)"><circle cx="408" cy="92" r="3.5"/><circle cx="470" cy="190" r="3.5"/><circle cx="168" cy="330" r="3.5"/><circle cx="208" cy="100" r="3.5"/></g>
             <text x="590" y="38" text-anchor="end">GCV (GAR)</text><text class="v" x="590" y="66" text-anchor="end">6,000 kcal/kg</text>
             <text x="590" y="180" text-anchor="end">Ash</text><text class="v" x="590" y="208" text-anchor="end">&lt; 12%</text>
             <text x="10" y="392">Origin</text><text class="v" x="10" y="420">Richards Bay, ZA</text>
@@ -592,7 +593,7 @@ footer{border-top:1px solid var(--line);padding:3.5rem 0 6rem;color:var(--muted)
     <div class="foot">
       <div>
         <a class="brand" href="#top" aria-label="Kolvara Resources, back to top">
-          <svg class="brand-mark" viewBox="0 0 34 34" aria-hidden="true"><polygon points="17,2 30,10 28,25 17,32 6,25 4,10" fill="none" stroke="#F08A3C" stroke-width="1.4"/><polyline points="4,10 15,15 17,32" fill="none" stroke="#F08A3C" stroke-width="1" opacity=".7"/><polyline points="30,10 15,15" fill="none" stroke="#F08A3C" stroke-width="1" opacity=".7"/></svg>
+          <svg class="brand-mark" viewBox="0 0 34 34" aria-hidden="true"><polygon points="17,2 30,10 28,25 17,32 6,25 4,10" fill="none" stroke-width="1.4" style="stroke:var(--ember)"/><polyline points="4,10 15,15 17,32" fill="none" stroke-width="1" opacity=".7" style="stroke:var(--ember)"/><polyline points="30,10 15,15" fill="none" stroke-width="1" opacity=".7" style="stroke:var(--ember)"/></svg>
           <span class="brand-name" style="color:var(--text)">KOLVARA</span>
         </a>
         <p>Independent trading in thermal, metallurgical and specialty coals for Indian industry.</p>
@@ -642,6 +643,45 @@ document.documentElement.classList.add('js');
   });
   document.querySelectorAll('.yr').forEach((el) => (el.textContent = new Date().getFullYear()));
 })();
+</script>
+<script>
+/* Mockup only: options for the "Customise" toolbar (see mockup-bar.js). Remove before launch. */
+window.STYLE_LAB = {
+  themes: [
+    { id: 'ember', name: 'Ember (original)', swatch: ['#0C0B0A', '#F08A3C'], scheme: 'dark', vars: {} },
+    { id: 'ocean', name: 'Deep Ocean', swatch: ['#071A22', '#F2B544'], scheme: 'dark', meta: '#071A22',
+      vars: { '--bg': '#071A22', '--bg-2': '#0A2029', '--surface': '#0D2832', '--surface-2': '#11303C', '--text': '#E9F4F7', '--muted': '#93B4C0', '--ember': '#F2B544', '--ember-2': '#F7CB75', '--ink-on-ember': '#071A22' } },
+    { id: 'forest', name: 'Forest Brass', swatch: ['#0D1411', '#C9A55A'], scheme: 'dark', meta: '#0D1411',
+      vars: { '--bg': '#0D1411', '--bg-2': '#111A16', '--surface': '#16211C', '--surface-2': '#1B2822', '--text': '#ECEFE6', '--muted': '#A3AE9F', '--ember': '#C9A55A', '--ember-2': '#E2C487', '--ink-on-ember': '#10140E' } },
+    { id: 'graphite', name: 'Graphite Blue', swatch: ['#111214', '#7FA7FF'], scheme: 'dark', meta: '#111214',
+      vars: { '--bg': '#111214', '--bg-2': '#15171A', '--surface': '#1B1E22', '--surface-2': '#22262B', '--text': '#EEF0F2', '--muted': '#A1A6AC', '--ember': '#7FA7FF', '--ember-2': '#A9C4FF', '--ink-on-ember': '#0B1020' } },
+    { id: 'ivory', name: 'Ivory & Ember', swatch: ['#F7F2EA', '#B4501C'], scheme: 'light', meta: '#F7F2EA',
+      vars: { '--bg': '#F7F2EA', '--bg-2': '#EFE8DC', '--surface': '#FFFDF8', '--surface-2': '#F3ECE1', '--text': '#1B1714', '--muted': '#5E554B', '--ember': '#B4501C', '--ember-2': '#9C4318', '--ink-on-ember': '#FFFFFF' } },
+    { id: 'arctic', name: 'Arctic Navy', swatch: ['#F8F9FA', '#1F4E8C'], scheme: 'light', meta: '#F8F9FA',
+      vars: { '--bg': '#F8F9FA', '--bg-2': '#EEF1F4', '--surface': '#FFFFFF', '--surface-2': '#F2F4F7', '--text': '#0E1621', '--muted': '#4F5B69', '--ember': '#1F4E8C', '--ember-2': '#1F4E8C', '--ink-on-ember': '#FFFFFF' } }
+  ],
+  fonts: [
+    { id: 'instrument', name: 'Instrument Serif + Hanken Grotesk', display: '"Instrument Serif", serif', body: '"Hanken Grotesk", sans-serif', vars: {} },
+    { id: 'playfair', name: 'Playfair Display + Inter', display: '"Playfair Display", serif', body: '"Inter", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Inter:wght@400..700&display=swap',
+      vars: { '--serif': '"Playfair Display", Georgia, serif', '--sans': '"Inter", system-ui, sans-serif' } },
+    { id: 'cormorant', name: 'Cormorant Garamond + Manrope', display: '"Cormorant Garamond", serif', body: '"Manrope", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400..700&display=swap',
+      vars: { '--serif': '"Cormorant Garamond", Georgia, serif', '--sans': '"Manrope", system-ui, sans-serif' } },
+    { id: 'fraunces', name: 'Fraunces + DM Sans', display: '"Fraunces", serif', body: '"DM Sans", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=DM+Sans:wght@400;500;600;700&display=swap',
+      vars: { '--serif': '"Fraunces", Georgia, serif', '--sans': '"DM Sans", system-ui, sans-serif' } },
+    { id: 'dmserif', name: 'DM Serif Display + Figtree', display: '"DM Serif Display", serif', body: '"Figtree", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700&display=swap',
+      vars: { '--serif': '"DM Serif Display", Georgia, serif', '--sans': '"Figtree", system-ui, sans-serif' } },
+    { id: 'grotesk', name: 'Space Grotesk', label: 'Space Grotesk', display: '"Space Grotesk", sans-serif', body: '"Space Grotesk", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap',
+      vars: { '--serif': '"Space Grotesk", system-ui, sans-serif', '--sans': '"Space Grotesk", system-ui, sans-serif' } },
+    { id: 'atkinson', name: 'Atkinson Hyperlegible', label: 'Atkinson Hyperlegible', note: 'most readable', display: '"Atkinson Hyperlegible", sans-serif', body: '"Atkinson Hyperlegible", sans-serif',
+      href: 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap',
+      vars: { '--serif': '"Atkinson Hyperlegible", system-ui, sans-serif', '--sans': '"Atkinson Hyperlegible", system-ui, sans-serif' } }
+  ]
+};
 </script>
 <script src="mockup-bar.js" defer></script>
 </body>

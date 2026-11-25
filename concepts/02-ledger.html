@@ -15,6 +15,7 @@
   --paper:#F2F0EB; --paper-2:#E8E5DD; --white:#FBFAF7; --ink:#111111; --ink-2:#2A2926;
   --muted:#5C5850; --rule:#CFCAC0; --signal:#FF4D00; --signal-ink:#C23A00;
   --on-ink:#F2F0EB; --on-ink-muted:#A8A398; --ink-rule:#34322E;
+  --on-signal:var(--ink); --focus:var(--signal);
   --sans:"Archivo", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --maxw:1360px;
@@ -25,7 +26,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 va
 img,svg{display:block;max-width:100%}
 a{color:inherit}
 h1,h2,h3,p{margin:0}
-:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .skip{position:absolute;left:1rem;top:-120px;z-index:100;background:var(--ink);color:var(--paper);padding:.75rem 1rem;font-weight:700;text-decoration:none}
 .skip:focus{top:1rem}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -35,10 +36,10 @@ h1,h2,h3,p{margin:0}
 .label{font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;color:var(--muted)}
 .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1rem 1.25rem;font:600 .95rem/1 var(--sans);text-decoration:none;border:1.5px solid var(--ink);transition:background .2s,color .2s}
 .btn-ink{background:var(--ink);color:var(--paper)}
-.btn-ink:hover{background:var(--signal);color:var(--ink);border-color:var(--signal)}
+.btn-ink:hover{background:var(--signal);color:var(--on-signal);border-color:var(--signal)}
 .btn-line:hover{background:var(--ink);color:var(--paper)}
-.btn-signal{background:var(--signal);border-color:var(--signal);color:var(--ink)}
-.btn-signal:hover{background:var(--paper);border-color:var(--paper)}
+.btn-signal{background:var(--signal);border-color:var(--signal);color:var(--on-signal)}
+.btn-signal:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
 
 /* Utility + header */
 .util{background:var(--ink);color:var(--on-ink)}
@@ -48,10 +49,10 @@ h1,h2,h3,p{margin:0}
 .desk::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#3DDC84;margin-right:.55rem;vertical-align:1px}
 .desk.closed::before{background:var(--on-ink-muted)}
 .util-r{display:flex;gap:1.5rem}
-.site-header{position:sticky;top:0;z-index:50;background:rgba(242,240,235,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1.5px solid var(--ink)}
+.site-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1.5px solid var(--ink)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
 .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
-.brand-mark{width:40px;height:40px;background:var(--signal);display:grid;place-items:center;font:900 1.35rem/1 var(--sans);font-stretch:125%}
+.brand-mark{width:40px;height:40px;background:var(--signal);display:grid;place-items:center;font:900 1.35rem/1 var(--sans);font-stretch:125%;color:var(--on-signal)}
 .brand-text{display:flex;flex-direction:column;line-height:1}
 .brand-text b{font-weight:800;font-stretch:125%;font-size:1.15rem;letter-spacing:.02em}
 .brand-text span{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:.3rem;letter-spacing:.12em;text-transform:uppercase}
@@ -68,12 +69,12 @@ h1,h2,h3,p{margin:0}
 .cols{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(to right, var(--rule) 1px, transparent 1px);background-size:calc(100% / 12) 100%;border-right:1px solid var(--rule);opacity:.55}
 .hero-meta{display:flex;flex-wrap:wrap;gap:.5rem 2.5rem;margin-bottom:2rem;position:relative}
 .hero-grid{position:relative;display:grid;grid-template-columns:repeat(12,1fr);column-gap:0;align-items:end}
-.hero h1{grid-column:1 / -1;font-size:clamp(1.9rem,8.9vw,9.6rem);line-height:.86;font-stretch:125%;font-weight:850;text-transform:uppercase;letter-spacing:-.035em}
+.hero h1{grid-column:1 / -1;font-size:clamp(1.7rem,8.5vw,150px);overflow-wrap:break-word;line-height:.86;font-stretch:125%;font-weight:850;text-transform:uppercase;letter-spacing:-.035em}
 .hero h1 .dot{color:var(--signal)}
 .ticket{grid-column:9 / span 4;align-self:start;background:var(--white);border:1.5px solid var(--ink);font-family:var(--mono);font-size:.78rem;box-shadow:8px 8px 0 var(--ink);margin:1.75rem 8px 2.5rem 1.5rem}
 .hero-row > .ticket{padding:0}
 .ticket header{display:flex;justify-content:space-between;align-items:center;padding:.7rem .9rem;border-bottom:1.5px solid var(--ink);font-weight:600}
-.ticket header span:last-child{background:var(--signal);padding:.15rem .45rem}
+.ticket header span:last-child{background:var(--signal);color:var(--on-signal);padding:.15rem .45rem}
 .ticket dl{margin:0;padding:.4rem .9rem}
 .ticket dl div{display:flex;justify-content:space-between;gap:1rem;padding:.42rem 0;border-bottom:1px dashed var(--rule)}
 .ticket dl div:last-child{border-bottom:0}
@@ -105,17 +106,16 @@ h1,h2,h3,p{margin:0}
 .sec-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:0 1.5rem}
 .sec-label{grid-column:1 / span 3}
 .sec-body{grid-column:4 / span 9}
-.sec-title{font-size:clamp(1.75rem,7.2vw,5rem);line-height:.9;font-stretch:125%;font-weight:850;text-transform:uppercase;letter-spacing:-.03em;margin-bottom:2.5rem}
+.sec-title{font-size:clamp(1.6rem,6.2vw,80px);overflow-wrap:break-word;line-height:.9;font-stretch:125%;font-weight:850;text-transform:uppercase;letter-spacing:-.03em;margin-bottom:2.5rem}
 .sec-title .dot{color:var(--signal)}
 .big-p{font-size:clamp(1.45rem,2.4vw,2.1rem);line-height:1.3;font-weight:500;letter-spacing:-.01em;max-width:52rem}
-.big-p mark{background:linear-gradient(transparent 62%, rgba(255,77,0,.35) 62%);color:inherit}
+.big-p mark{background:linear-gradient(transparent 62%, color-mix(in srgb,var(--signal) 35%,transparent) 62%);color:inherit}
 .vm{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3.5rem;border-top:1.5px solid var(--ink)}
 .vm > div{padding-top:1.5rem}
 .vm h3{font-family:var(--mono);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.75rem}
 .vm p{font-size:1.1rem;color:var(--ink-2)}
-.values{list-style:none;margin:3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--ink)}
-.values li{padding:1.25rem;border-left:1px solid var(--ink)}
-.values li:first-child{border-left:0}
+.values{list-style:none;margin:3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:1px;background:var(--ink);border:1.5px solid var(--ink)}
+.values li{padding:1.25rem;background:var(--paper)}
 .values span{display:block;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
 .values b{font-size:1.15rem;font-stretch:115%;font-weight:750}
 
@@ -132,7 +132,7 @@ h1,h2,h3,p{margin:0}
 .plist .key,.plist .org{font-family:var(--mono);font-size:.82rem}
 .plist .key b{display:block;font-family:var(--sans);font-size:1.05rem;font-weight:700}
 .plus{width:2.2rem;height:2.2rem;border:1.5px solid var(--ink);display:grid;place-items:center;font:500 1.3rem/1 var(--mono);transition:transform .25s,background .2s}
-details[open] .plus{transform:rotate(45deg);background:var(--signal);border-color:var(--signal)}
+details[open] .plus{transform:rotate(45deg);background:var(--signal);border-color:var(--signal);color:var(--on-signal)}
 .pbody{display:grid;grid-template-columns:4rem 1fr 1fr;gap:1rem 2.5rem;padding:.5rem .5rem 2.25rem}
 .pbody > p{grid-column:2;font-size:1.05rem;color:var(--ink-2)}
 .pbody table{grid-column:3;grid-row:1 / span 2;width:100%;border-collapse:collapse;font-family:var(--mono);font-size:.85rem}
@@ -171,8 +171,8 @@ details[open] .plus{transform:rotate(45deg);background:var(--signal);border-colo
 /* Industries */
 .ind{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink);border-left:1px solid var(--ink)}
 .ind li{padding:1.75rem 1.5rem 2rem;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);min-height:180px;display:flex;flex-direction:column;justify-content:space-between;transition:background .2s}
-.ind li:hover{background:var(--signal)}
-.ind li:hover .label{color:var(--ink)}
+.ind li:hover{background:var(--signal);color:var(--on-signal)}
+.ind li:hover .label{color:var(--on-signal)}
 .ind b{font-size:1.55rem;font-stretch:125%;font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:-.02em}
 
 /* Reach */
@@ -199,19 +199,19 @@ form .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
 .field{display:flex;flex-direction:column;margin-bottom:1.6rem}
 .field.full{grid-column:1 / -1}
 label{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--on-ink-muted);margin-bottom:.35rem}
-input,select,textarea{font:inherit;font-size:1.1rem;color:var(--paper);background:transparent;border:0;border-bottom:1.5px solid #5A5750;padding:.6rem 0;border-radius:0;width:100%}
+input,select,textarea{font:inherit;font-size:1.1rem;color:var(--paper);background:transparent;border:0;border-bottom:1.5px solid color-mix(in srgb,var(--on-ink) 35%,var(--ink));padding:.6rem 0;border-radius:0;width:100%}
 select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--on-ink-muted) 50%),linear-gradient(135deg,var(--on-ink-muted) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 7px) 55%;background-size:5px 5px;background-repeat:no-repeat}
 select option{color:var(--ink)}
 textarea{min-height:110px;resize:vertical}
-input::placeholder,textarea::placeholder{color:#7D796F}
+input::placeholder,textarea::placeholder{color:color-mix(in srgb,var(--on-ink) 52%,var(--ink))}
 input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;border-bottom-color:var(--signal);box-shadow:0 2px 0 0 var(--signal)}
 .form-foot{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .form-foot .btn{cursor:pointer;min-width:240px}
-.status{font-family:var(--mono);font-size:.85rem;color:var(--signal)}
+.status{font-family:var(--mono);font-size:.85rem;color:var(--on-ink)}
 
 /* Footer */
 body > footer{background:var(--ink);color:var(--on-ink-muted);padding:2rem 0 5.5rem;overflow:hidden}
-.wordmark{font-size:clamp(4rem,19.5vw,22rem);line-height:.8;font-stretch:125%;font-weight:900;letter-spacing:-.05em;color:#1E1D1B;text-transform:uppercase;white-space:nowrap;margin:0 0 2rem -.04em;user-select:none}
+.wordmark{font-size:clamp(4rem,19.5vw,22rem);line-height:.8;font-stretch:125%;font-weight:900;letter-spacing:-.05em;color:color-mix(in srgb,var(--on-ink) 7%,var(--ink));text-transform:uppercase;white-space:nowrap;margin:0 0 2rem -.04em;user-select:none}
 .wordmark::before{content:"Kolvara"}
 .foot{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:var(--mono);font-size:.78rem;border-top:1px solid var(--ink-rule);padding-top:1.25rem}
 .foot nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.5rem;flex-wrap:wrap}
@@ -248,9 +248,6 @@ body > footer{background:var(--ink);color:var(--on-ink-muted);padding:2rem 0 5.5
   .chart > header{margin-bottom:1.5rem}
   .ind{grid-template-columns:1fr 1fr}
   .contact-grid{grid-template-columns:1fr}
-  .values{grid-template-columns:1fr 1fr}
-  .values li:nth-child(3){border-left:0}
-  .values li:nth-child(n+3){border-top:1px solid var(--ink)}
   .pbody{grid-template-columns:1fr;padding-left:.5rem}
   .pbody > p,.pbody table,.pbody .btn{grid-column:1;grid-row:auto}
 }
@@ -623,6 +620,42 @@ body > footer{background:var(--ink);color:var(--on-ink-muted);padding:2rem 0 5.5
   });
   document.querySelectorAll('.yr').forEach((el) => (el.textContent = new Date().getFullYear()));
 })();
+</script>
+<script>
+/* Mockup only: options for the "Customise" toolbar (see mockup-bar.js). Remove before launch. */
+window.STYLE_LAB = {
+  themes: [
+    { id: 'signal', name: 'Signal (original)', swatch: ['#F2F0EB', '#FF4D00'], scheme: 'light', vars: {} },
+    { id: 'hazard', name: 'Hazard Yellow', swatch: ['#0A0A0A', '#FFD400'], scheme: 'light', meta: '#F5F5F2',
+      vars: { '--paper': '#F5F5F2', '--paper-2': '#EAEAE5', '--white': '#FFFFFF', '--ink': '#0A0A0A', '--ink-2': '#262626', '--muted': '#555550', '--rule': '#D1D1CB', '--signal': '#FFD400', '--on-signal': '#0A0A0A', '--focus': '#0A0A0A', '--on-ink': '#F5F5F2', '--on-ink-muted': '#A3A39C', '--ink-rule': '#2E2E2E' } },
+    { id: 'blueprint', name: 'Blueprint', swatch: ['#EEF2F6', '#1D4ED8'], scheme: 'light', meta: '#EEF2F6',
+      vars: { '--paper': '#EEF2F6', '--paper-2': '#E2E8EF', '--white': '#F8FAFC', '--ink': '#0B1B2E', '--ink-2': '#22344A', '--muted': '#4A5A6E', '--rule': '#C5CFDB', '--signal': '#1D4ED8', '--on-signal': '#FFFFFF', '--focus': '#1D4ED8', '--on-ink': '#EEF2F6', '--on-ink-muted': '#9FB0C4', '--ink-rule': '#22344A' } },
+    { id: 'lime', name: 'Lime Forest', swatch: ['#14211A', '#B6E35A'], scheme: 'light', meta: '#EEF0E8',
+      vars: { '--paper': '#EEF0E8', '--paper-2': '#E2E6DA', '--white': '#F8F9F4', '--ink': '#14211A', '--ink-2': '#2A3A31', '--muted': '#52604F', '--rule': '#C6CEBF', '--signal': '#B6E35A', '--on-signal': '#14211A', '--focus': '#14211A', '--on-ink': '#EEF0E8', '--on-ink-muted': '#A7B3A2', '--ink-rule': '#2C3B32' } },
+    { id: 'terracotta', name: 'Terracotta', swatch: ['#F3EDE3', '#C2410C'], scheme: 'light', meta: '#F3EDE3',
+      vars: { '--paper': '#F3EDE3', '--paper-2': '#E9E0D2', '--white': '#FBF8F3', '--ink': '#2B1D14', '--ink-2': '#45342A', '--muted': '#6B5B4E', '--rule': '#D8CCBB', '--signal': '#C2410C', '--on-signal': '#FFF7ED', '--focus': '#C2410C', '--on-ink': '#F3EDE3', '--on-ink-muted': '#BFAE9C', '--ink-rule': '#45342A' } },
+    { id: 'night', name: 'Night Shift', swatch: ['#121212', '#FF5A1F'], scheme: 'dark', meta: '#121212',
+      vars: { '--paper': '#121212', '--paper-2': '#1A1A1A', '--white': '#181818', '--ink': '#EDEBE6', '--ink-2': '#CFCBC3', '--muted': '#A19C92', '--rule': '#333230', '--signal': '#FF5A1F', '--on-signal': '#111111', '--focus': '#FF5A1F', '--on-ink': '#121212', '--on-ink-muted': '#57534C', '--ink-rule': '#CFCAC0' } }
+  ],
+  fonts: [
+    { id: 'archivo', name: 'Archivo Expanded + IBM Plex Mono', display: '"Archivo", sans-serif', body: '"IBM Plex Mono", monospace', vars: {} },
+    { id: 'bricolage', name: 'Bricolage Grotesque + DM Mono', display: '"Bricolage Grotesque", sans-serif', body: '"DM Mono", monospace',
+      href: 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..800&family=DM+Mono:wght@400;500&display=swap',
+      vars: { '--sans': '"Bricolage Grotesque", system-ui, sans-serif', '--mono': '"DM Mono", ui-monospace, monospace' } },
+    { id: 'space', name: 'Space Grotesk + Space Mono', display: '"Space Grotesk", sans-serif', body: '"Space Mono", monospace',
+      href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap',
+      vars: { '--sans': '"Space Grotesk", system-ui, sans-serif', '--mono': '"Space Mono", ui-monospace, monospace' } },
+    { id: 'schibsted', name: 'Schibsted Grotesk + JetBrains Mono', display: '"Schibsted Grotesk", sans-serif', body: '"JetBrains Mono", monospace',
+      href: 'https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=JetBrains+Mono:wght@400;500&display=swap',
+      vars: { '--sans': '"Schibsted Grotesk", system-ui, sans-serif', '--mono': '"JetBrains Mono", ui-monospace, monospace' } },
+    { id: 'intertight', name: 'Inter Tight + IBM Plex Mono', display: '"Inter Tight", sans-serif', body: '"IBM Plex Mono", monospace',
+      href: 'https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..800&display=swap',
+      vars: { '--sans': '"Inter Tight", system-ui, sans-serif' } },
+    { id: 'atkinson', name: 'Atkinson Hyperlegible + IBM Plex Mono', label: 'Atkinson Hyperlegible', note: 'most readable', display: '"Atkinson Hyperlegible", sans-serif', body: '"IBM Plex Mono", monospace',
+      href: 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap',
+      vars: { '--sans': '"Atkinson Hyperlegible", system-ui, sans-serif' } }
+  ]
+};
 </script>
 <script src="mockup-bar.js" defer></script>
 </body>
